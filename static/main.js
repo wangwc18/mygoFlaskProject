@@ -88,7 +88,10 @@ function updateNewsData() {
                     content += '</div>'
                     content += '<div class="comment-item-right">'
                     content += '<div class="comment-item-name">'
-                    content += '<span>'+reply.uname+'</span>'
+                    if(reply.vipStatus==1){
+                        content += '<span>'+reply.uname+'</span>'}
+                    else{
+                        content += '<span>'+reply.uname+'</span>'}
                     if(reply.current_level>=1&& reply.is_senior_member!=1)
                         content += '<span style="padding-left:5px"><img style="height:13px;width:26px" src="/static/pic/l'+reply.current_level+'.png"/></span></div>'
                     else if(reply.is_senior_member==1)
@@ -115,7 +118,11 @@ function updateNewsData() {
                         content += '</div>'
                         content += '</div>'
                         content += '<div class="comment-s-item-right">'
-                        content += '<span class="comment-s-item-name">'+reply.replies[j].uname+'</span>'
+                        if(reply.replies[j].vipStatus==1){
+                            content += '<span class="comment-s-item-name2">'+reply.replies[j].uname+'</span>'
+                        }
+                        else{
+                            content += '<span class="comment-s-item-name">'+reply.replies[j].uname+'</span>'}
                         if(reply.current_level>=1&& reply.is_senior_member!=1)
                             content += '<span style="padding-left:5px"><img style="height:12px;width:24px" src="/static/pic/l'+reply.current_level+'.png"/></span>'
                         else if(reply.is_senior_member==1)
@@ -165,7 +172,10 @@ content += '</div>'
 content += '</div>'
 content += '<div class="comment-item-right">'
 content += '<div class="comment-item-name">'
-content += '<span>'+reply.uname+'</span>'
+                if(reply.vipStatus==1){
+content += '<span style="color:#FB7299;">'+reply.uname+'</span>'}
+                else{
+content += '<span>'+reply.uname+'</span>'}
                 if(reply.current_level>=1&& reply.is_senior_member!=1)
 content += '<span style="padding-left:5px"><img style="height:13px;width:26px" src="/static/pic/l'+reply.current_level+'.png"/></span></div>'
                 else if(reply.is_senior_member==1)
@@ -194,7 +204,11 @@ content += '<img class="comment-s-item-img-1" src="'+reply.replies[j].avatar+'" 
 content += '</div>'
 content += '</div>'
 content += '<div class="comment-s-item-right">'
-content += '<span class="comment-s-item-name">'+reply.replies[j].uname+'</span>'
+if(reply.replies[j].vipStatus==1){
+    content += '<span class="comment-s-item-name2">'+reply.replies[j].uname+'</span>'
+}
+else{
+    content += '<span class="comment-s-item-name">'+reply.replies[j].uname+'</span>'}
                 if(reply.current_level>=1&& reply.is_senior_member!=1)
 content += '<span style="padding-left:5px"><img style="height:12px;width:24px" src="/static/pic/l'+reply.current_level+'.png"/></span>'
                 else if(reply.is_senior_member==1)

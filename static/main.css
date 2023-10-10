@@ -78,6 +78,15 @@
     font-family: BlinkMacSystemFont sans-serif;
     color: #61666d;
 }
+.comment-item-name2{
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family: BlinkMacSystemFont sans-serif;
+    color: #FB7299;;
+}
 .comment-item-content{
     width: 100%;
     margin-left: 10px;
@@ -131,6 +140,15 @@
     font-size: 14px;
     font-family: BlinkMacSystemFont sans-serif;
     color: #61666d;
+}
+.comment-s-item-name2{
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family: BlinkMacSystemFont sans-serif;
+    color:#FB7299;;
 }
 .comment-s-item-content{
     width: 100%;
