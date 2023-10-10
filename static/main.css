@@ -1,0 +1,296 @@
+.app-header {
+    width: 100%;
+    height: 70px;
+    font-size: 15px;
+    position: fixed;
+    box-shadow:0px 5px 3px #F6F7F8;
+    color: #18191C;;
+    min-width: 1100px;
+    background: white;
+    z-index: 10;
+    margin:0; padding:0
+}
+.container {
+    overflow-y: auto;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 75px;
+    /*border: 1px solid red;*/
+}
+.container-left {
+    float: left;
+    width: 70%;
+    /*background: green;*/
+}
+.left-title {
+    padding-top: 20px;
+    font-size: 22px;
+    font-family: BlinkMacSystemFont sans-serif;
+}
+.left-title-detail{
+    font-size: 13px;
+    font-family: BlinkMacSystemFont sans-serif;
+    color: #9499A0;
+    padding-top: 16px;
+    padding-bottom: 22px;
+}
+
+.comment-list{
+    width: 100%;
+}
+.comment-list-item{
+    width: 100%;
+}
+.comment-item-img-contain{
+    float: left;
+    width: 7%;
+}
+.comment-item-img1{
+    position:absolute;
+    z-index:1;
+}
+.comment-item-img2{
+    position:absolute;
+    z-index:2;
+}
+.comment-item-img-1{
+    margin-top: 16px;
+    margin-left: 16px;
+    width: 49px;
+    height: 49px;
+    border-radius:50%;
+}
+.comment-item-img-2{
+    width: 80px;
+    height: 80px;
+}
+.comment-item-right{
+    margin-left: 7%;
+    padding-top: 1px;
+    /*background: blue;*/
+}
+.comment-item-name{
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family: BlinkMacSystemFont sans-serif;
+    color: #61666d;
+}
+.comment-item-content{
+    width: 100%;
+    margin-left: 10px;
+    font-size: 16px;
+    font-family: BlinkMacSystemFont sans-serif;
+    color: #18191C;
+    line-height: 26px;
+}
+.comment-item-fun{
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 13px;
+    font-family: BlinkMacSystemFont sans-serif;
+    color:#9499A0;
+}
+
+.comment-s-list-item{
+    width: 100%;
+}
+.comment-s-item-img-contain{
+    float: left;
+    width: 7%;
+}
+.comment-s-item-img1{
+    position:absolute;
+    z-index:1;
+}
+.comment-s-item-img2{
+    position:absolute;
+    z-index:2;
+}
+.comment-s-item-img-1{
+    margin-top: 12px;
+    margin-left: 12px;
+    width: 37px;
+    height: 37px;
+    border-radius:50%;
+}
+
+.comment-s-item-right{
+    margin-left: 7%;
+    padding-top: 12px;
+    /*background: blue;*/
+}
+.comment-s-item-name{
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family: BlinkMacSystemFont sans-serif;
+    color: #61666d;
+}
+.comment-s-item-content{
+    width: 100%;
+    margin-left: 10px;
+    font-size: 16px;
+    font-family: BlinkMacSystemFont sans-serif;
+    color: #18191C;
+    line-height: 26px;
+}
+.comment-s-item-fun{
+    width: 100%;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 13px;
+    font-family: BlinkMacSystemFont sans-serif;
+    color:#9499A0;
+}
+
+
+.bottom-line{
+    border-bottom: 1px solid #E3E5E7;
+    margin-left: 10px;
+    padding-top: 15px;
+}
+
+.bottom-line2{
+    border-bottom: 1px solid #E3E5E7;
+    padding-top: 15px;
+}
+
+.container-right {
+    margin-left: 73%;
+    height: 594px;
+}
+.right-who-left {
+   width: 15%;
+    float:left;
+    padding-top:20px;
+}
+.right-who-right{
+    margin-left:15%;
+    padding-top:15px;
+    /*padding-left: ;*/
+}
+.right-list {
+    background: #F1F2F3;
+    margin-top:20px;
+    padding-top:5px;
+    padding-bottom:5px;
+    padding-left:5px;
+    padding-right:5px;
+    border-radius:8px;
+    width: 100%;
+}
+.right-list-title {
+    padding-left:8px;
+    padding-top:10px;
+    color: #9499A0;
+    font-size: 13px;
+}
+.right-list-item {
+    width:100%;
+    padding-top:5px;
+    padding-bottom:5px;
+    user-select: none;
+    font-size:15px;
+    color:#18191C;
+}
+.right-list-item:hover{
+    color: #00AEEC;
+}
+.hot_or_new{
+    margin-left:3%;
+    font-size: 17px;
+     color: #9499A0;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+.hot_or_new.active{
+    color: #18191C;
+}
+.chongdian{
+    float:left;
+    background-color: #00AEEC;
+    color:whitesmoke;
+    border-radius: 5px;
+    width:23%;
+    height:27px;
+    font-size: 13px;
+    padding-top:4px;
+}
+.guanzhu{
+    margin-left:26%;
+    background-color: #E3E5E7 ;
+    color:#9499A0;
+    border-radius: 5px;
+    width:67%;
+    height:27px;
+    font-size: 13px;
+    padding-top:4px;
+}
+
+.star_like{
+    vertical-align: middle;
+    height:40px;
+    width: 40px;
+}
+.player_bottom{
+    /*width: 100%;*/
+    height: 46px;
+    font-size: 16px;
+    box-shadow:0px 0px 8px #E3E5E7;
+    color: #505050;
+    padding-top: 15px;
+    padding-left: 15px
+}
+
+.rand_band{
+    color: #505050;
+    background-color: #E3E5E7 ;
+    border-radius:20px;
+    font-size: 15px;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 5px;
+    padding-bottom: 6px;
+    margin-left: 15px;
+}
+.bar-pic{
+    padding-top: 25px;
+    width: 100%;
+}
+.user-right-top-band{
+    float:right;
+    font-size: 12px;
+}
+.user-right-top-band-img{
+    height: 48px;
+    position:absolute;
+    transform: translateX(-240px);
+}
+.user-right-top-band-num{
+    padding-top: 8px;
+    padding-right: 8px;
+    font-family: PingFang SC;
+    font-weight: bold;
+}
+.go-top-icon{
+    border: 1px solid red;
+    color:red;
+    font-size: 10px;
+    padding-right: 3px;
+}
+.danmu-list{
+    margin-top: 10px;
+    background: #f4f4f4;
+    font-size: 17px;
+    width: 100%;
+    height: 37px;
+    border-radius: 10px;
+    padding-top:10px;
+    padding-left:10px;
+}

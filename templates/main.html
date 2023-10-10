@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{videos[vid]['title']}}</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename="main.css") }}">
+    <link rel="stylesheet" href="{{ url_for("static", filename="dplayer/dist/DPlayer.min.css") }}">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <script src="{{ url_for("static", filename="dplayer/plugin/flv.min.js") }}"></script>
+    <script src="{{ url_for("static", filename="dplayer/plugin/hls.min.js") }}"></script>
+    <script src="{{ url_for("static", filename="dplayer/dist/DPlayer.min.js") }}"></script>
+    <script type="text/javascript" src="{{ url_for("static", filename="jquery/jquery.min.js") }}"></script>
+    <script> const vid = '{{vid}}';</script>
+    <script src="{{ url_for("static", filename="main.js") }}"></script>
+    <style>
+        .dplayer-comment-setting-type>label{display: inline;}
+    </style>
+</head>
+<body style="margin:0; padding:0">
+<div class="app-header">
+    <img src="{{ url_for("static", filename="svg/bilibili.svg")}}" style="height:28px;padding-top:20px;padding-left:20px" />
+    <span style="padding-left:20px">首页</span>
+    <span style="padding-left:30px">番剧</span>
+    <span style="padding-left:20px">直播</span>
+    <span style="padding-left:25px">游戏中心</span>
+    <span style="padding-left:25px">会员购</span>
+    <span style="padding-left:25px">漫画</span>
+    <span style="padding-left:25px">赛事</span>
+    <span style="padding-left:25px">亚运会</span>
+    <span style="padding-left:25px">小长假</span>
+    <span style="padding-left:25px"><img src="{{ url_for("static", filename="svg/download-client.svg")}}" style="vertical-align: middle;"/></span></span>
+    <span style="padding-left:3px">下载客户端</span>
+{#    <span style="padding-left:3px">下载客户端</span>#}
+</div>
+
+<div class="container">
+    <div class="container-left">
+        <div class="left-title">{{videos[vid]['title']}}</div>
+        <div class="left-title-detail">
+            <span><img src="{{ url_for("static", filename="svg/view-icon.svg")}}" style="vertical-align: middle;"/></span><span style="padding-right:20px">{{videos[vid]['play_time']}}</span>
+            <span><img src="{{ url_for("static", filename="svg/dm-icon.svg")}}" style="vertical-align: middle;"/></span><span style="padding-right:20px">{{videos[vid]['danmaku_num']}}</span>
+            <span  style="padding-right:20px">{{videos[vid]['upload_time']}}</span>
+            <span><img src="{{ url_for("static", filename="pic/prohibit.png")}}" style="vertical-align: middle;"/>未经作者授权，禁止转载</span>
+        </div>
+
+        <div id="dplayer" style="width:100%;"></div>
+        <div class="player_bottom">
+            <span>1人正在观看，已装填{{videos[vid]['load_danmaku']}}条弹幕</span>
+        </div>
+
+        <div style="width: 100%;color:#61666d;font-size: 16px;padding-top:20px">
+            <span><img src="{{ url_for("static", filename="svg/like.svg")}}" class="star_like"/></span>
+            <span style="padding-right:4%;padding-left:5px">{{videos[vid]['like']}}</span>
+            <span><img src="{{ url_for("static", filename="svg/coin.svg")}}" class="star_like"/></span>
+            <span style="padding-right:4%;padding-left:5px">{{videos[vid]['coin']}}</span>
+            <span><img src="{{ url_for("static", filename="svg/star.svg")}}" class="star_like"/></span>
+            <span style="padding-right:4%;padding-left:5px">{{videos[vid]['star']}}</span>
+            <span><img src="{{ url_for("static", filename="svg/share.svg")}}" class="star_like"/></span>
+            <span style="padding-right:4%;padding-left:5px">{{videos[vid]['share']}}</span>
+        </div>
+        <div class = "bottom-line2" > </div>
+
+        <div>
+            <div style="color:#18191C;font-size:16px;font-family:PingFang SC;line-height:50px;padding-left:5px;padding-top:10px">
+                本次期间限定公开，将于北京时间10月1日（星期日）23:00截止 <br>※为方便大家观看，此版本进行了字幕的优化。
+            </div>
+            <div style="padding-top: 10px;padding-bottom: 10px">
+                <span class="rand_band">动画</span>
+                <span class="rand_band">MyGO!!!!!</span>
+                <span class="rand_band">mygo</span>
+                <span class="rand_band">BanG Dream!</span>
+            </div>
+        </div>
+        <div class = "bottom-line2" > </div>
+
+        <div class="bar-pic">
+            <img src="{{ url_for("static", filename="pic/bar.png")}}" style="width: 100%"/>
+        </div>
+
+        <div style="padding-top:3%;padding-bottom:3%">
+            <span style="font-size:25px;color:#18191C;">评论</span>
+            <span style="font-size:15px;color:#9499A0;">{{videos[vid]['comment_num']}}</span>
+            <span class="hot_or_new" data-cid="1">最热</span>
+            <span class="hot_or_new" data-cid="2">最新</span>
+        </div>
+        <div class="comment-list" data-infinite-scroll></div>
+
+    </div>
+
+    <div class="container-right">
+        <div class="right-who-left"><img src="{{ url_for("static", filename="pic/i2.hdslb.com/bfs/face/5727b28b871235eaeb8d9a68354846b569d7a1cc.jpg")}}" style="vertical-align: middle;border-radius:50%;height:50px;width:50px"/></div>
+        <div class="right-who-right">
+            <div>
+                <span style="color:#FB7299;font-size:16px;">MyGO_AveMujica</span>
+                <span style="color:#61666D;font-size:13px;"><img src="{{ url_for("static", filename="pic/send_mes.png")}}"/> 发消息</span>
+            </div>
+            <div style="color: #9499A0;font-size:13px;padding-top:5px">来自BanG Dream! Project，「MyGO!!!!!」与「Ave Muj</div>
+            <div style="padding-top:8px">
+                <div class="chongdian"><span style="padding-left:30%">充电</span></div>
+                <div class="guanzhu"><span style="padding-left:35%">已关注 18.3万</span></div>
+            </div>
+        </div>
+        <div class="danmu-list">
+            <span>弹幕列表</span>
+            <span style="float:right;padding-right:20px"><img style="width:20px;height:20px;transform: rotate(90deg)" src="{{ url_for("static", filename="svg/arrow-icon.svg")}}"/></span>
+        </div>
+        <div style="width:100%;padding-top:20px;height:150px">
+            <div style="float:left;padding-left:0px"><img src="/static/pic/ad_pic.png" style="height:150px;border-radius:10px"/></div>
+            <div style="margin-left:55%;font-size:16px;padding-top:5px;line-height:30px;color:#505050;">
+                物贩还在继续哦
+            </div>
+        </div>
+        <div class="right-list">
+            <div style="padding-left:8px;padding-top:5px">
+                <span>It's MyGO!!!!!</span>
+                <span style="color: #9499A0;font-size:13px">({{videos[vid]['rank']}}/14)</span>
+            </div>
+            <div class="right-list-title"><span>210.5万播放 </span>
+                <span><img src="{{ url_for("static", filename="svg/ic_info.svg")}}"/>简介</span></div>
+            <div class = "bottom-line" > </div>
+            {%for vid_e in videos.keys()%}
+                {% if vid_e==vid %}
+                <div class="right-list-item" style="color:#00AEEC" onClick="handleListItemClick('{{vid_e}}')">
+                    <img src="{{ url_for("static", filename="pic/playing.gif")}}" style="height:13px">
+                    {{videos[vid_e]['title']}}
+                    <span style="float:right;padding-right:10px;color:#18191C">{{videos[vid_e]['long']}}</span>
+                </div>
+                {% else %}
+                <div class="right-list-item" onClick="handleListItemClick('{{vid_e}}')">{{videos[vid_e]['title']}}
+                <span style="float:right;padding-right:10px">{{videos[vid_e]['long']}}</span></div>
+                {% endif %}
+            {%endfor%}
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+    // 弹幕js
+    var dp1 = new DPlayer({
+        element: document.getElementById("dplayer"),
+        video: {
+            {#url: "/api/video?vid={{vid}}"#}
+            quality: [
+            {
+              name: '1080P',
+              url: "/api/video?vid={{vid}}",
+            },
+            {
+              name: '720P',
+              url: "/api/video?vid={{vid}}",
+            },
+          ],
+            defaultQuality: 0,
+        },
+        danmaku: {
+            id: "{{vid}}",
+            api: '/api/danmu'
+        }
+    });
+    function handleListItemClick(i) {
+        redirectUrl = '/video/' + (i);
+        window.location.href = redirectUrl;
+    };
+</script>
