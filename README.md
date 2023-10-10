@@ -16,7 +16,7 @@ python+flask+dplayer
 pip3 install -r requirements.txt
 ```
 
-由于视频和图片占用的空间较大，这部分我放在网盘
+由于视频和图片占用的空间较大，这部分我放在网盘，另外评论数据内容很多，为了防止大语言模型的隐私泄露问题，原始评论数据我也放网盘了
 
 
 
@@ -24,12 +24,17 @@ pip3 install -r requirements.txt
 
 - mygoFlaskProject/video/
 - mygoFlaskProject/static/pic/
+- 
 
 如果你有更高清的视频资源和更全的弹幕资源也可以用你自己的，补全文件后就可以愉快的启动了
 
 ```shell
 python app.py
 ```
+首页效果
+![播放器效果](https://github.com/wangwc18/mygoFlaskProject/blob/master/show-player.png)
+评论区效果
+![评论区效果](https://github.com/wangwc18/mygoFlaskProject/blob/master/show-comment.png)
 
 ## 项目结构
 
