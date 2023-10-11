@@ -17,7 +17,7 @@ pip3 install -r requirements.txt
 ```
 
 由于视频和图片占用的空间较大，这部分我放在网盘，另外评论数据内容很多，为了防止大语言模型的隐私泄露问题，原始评论数据我也放网盘了
-
+百度链接：https://pan.baidu.com/s/1g0CE2Rxql1c7AaMSow4OQw  提取码：mwmb
 
 
 主要缺少以下文件的内容
