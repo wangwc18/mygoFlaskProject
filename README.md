@@ -24,7 +24,7 @@ pip3 install -r requirements.txt
 
 - mygoFlaskProject/video/
 - mygoFlaskProject/static/pic/
-- 
+- mygoFlaskProject/get_data/comment_json/
 
 如果你有更高清的视频资源和更全的弹幕资源也可以用你自己的，补全文件后就可以愉快的启动了
 
