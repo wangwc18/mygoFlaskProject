@@ -24,7 +24,7 @@ pip3 install -r requirements.txt
 
 代码+资源文件百度链接：https://pan.baidu.com/s/1g0CE2Rxql1c7AaMSow4OQw  提取码：mwmb
 
-竟然还有很多非技术的粉丝关注这个项目，那我再放一下运行环境的链接吧：https://pan.baidu.com/s/1uuHwohQThnb0JkYmBP7wFA  提取码：2yg4
+竟然还有很多非技术的粉丝关注这个项目，那我再放一下python运行环境的网盘吧：https://pan.baidu.com/s/1uuHwohQThnb0JkYmBP7wFA  提取码：2yg4
 
 主要缺少以下文件的内容
 
