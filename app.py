@@ -170,7 +170,7 @@ def danmu_post():
     if vid not in mygo_data.keys():
         return
     rank = mygo_data[vid]['rank']
-    xml_file = open('video/' + str(rank) + '.xml', 'r', encoding="UTF-8")
+    xml_file = open('danmaku/' + str(rank) + '.xml', 'r', encoding="UTF-8")
     parsed_data = xmltodict.parse(xml_file.read())
     xml_file.close()
     json_conversion = parsed_data['i']['d']

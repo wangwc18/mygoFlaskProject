@@ -1,4 +1,7 @@
 .idea/
 __pycache__/
 .video/
-.static/pic/
+.static/pic/i0.hdslb.com/
+.static/pic/i1.hdslb.com/
+.static/pic/i2.hdslb.com/
+.get_data/comment_json/
