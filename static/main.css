@@ -1,3 +1,4 @@
+a{text-decoration:none}
 .app-header {
     width: 100%;
     height: 70px;
@@ -19,7 +20,7 @@
 }
 .container-left {
     float: left;
-    width: 70%;
+    width: 67%;
     /*background: green;*/
 }
 .left-title {
@@ -180,7 +181,7 @@
 }
 
 .container-right {
-    margin-left: 73%;
+    margin-left: 70%;
     height: 594px;
 }
 .right-who-left {
@@ -209,6 +210,27 @@
     color: #9499A0;
     font-size: 13px;
 }
+.right-list-box{
+    height: 200px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.right-list-box::-webkit-scrollbar {
+  width: 6px; /* 设置滚动条宽度 */
+  height: 6px; /* 设置滚动条高度 */
+}
+
+.right-list-box::-webkit-scrollbar-thumb {
+  border-radius: 3px; /* 设置滚动条滑块圆角 */
+  background-color: rgba(0, 0, 0, 0.2); /* 设置滑块颜色 */
+}
+
+.right-list-box::-webkit-scrollbar-track {
+  background-color: rgba(0,0,0,0.05); /* 设置滑块轨道颜色 */
+}
+
+
 .right-list-item {
     width:100%;
     padding-top:5px;
@@ -230,6 +252,10 @@
 }
 .hot_or_new.active{
     color: #18191C;
+}
+.hot_or_new:hover{
+    color: #00AEEC;
+    cursor:pointer;
 }
 .chongdian{
     float:left;
@@ -312,4 +338,21 @@
     border-radius: 10px;
     padding-top:10px;
     padding-left:10px;
+}
+.pan-tab{
+    width:100%;
+    padding-top:20px;
+    height:150px;
+}
+.pan-tab:hover{
+    color: #00AEEC;
+    cursor:pointer;
+}
+.pan-tab-title{
+    word-wrap: break-word;
+    word-break: normal;
+    font-size:16px;
+    padding-top:5px;
+    line-height:30px;
+    color:#18191C
 }

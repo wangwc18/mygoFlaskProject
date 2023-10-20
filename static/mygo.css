@@ -1,0 +1,49 @@
+
+.body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.div1{
+    width:100%;
+    padding-bottom:0.891%;
+    /*position: relative;*/
+    background-image: url("mygo_static/mygo1.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0;
+
+}
+.div2{
+    width:100%;
+    padding-bottom: 9.581%;
+    /*position: relative;*/
+    background-image: url("mygo_static/mygo2.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0;
+}
+.div3{
+    width:100%;
+    padding-bottom: 13%;
+    /*position: relative;*/
+    background-image: url("mygo_static/mygo3.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0;
+}
+.player{
+    width:50%;
+    padding-left: 25%;
+    padding-top:4.7%;
+    /*padding-bottom:9.55%;*/
+}
+.img1-1{
+    width:40%;
+    padding-left:30%;
+}
+.img3-1{
+    width:50%;
+    padding-top: 50%;
+    padding-left:25%;
+}

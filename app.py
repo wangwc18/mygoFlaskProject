@@ -103,6 +103,13 @@ def video_player(vid):
 def main_page():
     return redirect('/video/Av914573114')
 
+@app.route('/mygo')
+def mygo_page():
+    vid = request.args.get("vid")
+    if vid not in mygo_data.keys():
+        vid = 'Av914573114'
+    return render_template("mygo.html", vid=vid, videos=mygo_data)
+
 
 @app.route('/favicon.ico')
 def favicon():
@@ -136,6 +143,33 @@ def video_server():
     return send_file('video\\' + str(rank) + '.mp4')
 
 
+# @app.route("/api/danmu", methods=['GET'])
+# def danmu_server():
+#     vid = request.args.get("id")
+#     if vid not in mygo_data.keys():
+#         return
+#     rank = mygo_data[vid]['rank']
+#     xml_file = open('danmaku/' + str(rank) + '.xml', 'r', encoding="UTF-8")
+#     parsed_data = xmltodict.parse(xml_file.read())
+#     xml_file.close()
+#     json_conversion = parsed_data['i']['d']
+#     json_out = {'code': 1, 'danmaku': []}
+#     for danmu in json_conversion:
+#         list_param = danmu['@p'].split(',')
+#         hex_color = hex(int(list_param[3]))[2:]
+#         hex_color = '#' + '0' * (6 - len(hex_color)) + hex_color
+#         one_danmaku = {"__v": 0, "author": list_param[6], "time": float(list_param[0]), "text": danmu['#text'],
+#                        "color": hex_color, "type": "right"}
+#         if list_param[1] == '4':
+#             one_danmaku['type'] = "bottom"
+#         if list_param[1] == '4':
+#             one_danmaku['type'] = "top"
+#         json_out['danmaku'].append(one_danmaku)
+#     json_str = json.dumps(json_out, ensure_ascii=False)
+#     headers = {"Content-Type": "application/json"}
+#     return json_str, 200, headers
+
+
 @app.route("/api/danmu", methods=['GET'])
 def danmu_server():
     vid = request.args.get("id")
@@ -146,51 +180,51 @@ def danmu_server():
     parsed_data = xmltodict.parse(xml_file.read())
     xml_file.close()
     json_conversion = parsed_data['i']['d']
-    json_out = {'code': 1, 'danmaku': []}
+    json_out = {'code': 1, 'data': []}
     for danmu in json_conversion:
         list_param = danmu['@p'].split(',')
         hex_color = hex(int(list_param[3]))[2:]
         hex_color = '#' + '0' * (6 - len(hex_color)) + hex_color
-        one_danmaku = {"__v": 0, "author": list_param[6], "time": float(list_param[0]), "text": danmu['#text'],
-                       "color": hex_color, "type": "right"}
+        one_danmaku = {"author": list_param[6], "time": float(list_param[0]), "text": danmu['#text'],
+                       "color": hex_color, "type": "scroll"}
         if list_param[1] == '4':
             one_danmaku['type'] = "bottom"
-        if list_param[1] == '4':
+        if list_param[1] == '5':
             one_danmaku['type'] = "top"
-        json_out['danmaku'].append(one_danmaku)
+        json_out['data'].append(one_danmaku)
+    json_out['data'] = sorted(json_out['data'], key=lambda x: x['time'])
     json_str = json.dumps(json_out, ensure_ascii=False)
     headers = {"Content-Type": "application/json"}
     return json_str, 200, headers
 
-
-@app.route("/api/danmu", methods=['POST'])
-def danmu_post():
-    data = json.loads(request.get_data())
-    vid = data["player"]
-    if vid not in mygo_data.keys():
-        return
-    rank = mygo_data[vid]['rank']
-    xml_file = open('danmaku/' + str(rank) + '.xml', 'r', encoding="UTF-8")
-    parsed_data = xmltodict.parse(xml_file.read())
-    xml_file.close()
-    json_conversion = parsed_data['i']['d']
-    json_out = {'code': 1, 'danmaku': []}
-    for danmu in json_conversion:
-        list_param = danmu['@p'].split(',')
-        hex_color = hex(int(list_param[3]))[2:]
-        hex_color = '#' + '0' * (6 - len(hex_color)) + hex_color
-        one_danmaku = {"__v": 0, "author": list_param[6], "time": float(list_param[0]), "text": danmu['#text'],
-                       "color": hex_color, "type": "right"}
-        if list_param[1] == '4':
-            one_danmaku['type'] = "bottom"
-        if list_param[1] == '4':
-            one_danmaku['type'] = "top"
-        json_out['danmaku'].append(one_danmaku)
-    json_out['danmaku'].append({"__v": 0, "author": '1', "time": data["time"], "text": data["text"],
-                                "color": data["color"], "type": data["type"]})
-    json_str = json.dumps(json_out, ensure_ascii=False)
-    headers = {"Content-Type": "application/json"}
-    return json_str, 200, headers
+# @app.route("/api/danmu", methods=['POST'])
+# def danmu_post():
+#     data = json.loads(request.get_data())
+#     vid = data["player"]
+#     if vid not in mygo_data.keys():
+#         return
+#     rank = mygo_data[vid]['rank']
+#     xml_file = open('danmaku/' + str(rank) + '.xml', 'r', encoding="UTF-8")
+#     parsed_data = xmltodict.parse(xml_file.read())
+#     xml_file.close()
+#     json_conversion = parsed_data['i']['d']
+#     json_out = {'code': 1, 'danmaku': []}
+#     for danmu in json_conversion:
+#         list_param = danmu['@p'].split(',')
+#         hex_color = hex(int(list_param[3]))[2:]
+#         hex_color = '#' + '0' * (6 - len(hex_color)) + hex_color
+#         one_danmaku = {"__v": 0, "author": list_param[6], "time": float(list_param[0]), "text": danmu['#text'],
+#                        "color": hex_color, "type": "right"}
+#         if list_param[1] == '4':
+#             one_danmaku['type'] = "bottom"
+#         if list_param[1] == '4':
+#             one_danmaku['type'] = "top"
+#         json_out['danmaku'].append(one_danmaku)
+#     json_out['danmaku'].append({"__v": 0, "author": '1', "time": data["time"], "text": data["text"],
+#                                 "color": data["color"], "type": data["type"]})
+#     json_str = json.dumps(json_out, ensure_ascii=False)
+#     headers = {"Content-Type": "application/json"}
+#     return json_str, 200, headers
 
 
 if __name__ == '__main__':

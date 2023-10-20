@@ -4,6 +4,18 @@ var cur_page = 1; // 当前页
 var total_page = 1;  // 总页数
 var data_querying = true;   // 是否正在向后台获取数据:如果为ture表示正在加载数据；反之，没有加载数据
 $(function () {
+    $.get('/api/danmu?id='+vid,function (response){
+        const items = response.data
+        const player = new NPlayer.Player({
+           src: "/api/video?vid="+vid,
+           plugins: [
+            new NPlayerDanmaku({items}),
+        ],
+       });
+       player.mount('#dplayer')
+   })
+
+
     // 当主页加载完成之后，立即刷新主页的分页数据
     // 默认加载第一页
     updateNewsData();

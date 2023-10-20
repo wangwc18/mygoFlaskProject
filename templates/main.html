@@ -4,17 +4,13 @@
     <meta charset="UTF-8">
     <title>{{videos[vid]['title']}}</title>
     <link rel="stylesheet" href="{{ url_for("static", filename="main.css") }}">
-    <link rel="stylesheet" href="{{ url_for("static", filename="dplayer/dist/DPlayer.min.css") }}">
     <link rel="shortcut icon" href="/favicon.ico">
-    <script src="{{ url_for("static", filename="dplayer/plugin/flv.min.js") }}"></script>
-    <script src="{{ url_for("static", filename="dplayer/plugin/hls.min.js") }}"></script>
-    <script src="{{ url_for("static", filename="dplayer/dist/DPlayer.min.js") }}"></script>
+    <script src="{{ url_for("static", filename="nplayer/dist/index.min.js") }}"></script>
+    <script src="{{ url_for("static", filename="nplayer-danmaku/dist/index.min.js") }}"></script>
     <script type="text/javascript" src="{{ url_for("static", filename="jquery/jquery.min.js") }}"></script>
     <script> const vid = '{{vid}}';</script>
     <script src="{{ url_for("static", filename="main.js") }}"></script>
-    <style>
-        .dplayer-comment-setting-type>label{display: inline;}
-    </style>
+
 </head>
 <body style="margin:0; padding:0">
 <div class="app-header">
@@ -74,7 +70,9 @@
         <div class = "bottom-line2" > </div>
 
         <div class="bar-pic">
-            <img src="{{ url_for("static", filename="pic/bar.png")}}" style="width: 100%"/>
+            <a href="/mygo">
+                <img src="{{ url_for("static", filename="pic/bar.png")}}" style="width: 100%"/>
+            </a>
         </div>
 
         <div style="padding-top:3%;padding-bottom:3%">
@@ -104,12 +102,12 @@
             <span>弹幕列表</span>
             <span style="float:right;padding-right:20px"><img style="width:20px;height:20px;transform: rotate(90deg)" src="{{ url_for("static", filename="svg/arrow-icon.svg")}}"/></span>
         </div>
+        <a href="https://mall.bilibili.com/act/aicms/Ux2yGo7eC.html?spm_id_from=333.999.rich-text.link.click">
         <div style="width:100%;padding-top:20px;height:150px">
             <div style="float:left;padding-left:0px"><img src="/static/pic/ad_pic.png" style="height:150px;border-radius:10px"/></div>
-            <div style="margin-left:55%;font-size:16px;padding-top:5px;line-height:30px;color:#505050;">
-                物贩还在继续哦
-            </div>
+            <div style="margin-left:55%;font-size:16px;padding-top:5px;line-height:30px;color:#505050">物贩还在继续哦</div>
         </div>
+        </a>
         <div class="right-list">
             <div style="padding-left:8px;padding-top:5px">
                 <span>It's MyGO!!!!!</span>
@@ -118,6 +116,7 @@
             <div class="right-list-title"><span>210.5万播放 </span>
                 <span><img src="{{ url_for("static", filename="svg/ic_info.svg")}}"/>简介</span></div>
             <div class = "bottom-line" > </div>
+            <div class="right-list-box">
             {%for vid_e in videos.keys()%}
                 {% if vid_e==vid %}
                 <div class="right-list-item" style="color:#00AEEC" onClick="handleListItemClick('{{vid_e}}')">
@@ -130,34 +129,28 @@
                 <span style="float:right;padding-right:10px;">{{videos[vid_e]['long']}}</span></div>
                 {% endif %}
             {%endfor%}
+            </div>
         </div>
+        {%for vid_e in videos.keys()%}
+            {% if videos[vid_e]['rank']!=13%}
+        <div class="pan-tab" onClick="handleListItemClick('{{vid_e}}')">
+            <div style="float:left;padding-left:0px"><img src="/static/pic/mygo_j{{videos[vid_e]['rank']}}.webp" style="height:150px;border-radius:10px"/></div>
+            <div style="margin-left:55%;padding-top:5px;">
+                <div class="pan-tab-title">{{videos[vid_e]['title']}}</div>
+                <div class="left-title-detail">
+                    <span><img src="{{ url_for("static", filename="svg/view-icon.svg")}}" style="vertical-align: middle;"/></span><span style="padding-right:20px">{{videos[vid_e]['play_time']}}</span>
+                    <span><img src="{{ url_for("static", filename="svg/dm-icon.svg")}}" style="vertical-align: middle;"/></span><span style="padding-right:20px">{{videos[vid_e]['danmaku_num']}}</span>
+                </div>
+            </div>
+        </div>
+            {% endif %}
+        {%endfor%}
     </div>
 </div>
 </body>
 </html>
 <script>
-    // 弹幕js
-    var dp1 = new DPlayer({
-        element: document.getElementById("dplayer"),
-        video: {
-            {#url: "/api/video?vid={{vid}}"#}
-            quality: [
-            {
-              name: '1080P',
-              url: "/api/video?vid={{vid}}",
-            },
-            {
-              name: '720P',
-              url: "/api/video?vid={{vid}}",
-            },
-          ],
-            defaultQuality: 0,
-        },
-        danmaku: {
-            id: "{{vid}}",
-            api: '/api/danmu'
-        }
-    });
+
     function handleListItemClick(i) {
         redirectUrl = '/video/' + (i);
         window.location.href = redirectUrl;
