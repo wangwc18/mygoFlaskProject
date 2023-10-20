@@ -42,6 +42,8 @@ python app.py
 评论区效果
 ![评论区效果](https://github.com/wangwc18/mygoFlaskProject/blob/master/show-comment.png)
 
+评论区上的图片（跳转主题页）和视频播放器右侧的图片（跳转b站会员购）都是可以点击跳转到对应的页面
+
 ## 项目结构
 
 **数据获取**
@@ -55,7 +57,7 @@ python app.py
 
 **视频组件**
 
-原生dplayer( https://github.com/DIYgod/DPlayer )组件貌似有bug，我的弹幕一直不加载，所以我从别人那里复制了项目里的dplayer组件( https://github.com/mtianyan/FlaskMovie )，也用了ta项目里的接口写法（不会写js的我）
+经过b站月落云尘大佬指路，本分支视频组件替换为使用nplayer(https://github.com/oyuyue/nplayer)，原本的项目是使用dplayer( https://github.com/DIYgod/DPlayer )，但是有bug迟迟不能修复。后续再研究一下添加新的功能
 
 
 
