@@ -26,7 +26,7 @@ pip3 install -r requirements.txt
 
 竟然还有很多非技术的粉丝关注这个项目，那我再放一下python运行环境的网盘：https://pan.baidu.com/s/1uuHwohQThnb0JkYmBP7wFA  提取码：2yg4
 
-（本来以为没人用谷歌云盘，没想到这么多，二合一谷歌云盘链接https://drive.google.com/file/d/1cWe6gwOBdhbCWBCgPUWD8V5ZkFxYM1yu/view?usp=sharing,解压后直接双击运行里面的run.bat即可）
+（本来以为没人用谷歌云盘，没想到这么多，二合一谷歌云盘链接https://drive.google.com/file/d/1cWe6gwOBdhbCWBCgPUWD8V5ZkFxYM1yu/view?usp=sharing  ,解压后直接双击运行里面的run.bat即可）
 
 主要缺少以下文件的内容
 
