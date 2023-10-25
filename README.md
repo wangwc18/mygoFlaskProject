@@ -20,11 +20,13 @@ pip3 install -r requirements.txt
 
 由于视频和图片占用的空间较大，这部分我放在网盘
 
-另外评论数据内容很多，为了防止大语言模型的隐私泄露问题，原始评论数据我也放网盘了（国外应该没人看b站吧，我就不放谷歌云盘了）
+另外评论数据内容很多，为了防止大语言模型的隐私泄露问题，原始评论数据我也放网盘了
 
-代码+资源文件百度链接：https://pan.baidu.com/s/1kf6j1WTZQ-6Krttwb8RVYA  提取码：i2n5
+代码+资源文件百度链接：链接：https://pan.baidu.com/s/1uynKQMfYJ8tFCy7rKPLEXQ 提取码：3n8y
 
 竟然还有很多非技术的粉丝关注这个项目，那我再放一下python运行环境的网盘：https://pan.baidu.com/s/1uuHwohQThnb0JkYmBP7wFA  提取码：2yg4
+
+（本来以为没人用谷歌云盘，没想到这么多，二合一谷歌云盘链接https://drive.google.com/file/d/1cWe6gwOBdhbCWBCgPUWD8V5ZkFxYM1yu/view?usp=sharing  ,解压后直接双击运行里面的run.bat即可）
 
 主要缺少以下文件的内容
 
@@ -57,7 +59,8 @@ python app.py
 
 **视频组件**
 
-经过b站月落云尘大佬指路，本分支视频组件替换为使用nplayer(https://github.com/oyuyue/nplayer)，原本的项目是使用dplayer( https://github.com/DIYgod/DPlayer )，但是有bug迟迟不能修复。后续再研究一下添加新的功能
+经过b站月落云尘大佬指路，本分支视频组件替换为使用nplayer( https://github.com/oyuyue/nplayer )，
+原本的项目是使用dplayer( https://github.com/DIYgod/DPlayer )，但是有bug迟迟不能修复。后续再研究一下添加新的功能
 
 
 
