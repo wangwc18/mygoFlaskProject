@@ -356,3 +356,18 @@ a{text-decoration:none}
     line-height:30px;
     color:#18191C
 }
+.pan-tab-title:hover{
+    color: #00AEEC;
+}
+.one-pan-title-detail{
+    font-size: 13px;
+    font-family: BlinkMacSystemFont sans-serif;
+    color: #9499A0;
+    padding-top: 6px;
+}
+.one-pan-title-detail:hover{
+    color: #00AEEC;
+}
+.nplayer_video-mirroring {
+  transform: scaleX(-1);
+}

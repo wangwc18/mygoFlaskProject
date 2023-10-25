@@ -9,22 +9,12 @@
     <script src="{{ url_for("static", filename="nplayer-danmaku/dist/index.min.js") }}"></script>
     <script type="text/javascript" src="{{ url_for("static", filename="jquery/jquery.min.js") }}"></script>
     <script> const vid = '{{vid}}';</script>
+    <script src="{{ url_for("static", filename="player.js") }}"></script>
 </head>
 <body class="body">
 <div class="div1"><img class="img1-1" src="{{ url_for("static", filename="mygo_static/mygo1_1.png") }}"/></div>
-<div class="div2"><div id="nplayer" class="player"></div></div>
+<div class="div2"><div id="dplayer" class="player"></div></div>
 <div class="div3"><img class="img3-1" src="{{ url_for("static", filename="mygo_static/mygo3_1.png") }}"/></div>
 </body>
-<script>
-$.get('/api/danmu?id=' + vid, function (response) {
-    const items = response.data
-    const player = new NPlayer.Player({
-        src: "/api/video?vid=" + vid,
-        plugins: [
-            new NPlayerDanmaku({items}),
-        ],
-    });
-    player.mount('#nplayer')
-});
-</script>
+
 </html>

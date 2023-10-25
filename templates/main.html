@@ -10,7 +10,7 @@
     <script type="text/javascript" src="{{ url_for("static", filename="jquery/jquery.min.js") }}"></script>
     <script> const vid = '{{vid}}';</script>
     <script src="{{ url_for("static", filename="main.js") }}"></script>
-
+    <script src="{{ url_for("static", filename="player.js") }}"></script>
 </head>
 <body style="margin:0; padding:0">
 <div class="app-header">
@@ -78,7 +78,7 @@
         <div style="padding-top:3%;padding-bottom:3%">
             <span style="font-size:25px;color:#18191C;">评论</span>
             <span style="font-size:15px;color:#9499A0;">{{videos[vid]['comment_num']}}</span>
-            <span class="hot_or_new" data-cid="1">最热</span>
+            <span class="hot_or_new active" data-cid="1">最热</span>
             <span class="hot_or_new" data-cid="2">最新</span>
         </div>
         <div class="comment-list" data-infinite-scroll></div>
@@ -137,7 +137,11 @@
             <div style="float:left;padding-left:0px"><img src="/static/pic/mygo_j{{videos[vid_e]['rank']}}.webp" style="height:150px;border-radius:10px"/></div>
             <div style="margin-left:55%;padding-top:5px;">
                 <div class="pan-tab-title">{{videos[vid_e]['title']}}</div>
-                <div class="left-title-detail">
+                <div class="one-pan-title-detail">
+                    <span><img src="{{ url_for("static", filename="svg/up.svg")}}" style="vertical-align: middle;"/></span>
+                    <span>MyGO_AveMujica</span>
+                </div>
+                <div class="one-pan-title-detail">
                     <span><img src="{{ url_for("static", filename="svg/view-icon.svg")}}" style="vertical-align: middle;"/></span><span style="padding-right:20px">{{videos[vid_e]['play_time']}}</span>
                     <span><img src="{{ url_for("static", filename="svg/dm-icon.svg")}}" style="vertical-align: middle;"/></span><span style="padding-right:20px">{{videos[vid_e]['danmaku_num']}}</span>
                 </div>
