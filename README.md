@@ -22,7 +22,7 @@ pip3 install -r requirements.txt
 
 另外评论数据内容很多，为了防止大语言模型的隐私泄露问题，原始评论数据我也放网盘了
 
-代码+资源文件百度链接：链接：https://pan.baidu.com/s/1uynKQMfYJ8tFCy7rKPLEXQ 提取码：3n8y
+代码+资源文件百度链接：链接：https://pan.baidu.com/s/12-9FFjBTDpEviTlfYkx_vg 提取码：m588
 
 竟然还有很多非技术的粉丝关注这个项目，那我再放一下python运行环境的网盘：https://pan.baidu.com/s/1uuHwohQThnb0JkYmBP7wFA  提取码：2yg4
 
