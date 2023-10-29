@@ -48,20 +48,26 @@ $.get('/api/danmu?id='+vid,function (response){
         volumeProgressBg: 'rgba(35,173,229, 1)',
         progressDot: createIcon(dot, true)(),
         posterPlayEl: createIcon(playBig)(),
-        // bpControls: {500: [['play', 'progress', 'time'],]},
+        bpControls: [],
         volumeVertical:true,
         settings: [Mirroring, 'speed']
 
    });
     player.mount('#dplayer')
 
-// const videoContainer = document.querySelector('.video_container')
-// const miniContainer = document.querySelector('.mini_container')
-// const interObserver = new IntersectionObserver((entries) => {
-//   player.mount(entries[0].isIntersecting ? videoContainer : miniContainer)
-// }, {
-//   root: null,
-//   threshold: 0
-// })
-// interObserver.observe(videoContainer);
+    // player.video.oncanplay = ()=> {
+    const interObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            // if(document.pictureInPictureElement!=null)
+            document.pictureInPictureElement && document.exitPictureInPicture()
+        } else {
+            // if(player.video!=null)
+            document.pictureInPictureElement !== player.video && player.video.requestPictureInPicture();
+        }
+    }, {
+        root: null,
+        threshold: 0
+    })
+    interObserver.observe(player.video);
+    // }
 })

@@ -12,9 +12,31 @@
     <script src="{{ url_for("static", filename="player.js") }}"></script>
 </head>
 <body class="body">
-<div class="div1"><img class="img1-1" src="{{ url_for("static", filename="mygo_static/mygo1_1.png") }}"/></div>
-<div class="div2"><div id="dplayer" class="player"></div></div>
+<div class="div1">
+    <a href="https://mall.bilibili.com/act/aicms/Ux2yGo7eC.html?spm_id_from=333.999.rich-text.link.click">
+        <img class="img1-1" src="{{ url_for("static", filename="mygo_static/mygo1_1.png") }}"/>
+    </a>
+</div>
+<div class="div2">
+    <div id="dplayer" class="player"></div>
+    <div class="scroll">
+        {%for vid_e in videos.keys()%}
+            {% if videos[vid_e]['rank']!=13%}
+        <div class="item" onClick="handleListItemClick('{{vid_e}}')" id="div-{{vid_e}}">
+            <img src="/static/pic/mygo_j{{videos[vid_e]['rank']}}.webp" style="width:100%;border-radius:10px;padding-bottom: 0px;"/>
+        </div>
+            {%endif%}
+        {%endfor%}
+    </div>
+</div>
 <div class="div3"><img class="img3-1" src="{{ url_for("static", filename="mygo_static/mygo3_1.png") }}"/></div>
 </body>
 
 </html>
+<script>
+    function handleListItemClick(i) {
+        redirectUrl = '/mygo?vid=' + (i);
+        window.location.href = redirectUrl;
+    };
+    document.getElementById('div-{{vid}}').scrollLeft
+</script>

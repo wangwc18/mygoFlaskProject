@@ -16,7 +16,7 @@
 }
 .div2{
     width:100%;
-    padding-bottom: 9.581%;
+    padding-bottom: 0.59774%;
     /*position: relative;*/
     background-image: url("mygo_static/mygo2.png");
     background-repeat: no-repeat;
@@ -46,4 +46,36 @@
     width:50%;
     padding-top: 50%;
     padding-left:25%;
+}
+
+
+.scroll {
+    width:50%;
+    margin-left:25%;
+    padding-top:2.0%;
+    text-align: center;
+    white-space: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    border-radius:10px
+}
+
+
+.scroll::-webkit-scrollbar {
+  width:500px;height: 10px
+}
+
+.scroll::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: rgb(0, 0, 0);
+}
+
+.scroll::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0);
+}
+ .item {
+    white-space: nowrap;
+    display: inline-block;
+     padding: 0px;
+     width:20%
 }

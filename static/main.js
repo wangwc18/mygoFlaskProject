@@ -35,7 +35,7 @@ $(function () {
         var canScrollHeight = pageHeight - showHeight;
         // 页面滚动了多少,这个是随着页面滚动实时变化的
         var nowScroll = $(document).scrollTop();
-        if ((canScrollHeight - nowScroll) < 20) {
+        if ((canScrollHeight - nowScroll) < 150) {
             // TODO 判断页数，去更新新闻数据
             if (!data_querying) {
                 // 表示正在加载数据
