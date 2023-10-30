@@ -26,36 +26,39 @@ python+flask+dplayer
    - 想在手机或pad上运行：没问题，但是移动端的页面没有适配，操作方法是手机和电脑连接同一wifi(在同一个局域网内)，电脑打开程序后，手机浏览器（最好也是谷歌）访问命令行中的第二个地址，注意在播放视频时最好使用横屏模式。
 
 3. 开发环境启动
-首先你得有个python吧，没有就装一个吧，我的python版本是 3.10.11
 
-之后安装requirements.txt里的包
+   首先你得有个python吧，没有就装一个吧，我的python版本是 3.10.11
 
-```shell
-pip3 install -r requirements.txt
-```
+   之后安装requirements.txt里的包
 
-由于视频和图片占用的空间较大，这部分我放在网盘
+   ```shell
+   pip3 install -r requirements.txt
+   ```
+   
+   由于视频和图片占用的空间较大，这部分我放在网盘
+   
+   另外评论数据内容很多，为了防止大语言模型的隐私泄露问题，原始评论数据我也放网盘了
+   
+   主要缺少以下文件的内容
+   
+   - mygoFlaskProject/video/
+   - mygoFlaskProject/static/pic/
+   - mygoFlaskProject/get_data/comment_json/
+   
+   如果你有更高清的视频资源和更全的弹幕资源也可以用你自己的，补全文件后就可以愉快的启动了
+   
+   ```shell
+   python app.py
+   ```
+3. 效果：
 
-另外评论数据内容很多，为了防止大语言模型的隐私泄露问题，原始评论数据我也放网盘了
-
-主要缺少以下文件的内容
-
-- mygoFlaskProject/video/
-- mygoFlaskProject/static/pic/
-- mygoFlaskProject/get_data/comment_json/
-
-如果你有更高清的视频资源和更全的弹幕资源也可以用你自己的，补全文件后就可以愉快的启动了
-
-```shell
-python app.py
-```
-首页效果
-![播放器效果](https://github.com/wangwc18/mygoFlaskProject/blob/master/show-player.png)
-评论区效果
-![评论区效果](https://github.com/wangwc18/mygoFlaskProject/blob/master/show-comment.png)
-活动页效果（评论区上的图片点击跳转）
-![活动效果](https://github.com/wangwc18/mygoFlaskProject/blob/master/show-mygo.png)
-视频播放器右侧的图片（跳转b站会员购）都是可以点击跳转到B站对应的页面
+   首页效果
+   ![播放器效果](https://github.com/wangwc18/mygoFlaskProject/blob/master/show-player.png)
+   评论区效果
+   ![评论区效果](https://github.com/wangwc18/mygoFlaskProject/blob/master/show-comment.png)
+   活动页效果（评论区上的图片点击跳转）
+   ![活动效果](https://github.com/wangwc18/mygoFlaskProject/blob/master/show-mygo.png)
+   视频播放器右侧的图片（跳转b站会员购）都是可以点击跳转到B站对应的页面
 
 ## 项目结构
 
