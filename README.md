@@ -9,7 +9,23 @@ B站视频地址：https://www.bilibili.com/video/BV1Ww411C73f
 python+flask+dplayer
 
 ## mygo,启动!!!!!
+1. 下载、解压、直接启动!!!!!
+   
+   **本来B站视频里介绍的两个下载链接，但是实践后发现还不够简单，现在只需要下载链接中的一个压缩包**，解压之后可以放在任何地方，之后直接双击运行里面的run.bat即可。
 
+   代码+资源文件+运行环境 百度链接：https://pan.baidu.com/s/1YZcIQLh7hUEliqC_-PVj9Q  提取码：qgrs 
+
+   本来以为国内没人用谷歌云盘，没想到这么多，放一个谷歌云盘链接[https://drive.google.com/file/d/1cWe6gwOBdhbCWBCgPUWD8V5ZkFxYM1yu/view?usp=sharing](https://drive.google.com/file/d/1uIlezxrkGoVaG5uQgAfEcWYNh-Tw3gqM/view?usp=sharing) 
+
+   常见问题：
+   - 视频有声音黑屏：下载或更新至最新的谷歌浏览器即可，压缩包里的视频是v265格式，目前只有新的浏览器支持，谷歌官网是 https://www.google.cn/chrome/index.html ，不要进到钓鱼网站了
+   - 视频不加载+评论区不加载：原因是火绒的拦截策略，临时关掉火绒或者b站私聊，改一下代码即可
+   - 页面布局错乱：调整网页缩放即可，开发时我是在系统显示100%缩放+网页100%缩放下做的；比如大多数笔记本的系统缩放是125%，此时应该调小网页的缩放
+   - 感觉视频不够清楚：mygoFlaskProject/video/文件夹下放的是所有视频，替换为你的高清mp4资源即可
+   - 运行后图片和视频加载慢：不要把文件夹放在U盘或其他移动存储设备中直接运行，会导致数据传输受制于接口速度，如果还是卡那可能你需要换个新电脑啦:grin:
+   - 想在手机或pad上运行：没问题，但是移动端的页面没有适配，操作方法是手机和电脑连接同一wifi(在同一个局域网内)，电脑打开程序后，手机浏览器（最好也是谷歌）访问命令行中的第二个地址，注意在播放视频时最好使用横屏模式。
+
+3. 开发环境启动
 首先你得有个python吧，没有就装一个吧，我的python版本是 3.10.11
 
 之后安装requirements.txt里的包
@@ -21,12 +37,6 @@ pip3 install -r requirements.txt
 由于视频和图片占用的空间较大，这部分我放在网盘
 
 另外评论数据内容很多，为了防止大语言模型的隐私泄露问题，原始评论数据我也放网盘了
-
-代码+资源文件+运行环境 百度链接：https://pan.baidu.com/s/1nrRk0VQuaytes5L3LOM0ZA  提取码：4yq1
-（本来是两个链接，为了方便现在合在一个了，解压后直接双击运行里面的run.bat即可，B站视频里的方法还是不够简单？）
-
-
-（本来以为没人用谷歌云盘，没想到这么多，二合一谷歌云盘链接[https://drive.google.com/file/d/1cWe6gwOBdhbCWBCgPUWD8V5ZkFxYM1yu/view?usp=sharing](https://drive.google.com/file/d/1uIlezxrkGoVaG5uQgAfEcWYNh-Tw3gqM/view?usp=sharing)  ,解压后直接双击运行里面的run.bat即可）
 
 主要缺少以下文件的内容
 
