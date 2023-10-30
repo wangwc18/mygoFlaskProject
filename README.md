@@ -73,7 +73,7 @@ python+flask+dplayer
 
 **视频组件**
 
-经过b站月落云尘大佬指路，本分支视频组件替换为使用nplayer( https://github.com/oyuyue/nplayer )，
+超级感谢b站月落云尘大佬的指路以及代码示范，本分支视频组件替换为使用nplayer( https://github.com/oyuyue/nplayer )，
 原本的项目是使用dplayer( https://github.com/DIYgod/DPlayer )，但是有bug迟迟不能修复。后续再研究一下添加新的功能
 
 
