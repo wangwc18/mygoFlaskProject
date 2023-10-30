@@ -53,8 +53,9 @@ python app.py
 ![播放器效果](https://github.com/wangwc18/mygoFlaskProject/blob/master/show-player.png)
 评论区效果
 ![评论区效果](https://github.com/wangwc18/mygoFlaskProject/blob/master/show-comment.png)
-
-评论区上的图片（跳转主题页）和视频播放器右侧的图片（跳转b站会员购）都是可以点击跳转到对应的页面
+活动页效果（评论区上的图片点击跳转）
+![活动效果](https://github.com/wangwc18/mygoFlaskProject/blob/master/show-mygo.png)
+视频播放器右侧的图片（跳转b站会员购）都是可以点击跳转到B站对应的页面
 
 ## 项目结构
 
