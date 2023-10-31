@@ -140,7 +140,7 @@ def video_server():
     if vid not in mygo_data.keys():
         return
     rank = mygo_data[vid]['rank']
-    return send_file('video\\' + str(rank) + '.mp4')
+    return send_file('video/' + str(rank) + '.mp4')
 
 
 # @app.route("/api/danmu", methods=['GET'])
