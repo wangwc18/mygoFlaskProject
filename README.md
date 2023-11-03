@@ -13,9 +13,9 @@ python+flask+dplayer
    
    **本来B站视频里介绍的两个下载链接，但是实践后发现还不够简单，现在只需要下载链接中的一个压缩包**，解压之后可以放在任何地方，之后直接双击运行里面的run.bat即可。
 
-   代码+资源文件+运行环境 百度链接：https://pan.baidu.com/s/1pShdiAjqEsfUJMKcqcRcuA  提取码：mkj2
+   代码+资源文件+运行环境 百度链接：https://pan.baidu.com/s/1m8WBNGHCMXRY8r4AZmPYAw  提取码：2zt6
 
-   本来以为国内没人用谷歌云盘，没想到这么多，放一个谷歌云盘链接 [https://drive.google.com/file/d/1cfHZgzBsCOibgOuZ7q4WR1IoQK4jauj9/view?usp=sharing](https://drive.google.com/file/d/1cfHZgzBsCOibgOuZ7q4WR1IoQK4jauj9/view?usp=sharing)
+   本来以为国内没人用谷歌云盘，没想到这么多，放一个谷歌云盘链接 [https://drive.google.com/file/d/1l3IIMSUoRCrFSQxIxkJ3Jl0YgaOZgi69/view?usp=sharing](https://drive.google.com/file/d/1l3IIMSUoRCrFSQxIxkJ3Jl0YgaOZgi69/view?usp=sharing)
 
    常见问题：
    - 视频有声音黑屏：下载或更新至最新的谷歌浏览器即可，压缩包里的视频是v265格式，目前只有新的浏览器支持，谷歌官网是 https://www.google.cn/chrome/index.html ，不要进到钓鱼网站了
