@@ -41,7 +41,7 @@ $.get('/api/danmu?id='+vid,function (response){
     const player = new NPlayer.Player({
        src: "/api/video?vid="+vid,
        plugins: [
-        new NPlayerDanmaku({items}),
+        new NPlayerDanmaku({items,opacity: 0.4, speed: 0.7, area: 0.75,unlimited:true,fontsize:22}),
        ],
         themeColor: 'rgba(35,173,229, 1)',
         progressBg: 'rgba(35,173,229, 1)',
