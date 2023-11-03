@@ -14,6 +14,7 @@ python+flask+dplayer
    **本来B站视频里介绍的两个下载链接，但是实践后发现还不够简单，现在只需要下载链接中的一个压缩包，解压之后可以放在任何地方，之后windows用户直接双击运行里面的run.bat或windows启动.bat即可,mac用户看一下里面的说明**
 
    代码+资源文件+运行环境 百度链接： https://pan.baidu.com/s/1wnc1_61e2xlmMXSUNvPFIg  提取码：nsxo
+
    本来以为国内没人用谷歌云盘，没想到这么多，放一个谷歌云盘链接 [https://drive.google.com/file/d/1l3IIMSUoRCrFSQxIxkJ3Jl0YgaOZgi69/view?usp=sharing](https://drive.google.com/file/d/1l3IIMSUoRCrFSQxIxkJ3Jl0YgaOZgi69/view?usp=sharing)
 
    常见问题：
