@@ -34,7 +34,26 @@ const Mirroring = {
     // 通过添加移除 class 来让视频是否是镜像
   }
 }
-
+const Screenshot = {
+  html: '截图',
+  click(player) {
+    const canvas = document.createElement('canvas')
+    canvas.width = player.video.videoWidth
+    canvas.height = player.video.videoHeight
+    canvas.getContext('2d').drawImage(player.video, 0, 0, canvas.width, canvas.height)
+    canvas.toBlob((blob) => {
+        let dataURL = URL.createObjectURL(blob)
+        const link = document.createElement('a')
+        link.href = dataURL
+        link.download = 'NPlayer.png'
+        link.style.display = 'none'
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        URL.revokeObjectURL(dataURL)
+    })
+  }
+}
 
 $.get('/api/danmu?id='+vid,function (response){
     const items = response.data
@@ -50,7 +69,8 @@ $.get('/api/danmu?id='+vid,function (response){
         posterPlayEl: createIcon(playBig)(),
         bpControls: [],
         volumeVertical:true,
-        settings: [Mirroring, 'speed']
+        settings: [Mirroring, 'speed'],
+        contextMenus: [Screenshot, 'loop', 'pip', 'version']
 
    });
     player.mount('#dplayer')
