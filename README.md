@@ -4,7 +4,7 @@
 
 B站视频地址：https://www.bilibili.com/video/BV1Ww411C73f
 
-感谢b站Darklyyy(https://space.bilibili.com/2274482)对大屏页面的优化
+感谢b站Darklyyy( https://space.bilibili.com/2274482 )对大屏页面的优化
 
 ## 技术框架
 
