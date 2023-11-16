@@ -17,6 +17,8 @@ python+flask+dplayer
 
    本来以为国内没人用谷歌云盘，没想到这么多，放一个谷歌云盘链接 [https://drive.google.com/drive/folders/1hOLUy8toxSi63UbNCoDNCAE9dRwuDbia?usp=sharing](https://drive.google.com/drive/folders/1hOLUy8toxSi63UbNCoDNCAE9dRwuDbia?usp=sharing)
 
+   **如果是2k的大屏幕可以看一下这个分支( https://github.com/wangwc18/mygoFlaskProject/tree/better2k )**
+   
    常见问题：
    - **视频有声音黑屏**：下载或更新至最新的谷歌浏览器即可，压缩包里的视频是v265格式，目前只有新的浏览器支持，谷歌官网是 https://www.google.cn/chrome/index.html ，不要进到钓鱼网站了
    - **视频不加载+评论区不加载**：原因是火绒的拦截策略，临时关掉火绒或者b站私聊，改一下代码即可
