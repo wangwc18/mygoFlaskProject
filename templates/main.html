@@ -15,15 +15,14 @@
 <body style="margin:0; padding:0">
 <div class="app-header">
     <img src="{{ url_for("static", filename="svg/bilibili.svg")}}" style="height:28px;padding-top:20px;padding-left:20px" />
-    <span style="padding-left:20px">首页</span>
-    <span style="padding-left:30px">番剧</span>
-    <span style="padding-left:20px">直播</span>
+    <span style="padding-left:25px">首页</span>
+    <span style="padding-left:25px">番剧</span>
+    <span style="padding-left:25px">直播</span>
     <span style="padding-left:25px">游戏中心</span>
     <span style="padding-left:25px">会员购</span>
     <span style="padding-left:25px">漫画</span>
     <span style="padding-left:25px">赛事</span>
-    <span style="padding-left:25px">亚运会</span>
-    <span style="padding-left:25px">小长假</span>
+    <span style="padding-left:25px">Mygo</span>
     <span style="padding-left:25px"><img src="{{ url_for("static", filename="svg/download-client.svg")}}" style="vertical-align: middle;"/></span></span>
     <span style="padding-left:3px">下载客户端</span>
 {#    <span style="padding-left:3px">下载客户端</span>#}
@@ -57,20 +56,26 @@
         <div class = "bottom-line2" > </div>
 
         <div>
-            <div style="color:#18191C;font-size:16px;font-family:PingFang SC;line-height:50px;padding-left:5px;padding-top:10px">
-                本次期间限定公开，将于北京时间10月1日（星期日）23:00截止 <br>※为方便大家观看，此版本进行了字幕的优化。
+            <div style="color:#18191C;font-size:16px;font-family:PingFang SC;line-height:25px;padding-left:5px;padding-top:12px">
+                感谢大家对MyGO!!!!!的支持！<br>因为您的厚爱，#1我们决定半永久的留在B站的官方账号上。谢谢！<br>※温馨提示：由于小伙伴们非常热情，建议新朋友初次观看时关闭弹幕。<br>※为方便大家观看，此版本进行了字幕的优化。
             </div>
-            <div style="padding-top: 10px;padding-bottom: 10px">
+            <div style="padding-top:18px;padding-bottom: 10px">
                 <span class="rand_band">动画</span>
+                <span class="rand_band">综合</span>
                 <span class="rand_band">MyGO!!!!!</span>
+                <span class="rand_band">立石凛</span>
+                <span class="rand_band">青木阳菜</span>
+                <span class="rand_band">小日向美香</span>
                 <span class="rand_band">mygo</span>
                 <span class="rand_band">BanG Dream!</span>
+                <span class="rand_band">林鼓子</span>
+                <span class="rand_band">羊宫妃那</span>
             </div>
         </div>
         <div class = "bottom-line2" > </div>
 
         <div class="bar-pic">
-            <a href="/mygo">
+            <a href="https://mall.bilibili.com/act/aicms/Ux2yGo7eC.html">
                 <img src="{{ url_for("static", filename="pic/bar.png")}}" style="width: 100%"/>
             </a>
         </div>
@@ -95,17 +100,17 @@
             <div style="color: #9499A0;font-size:13px;padding-top:5px;white-space:nowrap;overflow:hidden;text-overflow: ellipsis">来自BanG Dream! Project，「MyGO!!!!!」与「Ave Mujica」的官方账号</div>
             <div style="padding-top:8px">
                 <div class="chongdian"><span style="padding-left:30%">充电</span></div>
-                <div class="guanzhu"><span style="padding-left:35%">已关注 18.3万</span></div>
+                <div class="guanzhu"><span style="padding-left:30%">≡ 已关注 22.1万</span></div>
             </div>
         </div>
         <div class="danmu-list">
             <span>弹幕列表</span>
             <span style="float:right;padding-right:20px"><img style="width:20px;height:20px;transform: rotate(90deg)" src="{{ url_for("static", filename="svg/arrow-icon.svg")}}"/></span>
         </div>
-        <a href="https://mall.bilibili.com/act/aicms/Ux2yGo7eC.html?spm_id_from=333.999.rich-text.link.click">
-        <div style="width:100%;padding-top:20px;height:150px">
-            <div style="float:left;padding-left:0px"><img src="/static/pic/ad_pic.png" style="height:150px;border-radius:10px"/></div>
-            <div style="margin-left:55%;font-size:16px;padding-top:5px;line-height:30px;color:#505050">物贩还在继续哦</div>
+        <a href="http://127.0.0.1:5000/mygo">
+        <div style="width:100%;padding-top:20px;height:100px">
+            <div style="float:left;padding-left:0px"><img src="/static/pic/ad_pic.png" style="height:100px;border-radius:8px"/></div>
+            <div style="margin-left:45%;font-size:15px;padding-top:0px;line-height:20px;color:#080808">→点此进入MyGO专题页←</div>
         </div>
         </a>
         <div class="right-list">
@@ -134,8 +139,8 @@
         {%for vid_e in videos.keys()%}
             {% if videos[vid_e]['rank']!=13%}
         <div class="pan-tab" onClick="handleListItemClick('{{vid_e}}')">
-            <div style="float:left;padding-left:0px"><img src="/static/pic/mygo_j{{videos[vid_e]['rank']}}.webp" style="height:150px;border-radius:10px"/></div>
-            <div style="margin-left:55%;padding-top:5px;">
+            <div style="float:left;padding-left:0px"><img src="/static/pic/mygo_j{{videos[vid_e]['rank']}}.webp" style="height:120px;border-radius:8px"/></div>
+            <div style="margin-left:50%;padding-top:0px;">
                 <div class="pan-tab-title">{{videos[vid_e]['title']}}</div>
                 <div class="one-pan-title-detail">
                     <span><img src="{{ url_for("static", filename="svg/up.svg")}}" style="vertical-align: middle;"/></span>
