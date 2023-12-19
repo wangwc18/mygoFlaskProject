@@ -1,10 +1,12 @@
 import json
 
 from flask import Flask, render_template, request, send_file, redirect, url_for
-import xmltodict
+
+from tools import xml_2_json, csv_2_json
 
 app = Flask(__name__)
 
+# 视频基本信息,懒事儿就不整数据库了
 mygo_data = {'Av914573114': {'rank': 1,
                              'title': "「BanG Dream! It's MyGO!!!!!」＃1",
                              'play_time': '150.1万', 'danmaku_num': '9063', 'upload_time': '2023-08-11 19:00:00',
@@ -103,6 +105,7 @@ def video_player(vid):
 def main_page():
     return redirect('/video/Av914573114')
 
+
 @app.route('/mygo')
 def mygo_page():
     vid = request.args.get("vid")
@@ -118,9 +121,9 @@ def favicon():
 
 @app.route('/api/comment')
 def get_comment():
-    vid = request.args.get("vid")
-    rank = mygo_data[vid]['rank']
-    cid = request.args.get("cid")
+    vid = request.args.get("vid")  # 传入视频id
+    rank = mygo_data[vid]['rank']  # 根据视频编号找到对应文件名
+    cid = request.args.get("cid")  # cid=1为热评排序 cid=2为最新排序
     page = request.args.get("page")
     if cid == '1':
         json_file = open('comment_hot_json/' + str(rank) + '/' + str(page) + '.json', 'r', encoding='UTF-8')
@@ -173,28 +176,24 @@ def video_server():
 @app.route("/api/danmu", methods=['GET'])
 def danmu_server():
     vid = request.args.get("id")
+    danmu_type = request.args.get("type")  # 弹幕类型
     if vid not in mygo_data.keys():
         return
+    if danmu_type not in ['1', '2', '3']:  # 1:加载3600条标准弹幕 2:加载最多弹幕 3:加载早期弹幕
+        danmu_type = '1'
     rank = mygo_data[vid]['rank']
-    xml_file = open('danmaku/' + str(rank) + '.xml', 'r', encoding="UTF-8")
-    parsed_data = xmltodict.parse(xml_file.read())
-    xml_file.close()
-    json_conversion = parsed_data['i']['d']
-    json_out = {'code': 1, 'data': []}
-    for danmu in json_conversion:
-        list_param = danmu['@p'].split(',')
-        hex_color = hex(int(list_param[3]))[2:]
-        hex_color = '#' + '0' * (6 - len(hex_color)) + hex_color
-        one_danmaku = {"author": list_param[6], "time": float(list_param[0]), "text": danmu['#text'],
-                       "color": hex_color, "type": "scroll"}
-        if list_param[1] == '4':
-            one_danmaku['type'] = "bottom"
-        if list_param[1] == '5':
-            one_danmaku['type'] = "top"
-        json_out['data'].append(one_danmaku)
-    json_out['data'] = sorted(json_out['data'], key=lambda x: x['time'])
-    json_str = json.dumps(json_out, ensure_ascii=False)
     headers = {"Content-Type": "application/json"}
+    if danmu_type == '1':
+        file_name = 'danmaku/1/' + str(rank) + '.xml'
+        json_out, len_danmu = xml_2_json(file_name)
+    elif danmu_type == '2':
+        file_name = 'danmaku/2/ep' + str(rank) + '.csv'
+        json_out, len_danmu = csv_2_json(file_name)
+    else:
+        file_name = 'danmaku/3/' + str(rank) + '.xml'
+        json_out, len_danmu = xml_2_json(file_name)
+    json_str = json.dumps(json_out, ensure_ascii=False)
+    # mygo_data[vid]['load_danmaku'] = len_danmu
     return json_str, 200, headers
 
 # @app.route("/api/danmu", methods=['POST'])

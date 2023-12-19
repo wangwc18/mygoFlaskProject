@@ -15,14 +15,15 @@
 <body style="margin:0; padding:0">
 <div class="app-header">
     <img src="{{ url_for("static", filename="svg/bilibili.svg")}}" style="height:28px;padding-top:20px;padding-left:20px" />
-    <span style="padding-left:25px">首页</span>
-    <span style="padding-left:25px">番剧</span>
-    <span style="padding-left:25px">直播</span>
+    <span style="padding-left:20px">首页</span>
+    <span style="padding-left:30px">番剧</span>
+    <span style="padding-left:20px">直播</span>
     <span style="padding-left:25px">游戏中心</span>
     <span style="padding-left:25px">会员购</span>
     <span style="padding-left:25px">漫画</span>
     <span style="padding-left:25px">赛事</span>
-    <span style="padding-left:25px">Mygo</span>
+    <span style="padding-left:25px">亚运会</span>
+    <span style="padding-left:25px">小长假</span>
     <span style="padding-left:25px"><img src="{{ url_for("static", filename="svg/download-client.svg")}}" style="vertical-align: middle;"/></span></span>
     <span style="padding-left:3px">下载客户端</span>
 {#    <span style="padding-left:3px">下载客户端</span>#}
@@ -38,9 +39,16 @@
             <span><img src="{{ url_for("static", filename="pic/prohibit.png")}}" style="vertical-align: middle;"/>未经作者授权，禁止转载</span>
         </div>
 
-        <div id="dplayer" style="width:100%;"></div>
+        <div id="nplayer" style="width:100%;"></div>
         <div class="player_bottom">
-            <span>1人正在观看，已装填{{videos[vid]['load_danmaku']}}条弹幕</span>
+            <span id="number_of_people_danmu">1人正在观看，已装填{{videos[vid]['load_danmaku']}}条弹幕</span>
+            <span style="padding-left:20px">
+                <select id="danmuchangebar" onchange="chageDanmu()">
+                    <option value="1">标准弹幕</option>
+                    <option value="2">最多弹幕</option>
+                    <option value="3">开播弹幕</option>
+                </select>
+            </span>
         </div>
 
         <div style="width: 100%;color:#61666d;font-size: 16px;padding-top:20px">
@@ -56,10 +64,10 @@
         <div class = "bottom-line2" > </div>
 
         <div>
-            <div style="color:#18191C;font-size:16px;font-family:PingFang SC;line-height:25px;padding-left:5px;padding-top:12px">
-                感谢大家对MyGO!!!!!的支持！<br>因为您的厚爱，#1我们决定半永久的留在B站的官方账号上。谢谢！<br>※温馨提示：由于小伙伴们非常热情，建议新朋友初次观看时关闭弹幕。<br>※为方便大家观看，此版本进行了字幕的优化。
+            <div style="color:#18191C;font-size:16px;font-family:PingFang SC;line-height:50px;padding-left:5px;padding-top:10px">
+                本次期间限定公开，将于北京时间10月1日（星期日）23:00截止 <br>※为方便大家观看，此版本进行了字幕的优化。
             </div>
-            <div style="padding-top:18px;padding-bottom: 10px">
+            <div style="padding-top: 10px;padding-bottom: 10px">
                 <span class="rand_band">动画</span>
                 <span class="rand_band">综合</span>
                 <span class="rand_band">MyGO!!!!!</span>
@@ -74,13 +82,13 @@
         </div>
         <div class = "bottom-line2" > </div>
 
+        <a href="/mygo">
         <div class="bar-pic">
-            <a href="https://mall.bilibili.com/act/aicms/Ux2yGo7eC.html">
-                <img src="{{ url_for("static", filename="pic/bar.png")}}" style="width: 100%"/>
-            </a>
+            <img src="{{ url_for("static", filename="pic/bar.png")}}" style="width: 100%;z-index: -1;"/>
         </div>
+        </a>
 
-        <div style="padding-top:3%;padding-bottom:3%">
+        <div style="padding-top:3%;padding-bottom:2%">
             <span style="font-size:25px;color:#18191C;">评论</span>
             <span style="font-size:15px;color:#9499A0;">{{videos[vid]['comment_num']}}</span>
             <span class="hot_or_new active" data-cid="1">最热</span>
@@ -100,17 +108,17 @@
             <div style="color: #9499A0;font-size:13px;padding-top:5px;white-space:nowrap;overflow:hidden;text-overflow: ellipsis">来自BanG Dream! Project，「MyGO!!!!!」与「Ave Mujica」的官方账号</div>
             <div style="padding-top:8px">
                 <div class="chongdian"><span style="padding-left:30%">充电</span></div>
-                <div class="guanzhu"><span style="padding-left:30%">≡ 已关注 22.1万</span></div>
+                <div class="guanzhu"><span style="padding-left:35%">已关注 18.3万</span></div>
             </div>
         </div>
         <div class="danmu-list">
             <span>弹幕列表</span>
             <span style="float:right;padding-right:20px"><img style="width:20px;height:20px;transform: rotate(90deg)" src="{{ url_for("static", filename="svg/arrow-icon.svg")}}"/></span>
         </div>
-        <a href="http://127.0.0.1:5000/mygo">
-        <div style="width:100%;padding-top:20px;height:100px">
-            <div style="float:left;padding-left:0px"><img src="/static/pic/ad_pic.png" style="height:100px;border-radius:8px"/></div>
-            <div style="margin-left:45%;font-size:15px;padding-top:0px;line-height:20px;color:#080808">→点此进入MyGO专题页←</div>
+        <a href="https://mall.bilibili.com/act/aicms/Ux2yGo7eC.html?spm_id_from=333.999.rich-text.link.click">
+        <div style="width:100%;padding-top:20px;height:150px">
+            <div style="float:left;padding-left:0px"><img src="/static/pic/ad_pic.png" style="height:150px;border-radius:10px"/></div>
+            <div style="margin-left:55%;font-size:16px;padding-top:5px;line-height:30px;color:#505050">→物贩还在继续哦←</div>
         </div>
         </a>
         <div class="right-list">
@@ -127,11 +135,11 @@
                 <div class="right-list-item" style="color:#00AEEC" onClick="handleListItemClick('{{vid_e}}')">
                     <img src="{{ url_for("static", filename="pic/playing.gif")}}" style="height:13px">
                     {{videos[vid_e]['title']}}
-                    <span style="float:right;padding-right:10px;color:#18191C">{{videos[vid_e]['long']}}</span>
+                    <span style="float:right;padding-right:10px;color:#18191C;white-space:nowrap;overflow:hidden;text-overflow: ellipsis">{{videos[vid_e]['long']}}</span>
                 </div>
                 {% else %}
                 <div class="right-list-item" onClick="handleListItemClick('{{vid_e}}')">{{videos[vid_e]['title']}}
-                <span style="float:right;padding-right:10px;">{{videos[vid_e]['long']}}</span></div>
+                <span style="float:right;padding-right:10px;white-space:nowrap;overflow:hidden;text-overflow: ellipsis">{{videos[vid_e]['long']}}</span></div>
                 {% endif %}
             {%endfor%}
             </div>
@@ -139,8 +147,8 @@
         {%for vid_e in videos.keys()%}
             {% if videos[vid_e]['rank']!=13%}
         <div class="pan-tab" onClick="handleListItemClick('{{vid_e}}')">
-            <div style="float:left;padding-left:0px"><img src="/static/pic/mygo_j{{videos[vid_e]['rank']}}.webp" style="height:120px;border-radius:8px"/></div>
-            <div style="margin-left:50%;padding-top:0px;">
+            <div style="float:left;padding-left:0px"><img src="/static/pic/mygo_j{{videos[vid_e]['rank']}}.webp" style="height:150px;border-radius:10px"/></div>
+            <div style="margin-left:55%;padding-top:5px;">
                 <div class="pan-tab-title">{{videos[vid_e]['title']}}</div>
                 <div class="one-pan-title-detail">
                     <span><img src="{{ url_for("static", filename="svg/up.svg")}}" style="vertical-align: middle;"/></span>

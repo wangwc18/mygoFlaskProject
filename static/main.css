@@ -1,8 +1,8 @@
 a{text-decoration:none}
 .app-header {
     width: 100%;
-    height: 60px;
-    font-size:14px;
+    height: 70px;
+    font-size: 15px;
     position: fixed;
     box-shadow:0px 5px 3px #F6F7F8;
     color: #18191C;;
@@ -263,30 +263,30 @@ a{text-decoration:none}
     color:whitesmoke;
     border-radius: 5px;
     width:23%;
-    height:26px;
-    font-size: 14px;
-    padding-top:5px;
+    height:27px;
+    font-size: 13px;
+    padding-top:4px;
 }
 .guanzhu{
     margin-left:26%;
     background-color: #E3E5E7 ;
     color:#9499A0;
     border-radius: 5px;
-    width:66%;
-    height:26px;
-    font-size:14px;
-    padding-top:5px;
+    width:67%;
+    height:27px;
+    font-size: 13px;
+    padding-top:4px;
 }
 
 .star_like{
     vertical-align: middle;
-    height:35px;
-    width: 35px;
+    height:40px;
+    width: 40px;
 }
 .player_bottom{
     /*width: 100%;*/
-    height: 40px;
-    font-size: 14px;
+    height: 46px;
+    font-size: 16px;
     box-shadow:0px 0px 8px #E3E5E7;
     color: #505050;
     padding-top: 15px;
@@ -297,12 +297,12 @@ a{text-decoration:none}
     color: #505050;
     background-color: #F1F2F3 ;
     border-radius:20px;
-    font-size: 14px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    margin-left: 10px;
+    font-size: 15px;
+    padding-left: 5px;
+    padding-right: 14px;
+    padding-top: 5px;
+    padding-bottom: 6px;
+    margin-left: 15px;
 }
 .bar-pic{
     padding-top: 25px;
@@ -332,17 +332,17 @@ a{text-decoration:none}
 .danmu-list{
     margin-top: 10px;
     background: #f4f4f4;
-    font-size: 15px;
+    font-size: 17px;
     width: 100%;
-    height: 32px;
+    height: 37px;
     border-radius: 10px;
-    padding-top:9px;
+    padding-top:13px;
     padding-left:17px;
 }
 .pan-tab{
     width:100%;
     padding-top:20px;
-    height:120px;
+    height:150px;
 }
 .pan-tab:hover{
     color: #00AEEC;
@@ -351,16 +351,16 @@ a{text-decoration:none}
 .pan-tab-title{
     word-wrap: break-word;
     word-break: normal;
-    font-size:15px;
+    font-size:16px;
     padding-top:0px;
-    line-height:20px;
+    line-height:25px;
     color:#18191C
 }
 .pan-tab-title:hover{
     color: #00AEEC;
 }
 .one-pan-title-detail{
-    font-size:12px;
+    font-size: 13px;
     font-family: BlinkMacSystemFont sans-serif;
     color: #9499A0;
     padding-top: 6px;

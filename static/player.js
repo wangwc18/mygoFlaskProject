@@ -1,3 +1,23 @@
+function setCookie(name,value)
+{
+    var Days = 30;
+    var exp = new Date();
+    exp.setTime(exp.getTime() + Days*24*60*60*1000);
+    document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+}
+
+function getCookie(name)
+{
+    var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)"); //正则匹配
+    if(arr=document.cookie.match(reg)){
+      return unescape(arr[2]);
+    }
+    else{
+     return null;
+    }
+}
+
+
 function createIcon(html, noCls) {
   const div = document.createElement('div')
   div.innerHTML = html;
@@ -55,25 +75,45 @@ const Screenshot = {
   }
 }
 
-$.get('/api/danmu?id='+vid,function (response){
+let player;
+$.get('/api/danmu?id='+vid,function (response) {
     const items = response.data
-    const player = new NPlayer.Player({
-       src: "/api/video?vid="+vid,
-       plugins: [
-        new NPlayerDanmaku({items,opacity: 0.7, speed: 0.7, area: 0.75,unlimited:true,fontsize:30}),
-       ],
-        themeColor: 'rgba(35,173,229, 1)',
-        progressBg: 'rgba(35,173,229, 1)',
-        volumeProgressBg: 'rgba(35,173,229, 1)',
-        progressDot: createIcon(dot, true)(),
-        posterPlayEl: createIcon(playBig)(),
-        bpControls: [],
-        volumeVertical:true,
-        settings: [Mirroring, 'speed'],
-        contextMenus: [Screenshot, 'loop', 'pip', 'version']
-
-   });
-    player.mount('#dplayer')
+    let set_opacity
+    let set_speed
+    let set_area
+    let set_fontsize
+    let set_fontsizeScale
+    if (getCookie("opacity") != NaN && getCookie("opacity") !=null )
+        {set_opacity = parseFloat(getCookie("opacity"))}
+    else{set_opacity =0.7}
+    if (getCookie("speed") != NaN && getCookie("speed") !=null )
+        {set_speed = parseFloat(getCookie("speed"))}
+    else {set_speed =1.0}
+    if (getCookie("area") != NaN&& getCookie("area") !=null )
+        {set_area = parseFloat(getCookie("area"))}
+    else {set_area =1.0}
+    if (getCookie("fontsize") != NaN&& getCookie("fontsize") !=null )
+        {set_fontsize = parseInt(getCookie("fontsize"))}
+    else {set_fontsize =22}
+    if (getCookie("fontsizeScale") != NaN&& getCookie("fontsizeScale") !=null )
+        {set_fontsizeScale = parseFloat(getCookie("fontsizeScale"))}
+    else {set_fontsizeScale =1}
+    player = new NPlayer.Player({
+    src: "/api/video?vid="+vid,
+    plugins: [
+        new NPlayerDanmaku({items,opacity:set_opacity,speed: set_speed, area: set_area,unlimited:true,fontsize:set_fontsize,fontsizeScale:set_fontsizeScale}),
+    ],
+    themeColor: 'rgba(35,173,229, 1)',
+    progressBg: 'rgba(35,173,229, 1)',
+    volumeProgressBg: 'rgba(35,173,229, 1)',
+    progressDot: createIcon(dot, true)(),
+    posterPlayEl: createIcon(playBig)(),
+    bpControls: [],
+    volumeVertical:true,
+    settings: [Mirroring, 'speed'],
+    contextMenus: [Screenshot, 'loop', 'pip', 'version']
+    });
+    player.mount('#nplayer')
 
     // player.video.oncanplay = ()=> {
     const interObserver = new IntersectionObserver((entries) => {
@@ -90,4 +130,28 @@ $.get('/api/danmu?id='+vid,function (response){
     })
     interObserver.observe(player.video);
     // }
-})
+    player.on('DanmakuSend', (opts) => {
+      // console.log(opts)
+    })
+    player.on(player.danmaku.EVENT.DANMAKU_UPDATE_OPTIONS, () => {
+      // console.log(player.danmaku.opts)
+        setCookie("opacity",player.danmaku.opts.opacity)
+        setCookie("speed",player.danmaku.opts.speed)
+        setCookie("area",player.danmaku.opts.area)
+        setCookie("fontsize",player.danmaku.opts.fontsize)
+        setCookie("fontsizeScale",player.danmaku.opts.fontsizeScale)
+    })
+});
+
+
+
+function chageDanmu(){
+    var res = document.getElementById("danmuchangebar").value;
+   $.get('/api/danmu?id='+vid+"&type="+res,function (response){
+        const items_new = response.data
+        player.danmaku.clearScreen()
+        player.danmaku.resetItems(items_new)
+       document.getElementById("number_of_people_danmu").textContent ="1人正在观看，已装填"+items_new.length+"条弹幕"
+    })
+}
+
