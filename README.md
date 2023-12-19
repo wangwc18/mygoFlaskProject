@@ -16,7 +16,7 @@ python+flask+nplayer
 
    代码+资源文件+运行环境 百度链接： https://pan.baidu.com/s/1wnc1_61e2xlmMXSUNvPFIg  提取码：nsxo
 
-   本来以为国内没人用谷歌云盘，没想到这么多，放一个谷歌云盘链接 [https://drive.google.com/drive/folders/1hOLUy8toxSi63UbNCoDNCAE9dRwuDbia?usp=sharing](https://drive.google.com/drive/folders/1hOLUy8toxSi63UbNCoDNCAE9dRwuDbia?usp=sharing)
+   本来以为国内没人用谷歌云盘，没想到这么多，放一个谷歌云盘链接 https://drive.google.com/drive/folders/1hOLUy8toxSi63UbNCoDNCAE9dRwuDbia?usp=sharing
 
    常见问题：
    - 视频有声音黑屏：下载或更新至最新的谷歌浏览器即可，压缩包里的视频是v265格式，目前只有新的浏览器支持，谷歌官网是 https://www.google.cn/chrome/index.html ，不要进到钓鱼网站了
@@ -28,7 +28,7 @@ python+flask+nplayer
    - 运行后图片和视频加载慢：不要把文件夹放在U盘或其他移动存储设备中直接运行，会导致数据传输受制于接口速度，如果还是卡那可能你需要换个新电脑啦:grin:
    - 想在手机或pad上运行：没问题，但是移动端的页面没有适配，操作方法是手机和电脑连接同一wifi(在同一个局域网内)，电脑打开程序后，手机浏览器（最好也是谷歌）访问命令行中的第二个地址，注意在播放视频时最好使用横屏模式。
 
-2. 开发环境启动
+3. 开发环境启动
 
    首先你得有个python吧，没有就装一个吧，我的python版本是 3.10.11
 
@@ -53,7 +53,7 @@ python+flask+nplayer
    ```shell
    python app.py
    ```
-3. 效果：
+4. 效果：
 
    首页效果
    ![播放器效果](https://github.com/wangwc18/mygoFlaskProject/blob/master/show-player.png)
