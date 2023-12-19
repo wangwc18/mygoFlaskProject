@@ -14,7 +14,7 @@ python+flask+nplayer
    
    **本来B站视频里介绍的两个下载链接，但是实践后发现还不够简单，现在只需要下载链接中的一个压缩包**，解压之后可以放在任何地方，之后直接双击运行里面的run.bat即可。
 
-   代码+资源文件+运行环境 百度链接：https://pan.baidu.com/s/1m8WBNGHCMXRY8r4AZmPYAw  提取码：2zt6
+   代码+资源文件+运行环境 百度链接： https://pan.baidu.com/s/1wnc1_61e2xlmMXSUNvPFIg  提取码：nsxo
 
    本来以为国内没人用谷歌云盘，没想到这么多，放一个谷歌云盘链接 [https://drive.google.com/file/d/1l3IIMSUoRCrFSQxIxkJ3Jl0YgaOZgi69/view?usp=sharing](https://drive.google.com/file/d/1l3IIMSUoRCrFSQxIxkJ3Jl0YgaOZgi69/view?usp=sharing)
 
@@ -85,7 +85,7 @@ python+flask+nplayer
 **最后**
 - 超级感谢b站月落云尘大佬对nplayer视频组件的指路以及代码示范
 - 感谢b站Darklyyy对页面部分细节的优化
-- 感谢github的Gray Zhang大佬(https://github.com/otakustay)提供的新弹幕文件和建议
+- 感谢github的Gray Zhang大佬( https://github.com/otakustay )提供的新弹幕文件和建议
 
 
 
