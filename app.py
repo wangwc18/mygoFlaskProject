@@ -1,7 +1,10 @@
 import json
-
 from flask import Flask, render_template, request, send_file, redirect, url_for
+import sys
+import os
 
+current_path = os.path.dirname(os.path.realpath(__file__))
+sys.path.append(current_path)
 from tools import xml_2_json, csv_2_json
 
 app = Flask(__name__)
@@ -195,6 +198,7 @@ def danmu_server():
     json_str = json.dumps(json_out, ensure_ascii=False)
     # mygo_data[vid]['load_danmaku'] = len_danmu
     return json_str, 200, headers
+
 
 # @app.route("/api/danmu", methods=['POST'])
 # def danmu_post():
