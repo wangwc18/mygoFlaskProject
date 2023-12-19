@@ -1,6 +1,6 @@
 <h1 align="center">mygoFlaskProject</h1>
 
-《mygo》在b站的期间限定公开在10月1日23：03结束了，与此一同消失的还有其中的评论和弹幕:sob:。为了保留两个多月来大家美好的回忆，我在10月1日下午写了个爬虫爬取了评论和弹幕:sunglasses:。本人非前端或后端程序员所以实现的比较简陋（这个版本是测试的屏幕是2k 150%缩放，在大屏幕上的效果较好，不适合小屏幕），之后有时间再重构吧:clipboard:
+《mygo》在b站的期间限定公开在10月1日23：03结束了，与此一同消失的还有其中的评论和弹幕。为了保留两个多月来大家美好的回忆，我在10月1日下午写了个爬虫爬取了评论和弹幕。本人非前端或后端程序员所以实现的比较简陋（这个版本是测试的屏幕是2k 150%缩放，在大屏幕上的效果较好，不适合小屏幕），之后有时间再重构吧。。。。。。
 
 B站视频地址：https://www.bilibili.com/video/BV1Ww411C73f
 
@@ -16,7 +16,7 @@ python+flask+nplayer
 
    代码+资源文件+运行环境 百度链接： https://pan.baidu.com/s/1wnc1_61e2xlmMXSUNvPFIg  提取码：nsxo
 
-   本来以为国内没人用谷歌云盘，没想到这么多，放一个谷歌云盘链接 [https://drive.google.com/file/d/1l3IIMSUoRCrFSQxIxkJ3Jl0YgaOZgi69/view?usp=sharing](https://drive.google.com/file/d/1l3IIMSUoRCrFSQxIxkJ3Jl0YgaOZgi69/view?usp=sharing)
+   本来以为国内没人用谷歌云盘，没想到这么多，放一个谷歌云盘链接 [https://drive.google.com/drive/folders/1hOLUy8toxSi63UbNCoDNCAE9dRwuDbia?usp=sharing](https://drive.google.com/drive/folders/1hOLUy8toxSi63UbNCoDNCAE9dRwuDbia?usp=sharing)
 
    常见问题：
    - 视频有声音黑屏：下载或更新至最新的谷歌浏览器即可，压缩包里的视频是v265格式，目前只有新的浏览器支持，谷歌官网是 https://www.google.cn/chrome/index.html ，不要进到钓鱼网站了
@@ -24,7 +24,7 @@ python+flask+nplayer
 把这个video文件夹下好之后，替换mygoFlaskProject里的video文件夹应该可以了，这个是老视频编码，而且更清晰
    - 视频不加载+评论区不加载：原因是火绒的拦截策略，临时关掉火绒或者b站私聊，改一下代码即可
    - 页面布局错乱：调整网页缩放即可
-   - 感觉视频不够清楚：mygoFlaskProject/video/文件夹下放的是所有视频，替换为你的高清mp4资源即可（ https://www.alipan.com/s/w1p8wp5K3kZ）
+   - 感觉视频不够清楚：mygoFlaskProject/video/文件夹下放的是所有视频，替换为你的高清mp4资源即可（ https://www.alipan.com/s/w1p8wp5K3kZ ）
    - 运行后图片和视频加载慢：不要把文件夹放在U盘或其他移动存储设备中直接运行，会导致数据传输受制于接口速度，如果还是卡那可能你需要换个新电脑啦:grin:
    - 想在手机或pad上运行：没问题，但是移动端的页面没有适配，操作方法是手机和电脑连接同一wifi(在同一个局域网内)，电脑打开程序后，手机浏览器（最好也是谷歌）访问命令行中的第二个地址，注意在播放视频时最好使用横屏模式。
 
@@ -90,4 +90,4 @@ python+flask+nplayer
 
 
 
-剩下的写的都比较简陋(~~实在太懒~~) :grin: ，有机会用Vue重构一下前端吧(大概要等到Mujicac出了吧，欸嘿:star:)
+剩下的写的都比较简陋(~~实在太懒~~) ，有机会用Vue重构一下前端吧(大概要等到Mujicac出了吧，欸嘿)
