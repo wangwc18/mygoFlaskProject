@@ -88,13 +88,13 @@ $.get('/api/danmu?id='+vid,function (response) {
     else{set_opacity =0.7}
     if (getCookie("speed") != NaN && getCookie("speed") !=null )
         {set_speed = parseFloat(getCookie("speed"))}
-    else {set_speed =1.0}
+    else {set_speed =0.5}
     if (getCookie("area") != NaN&& getCookie("area") !=null )
         {set_area = parseFloat(getCookie("area"))}
-    else {set_area =1.0}
+    else {set_area =0.5}
     if (getCookie("fontsize") != NaN&& getCookie("fontsize") !=null )
         {set_fontsize = parseInt(getCookie("fontsize"))}
-    else {set_fontsize =22}
+    else {set_fontsize =25}
     if (getCookie("fontsizeScale") != NaN&& getCookie("fontsizeScale") !=null )
         {set_fontsizeScale = parseFloat(getCookie("fontsizeScale"))}
     else {set_fontsizeScale =1}
