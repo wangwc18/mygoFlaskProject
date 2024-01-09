@@ -1,29 +1,26 @@
 <h1 align="center">mygoFlaskProject</h1>
 
-《mygo》在b站的期间限定公开在10月1日23：03结束了，与此一同消失的还有其中的评论和弹幕:sob:。为了保留两个多月来大家美好的回忆，我在10月1日下午写了个爬虫爬取了评论和弹幕:sunglasses:。本人非前端或后端程序员所以实现的比较简陋（这个版本是测试的屏幕是2k 150%缩放，在大屏幕上的效果较好，不适合小屏幕），之后有时间再重构吧:clipboard:
+《mygo》在b站的期间限定公开在10月1日23：03结束了，与此一同消失的还有其中的评论和弹幕。为了保留两个多月来大家美好的回忆，我在10月1日下午写了个爬虫爬取了评论和弹幕。本人非前端或后端程序员所以实现的比较简陋（此分支为2k屏幕150%缩放下测试），之后有时间再重构吧。。。。。。
 
 B站视频地址：https://www.bilibili.com/video/BV1Ww411C73f
-
 感谢b站Darklyyy( https://space.bilibili.com/2274482 )对大屏页面的优化
 
 ## 技术框架
 
-python+flask+dplayer
+python+flask+nplayer
 
 ## mygo,启动!!!!!
 1. 下载、解压、直接启动!!!!!
    
    **本来B站视频里介绍的两个下载链接，但是实践后发现还不够简单，现在只需要下载链接中的一个压缩包**，解压之后可以放在任何地方，之后直接双击运行里面的run.bat即可。
 
-   代码+资源文件+运行环境 百度链接：https://pan.baidu.com/s/1m8WBNGHCMXRY8r4AZmPYAw  提取码：2zt6
-
-   本来以为国内没人用谷歌云盘，没想到这么多，放一个谷歌云盘链接 [https://drive.google.com/file/d/1l3IIMSUoRCrFSQxIxkJ3Jl0YgaOZgi69/view?usp=sharing](https://drive.google.com/file/d/1l3IIMSUoRCrFSQxIxkJ3Jl0YgaOZgi69/view?usp=sharing)
-
+   代码+资源文件+运行环境 百度链接： 链接： https://pan.baidu.com/s/17y7N2q7lVoC8CSg_ezlMUQ  提取码：o1jm
+   
    常见问题：
-   - 视频有声音黑屏：下载或更新至最新的谷歌浏览器即可，压缩包里的视频是v265格式，目前只有新的浏览器支持，谷歌官网是 https://www.google.cn/chrome/index.html ，不要进到钓鱼网站了
+   - 由于内置谷歌浏览器，如果内置浏览器出错的话，请用自己的浏览器打开。
    - 视频不加载+评论区不加载：原因是火绒的拦截策略，临时关掉火绒或者b站私聊，改一下代码即可
    - 页面布局错乱：调整网页缩放即可
-   - 感觉视频不够清楚：mygoFlaskProject/video/文件夹下放的是所有视频，替换为你的高清mp4资源即可
+   - 感觉视频不够清楚：mygoFlaskProject/video/文件夹下放的是所有视频，替换为你的高清mp4资源即可（ https://www.alipan.com/s/w1p8wp5K3kZ ）
    - 运行后图片和视频加载慢：不要把文件夹放在U盘或其他移动存储设备中直接运行，会导致数据传输受制于接口速度，如果还是卡那可能你需要换个新电脑啦:grin:
    - 想在手机或pad上运行：没问题，但是移动端的页面没有适配，操作方法是手机和电脑连接同一wifi(在同一个局域网内)，电脑打开程序后，手机浏览器（最好也是谷歌）访问命令行中的第二个地址，注意在播放视频时最好使用横屏模式。
 
@@ -52,7 +49,7 @@ python+flask+dplayer
    ```shell
    python app.py
    ```
-3. 效果：
+4. 效果：
 
    首页效果
    ![播放器效果](https://github.com/wangwc18/mygoFlaskProject/blob/master/show-player.png)
@@ -66,7 +63,10 @@ python+flask+dplayer
 
 **数据获取**
 
-1. 弹幕使用“唧唧Down”获取xml和ass文件，只用xml文件，这些文件在mygoFlaskProject/danmaku/（做了重命名）
+1. 弹幕有三种来源，这些文件在mygoFlaskProject/danmaku/（做了重命名）下，最近才发现原来历史弹幕还能访问？这几天再试试！！！
+   - 标准弹幕，使用“唧唧Down”获取xml和ass文件，只用xml文件
+   - 最多弹幕，使用b站的这篇专栏 https://www.bilibili.com/read/cv26903973/ ，作者做了最大合并，里头还有各种其他类型的弹幕
+   - 开播弹幕，后期弹幕和前期弹幕的观感不同（比如前期弹幕剧透更少），所以取了前3000条，这部分由Gray Zhang提供
 2. 同时下载了视频文件在mygoFlaskProject/video/（做了重命名）
 3. 剩余的数据为程序抓取，在mygoFlaskProject/get_data/目录下
    - get_comment.py获取评论信息，保存在comment_json文件夹下（已经修改为抓最新评论，抓最热评论同理可得）
@@ -74,10 +74,15 @@ python+flask+dplayer
    - 原始json信息太多，使用orginal_json_to_type.py把comment_json中的json转换为mygoFlaskProject/comment_hot_json/和mygoFlaskProject/comment_new_json/,对应最热和最新评论
 
 **视频组件**
-
-超级感谢b站月落云尘大佬的指路以及代码示范，本分支视频组件替换为使用nplayer( https://github.com/oyuyue/nplayer )，
+1. 本分支视频组件替换为使用nplayer( https://github.com/oyuyue/nplayer )，
 原本的项目是使用dplayer( https://github.com/DIYgod/DPlayer )，但是有bug迟迟不能修复。后续再研究一下添加新的功能
+2. 弹幕的用户播放配置写入cookie，但是由于bug弹幕的透明度无法保存
+
+**最后**
+- 超级感谢b站月落云尘大佬对nplayer视频组件的指路以及代码示范
+- 感谢b站Darklyyy对页面部分细节的优化
+- 感谢github的Gray Zhang大佬( https://github.com/otakustay )提供的新弹幕文件和建议
 
 
-
-剩下的写的都比较简陋(~~实在太懒~~)了:grin:，有机会用Vue重构一下前端吧(大概要等到Mujicac出了吧，欸嘿:star:)
+剩下的写的都比较简陋(~~实在太懒~~) ，有机会用Vue重构一下前端吧(大概要等到Mujicac出了吧，欸嘿)
+母鸡卡要25年1月啦？？？？？
