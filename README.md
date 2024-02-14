@@ -28,7 +28,7 @@ python+flask+nplayer
    - 运行后图片和视频加载慢：不要把文件夹放在U盘或其他移动存储设备中直接运行，会导致数据传输受制于接口速度，如果还是卡那可能你需要换个新电脑啦:grin:
    - 想在手机或pad上运行：没问题，但是移动端的页面没有适配，操作方法是手机和电脑连接同一wifi(在同一个局域网内)，电脑打开程序后，手机浏览器（最好也是谷歌）访问命令行中的第二个地址，注意在播放视频时最好使用横屏模式。
 
-3. 开发环境启动
+2. 开发环境启动
 
    首先你得有个python吧，没有就装一个吧，我的python版本是 3.10.11
 
@@ -53,7 +53,8 @@ python+flask+nplayer
    ```shell
    python app.py
    ```
-4. 效果：
+   
+3. 效果：
 
    首页效果
    ![播放器效果](https://github.com/wangwc18/mygoFlaskProject/blob/master/show-player.png)
@@ -62,6 +63,26 @@ python+flask+nplayer
    活动页效果（评论区上的图片点击跳转）
    ![活动效果](https://github.com/wangwc18/mygoFlaskProject/blob/master/show-mygo.png)
    视频播放器右侧的图片（跳转b站会员购）都是可以点击跳转到B站对应的页面
+   
+## Mac + conda 运行本项目
+
+* Step 1: 克隆本项目。
+   * 你可以直接从谷歌云盘 [https://drive.google.com/drive/folders/1hOLUy8toxSi63UbNCoDNCAE9dRwuDbia?usp=sharing
+   ](https://drive.google.com/drive/folders/1hOLUy8toxSi63UbNCoDNCAE9dRwuDbia?usp=sharing
+   ) 下载本仓库的完整版本。
+   * 你也可以通过 `git clone git@github.com:wangwc18/mygoFlaskProject.git` 命令克隆本仓库。但是你还是需要从谷歌云盘下载完整版压缩包，解压后将 `video/` `static/pic/` 和 `get_data/comment_json/` 文件夹拷贝到本仓库下。
+* Step 2: 新建 conda 环境，使用如下命令：
+    * `conda create -n mygo python=3.10`
+    * `conda activate mygo`
+    * `pip install -r requirements.txt`
+* Step 3: 启动 app.py
+    * `python app.py`
+    * 此时如果遭遇端口号被占用的问题，请编辑 `app.py`，将最后一行的 `port=` 改为一个你喜欢的四位数。
+    * 使用 Chrome 访问 `127.0.0.1:上面设置的端口号`，就可以看 mygo 了。
+
+![alt text](show-mac-mygo.png)
+    
+以上测试使用 mac 环境 Ventura 13.4, MacBook Air M1，Chrome 121.0.6167.160.
 
 ## 项目结构
 
