@@ -5,3 +5,6 @@ __pycache__/
 .static/pic/i1.hdslb.com/
 .static/pic/i2.hdslb.com/
 .get_data/comment_json/
+.nvimlog
+.DS_Store
+
