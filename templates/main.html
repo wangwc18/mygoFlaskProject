@@ -2,47 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{videos[vid]['title']}}</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename="bootstrap/css/bootstrap.min.css") }}">
     <link rel="stylesheet" href="{{ url_for("static", filename="main.css") }}">
     <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="{{ url_for("static", filename="bootstrap-icons/bootstrap-icons.css") }}">
+    <script type="text/javascript" src="{{ url_for("static", filename="jquery/jquery-3.7.1.min.js") }}"></script>
+    <script src="{{ url_for("static", filename="bootstrap/js/bootstrap.min.js") }}"></script>
     <script src="{{ url_for("static", filename="nplayer/dist/index.min.js") }}"></script>
     <script src="{{ url_for("static", filename="nplayer-danmaku/dist/index.min.js") }}"></script>
-    <script type="text/javascript" src="{{ url_for("static", filename="jquery/jquery.min.js") }}"></script>
     <script> const vid = '{{vid}}';</script>
     <script src="{{ url_for("static", filename="main.js") }}"></script>
     <script src="{{ url_for("static", filename="player.js") }}"></script>
 </head>
-<body style="margin:0; padding:0">
-<div class="app-header">
-    <img src="{{ url_for("static", filename="svg/bilibili.svg")}}" style="height:28px;padding-top:20px;padding-left:20px" />
-    <span style="padding-left:20px">首页</span>
-    <span style="padding-left:30px">番剧</span>
-    <span style="padding-left:20px">直播</span>
-    <span style="padding-left:25px">游戏中心</span>
-    <span style="padding-left:25px">会员购</span>
-    <span style="padding-left:25px">漫画</span>
-    <span style="padding-left:25px">赛事</span>
-    <span style="padding-left:25px">亚运会</span>
-    <span style="padding-left:25px">小长假</span>
-    <span style="padding-left:25px"><img src="{{ url_for("static", filename="svg/download-client.svg")}}" style="vertical-align: middle;"/></span></span>
-    <span style="padding-left:3px">下载客户端</span>
-{#    <span style="padding-left:3px">下载客户端</span>#}
-</div>
+
+<body>
+
+<nav class="navbar navbar-expand-xl bd-navbar bg-body sticky-top shadow-sm">
+  <div class="container-fluid p-1 ps-4 pe-4">
+    <a class="navbar-brand" href="https://www.bilibili.com/">
+      <img src="{{ url_for("static", filename="svg/bilibili.svg")}}" alt="Bootstrap" height="28">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 app-header">
+        <li class="nav-item dropdown pe-1 cp">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">首页</a>
+        </li>
+        <li class="nav-item pe-1 cp"><a class="nav-link">番剧</a></li>
+        <li class="nav-item pe-1 cp"><a class="nav-link">直播</a></li>
+        <li class="nav-item pe-1 cp"><a class="nav-link">游戏中心</a></li>
+        <li class="nav-item pe-1 cp"><a class="nav-link">会员购</a></li>
+        <li class="nav-item pe-1 cp"><a class="nav-link">漫画</a></li>
+        <li class="nav-item pe-1 cp"><a class="nav-link">赛事</a></li>
+        <li class="nav-item pe-1 cp"><a class="nav-link">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="download-client-trigger__icon"><path d="M7.23181 8.65895V1.75796C7.23181 1.33935 7.57582 1 8.00018 1C8.42453 1 8.76854 1.33935 8.76854 1.75796V8.67097L9.98589 7.47009C10.286 7.17409 10.7725 7.17409 11.0725 7.47009C11.3726 7.7661 11.3726 8.24601 11.0725 8.54201L8.54958 11.0308C8.24952 11.3268 7.76302 11.3268 7.46295 11.0308L4.94002 8.54201C4.63995 8.24601 4.63995 7.7661 4.94002 7.47009C5.24008 7.17409 5.72658 7.17409 6.02665 7.47009L7.23181 8.65895Z" fill="currentColor"></path><path d="M3.48023 4.29936C2.40686 4.29936 1.53672 5.15772 1.53672 6.21656V11.5669C1.53672 12.6257 2.40686 13.4841 3.48023 13.4841H12.5198C13.5931 13.4841 14.4633 12.6257 14.4633 11.5669V6.21656C14.4633 5.15772 13.5931 4.29936 12.5198 4.29936H11.6158C11.1915 4.29936 10.8475 3.96001 10.8475 3.5414C10.8475 3.12279 11.1915 2.78344 11.6158 2.78344H12.5198C14.4418 2.78344 16 4.3205 16 6.21656V11.5669C16 13.4629 14.4418 15 12.5198 15H3.48023C1.55815 15 0 13.4629 0 11.5669V6.21656C0 4.3205 1.55815 2.78344 3.48023 2.78344H4.38418C4.80853 2.78344 5.15254 3.12279 5.15254 3.5414C5.15254 3.96001 4.80853 4.29936 4.38418 4.29936H3.48023Z" fill="currentColor"></path></svg>
+            下载客户端
+            </a>
+        </li>
+       <li class="nav-item">
+         <form class="d-flex input-group" role="search">
+          <input class="form-control ms-5 bg-body-secondary" type="search" placeholder="It's MyGO!!!!!" aria-label="Search" style="width:400px">
+             <button class="btn bg-body-secondary" type="submit" ><i class="bi bi-search"></i></button>
+        </form>
+       </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <div class="container">
-    <div class="container-left">
-        <div class="left-title">{{videos[vid]['title']}}</div>
-        <div class="left-title-detail">
-            <span><img src="{{ url_for("static", filename="svg/view-icon.svg")}}" style="vertical-align: middle;"/></span><span style="padding-right:20px">{{videos[vid]['play_time']}}</span>
-            <span><img src="{{ url_for("static", filename="svg/dm-icon.svg")}}" style="vertical-align: middle;"/></span><span style="padding-right:20px">{{videos[vid]['danmaku_num']}}</span>
-            <span  style="padding-right:20px">{{videos[vid]['upload_time']}}</span>
-            <span><img src="{{ url_for("static", filename="pic/prohibit.png")}}" style="vertical-align: middle;"/>未经作者授权，禁止转载</span>
+  <div class="row">
+    <div class="col-xxl-8 max-at-600px">
+        <div class="pt-4 pb-3">
+            <span class="title-black-big">{{videos[vid]['title']}}</span>
         </div>
-
-        <div id="nplayer" style="width:100%;"></div>
-        <div class="player_bottom">
-            <span id="number_of_people_danmu">1人正在观看，已装填{{videos[vid]['load_danmaku']}}条弹幕</span>
-            <span style="padding-left:20px">
+        <div class="d-flex align-items-start pb-3 title-gray-mes">
+            <span class="item pe-1">
+                <svg class="view-icon" style="width:20px;height:20px;" data-v-3b903b56="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20" width="20" height="20"><path d="M10 4.040041666666666C7.897383333333334 4.040041666666666 6.061606666666667 4.147 4.765636666666667 4.252088333333334C3.806826666666667 4.32984 3.061106666666667 5.0637316666666665 2.9755000000000003 6.015921666666667C2.8803183333333333 7.074671666666667 2.791666666666667 8.471183333333332 2.791666666666667 9.998333333333333C2.791666666666667 11.525566666666668 2.8803183333333333 12.922083333333333 2.9755000000000003 13.9808C3.061106666666667 14.932983333333334 3.806826666666667 15.666916666666667 4.765636666666667 15.744683333333336C6.061611666666668 15.849716666666666 7.897383333333334 15.956666666666667 10 15.956666666666667C12.10285 15.956666666666667 13.93871666666667 15.849716666666666 15.234766666666667 15.74461666666667C16.193416666666668 15.66685 16.939000000000004 14.933216666666667 17.024583333333336 13.981216666666668C17.11975 12.922916666666667 17.208333333333332 11.526666666666666 17.208333333333332 9.998333333333333C17.208333333333332 8.470083333333333 17.11975 7.073818333333334 17.024583333333336 6.015513333333334C16.939000000000004 5.063538333333333 16.193416666666668 4.329865000000001 15.234766666666667 4.252118333333334C13.93871666666667 4.147016666666667 12.10285 4.040041666666666 10 4.040041666666666zM4.684808333333334 3.255365C6.001155 3.14862 7.864583333333334 3.0400416666666668 10 3.0400416666666668C12.13565 3.0400416666666668 13.999199999999998 3.148636666666667 15.315566666666667 3.2553900000000002C16.753416666666666 3.3720016666666672 17.890833333333333 4.483195 18.020583333333335 5.925965000000001C18.11766666666667 7.005906666666667 18.208333333333336 8.433 18.208333333333336 9.998333333333333C18.208333333333336 11.56375 18.11766666666667 12.990833333333335 18.020583333333335 14.0708C17.890833333333333 15.513533333333331 16.753416666666666 16.624733333333335 15.315566666666667 16.74138333333333C13.999199999999998 16.848116666666666 12.13565 16.95666666666667 10 16.95666666666667C7.864583333333334 16.95666666666667 6.001155 16.848116666666666 4.684808333333334 16.7414C3.2467266666666665 16.624750000000002 2.1092383333333338 15.513266666666667 1.9795200000000002 14.070383333333334C1.8823900000000002 12.990000000000002 1.7916666666666667 11.562683333333334 1.7916666666666667 9.998333333333333C1.7916666666666667 8.434066666666666 1.8823900000000002 7.00672 1.9795200000000002 5.926381666666667C2.1092383333333338 4.483463333333334 3.2467266666666665 3.371976666666667 4.684808333333334 3.255365z" fill="#9499A0"></path><path d="M12.23275 9.1962C12.851516666666667 9.553483333333332 12.851516666666667 10.44665 12.232683333333332 10.803866666666666L9.57975 12.335600000000001C8.960983333333335 12.692816666666667 8.1875 12.246250000000002 8.187503333333334 11.531733333333333L8.187503333333334 8.4684C8.187503333333334 7.753871666666667 8.960983333333335 7.307296666666667 9.57975 7.66456L12.23275 9.1962z" fill="#9499A0"></path></svg>
+            </span>
+            <span class="item pe-3">{{videos[vid]['play_time']}}</span>
+            <span class="item pe-1">
+                <svg class="dm-icon" style="width:20px;height:20px;" data-v-3b903b56="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20" width="20" height="20"><path d="M10 4.040041666666666C7.897383333333334 4.040041666666666 6.061606666666667 4.147 4.765636666666667 4.252088333333334C3.806826666666667 4.32984 3.061106666666667 5.0637316666666665 2.9755000000000003 6.015921666666667C2.8803183333333333 7.074671666666667 2.791666666666667 8.471183333333332 2.791666666666667 9.998333333333333C2.791666666666667 11.525566666666668 2.8803183333333333 12.922083333333333 2.9755000000000003 13.9808C3.061106666666667 14.932983333333334 3.806826666666667 15.666916666666667 4.765636666666667 15.744683333333336C6.061611666666668 15.849716666666666 7.897383333333334 15.956666666666667 10 15.956666666666667C12.10285 15.956666666666667 13.93871666666667 15.849716666666666 15.234766666666667 15.74461666666667C16.193416666666668 15.66685 16.939000000000004 14.933216666666667 17.024583333333336 13.981216666666668C17.11975 12.922916666666667 17.208333333333332 11.526666666666666 17.208333333333332 9.998333333333333C17.208333333333332 8.470083333333333 17.11975 7.073818333333334 17.024583333333336 6.015513333333334C16.939000000000004 5.063538333333333 16.193416666666668 4.329865000000001 15.234766666666667 4.252118333333334C13.93871666666667 4.147016666666667 12.10285 4.040041666666666 10 4.040041666666666zM4.684808333333334 3.255365C6.001155 3.14862 7.864583333333334 3.0400416666666668 10 3.0400416666666668C12.13565 3.0400416666666668 13.999199999999998 3.148636666666667 15.315566666666667 3.2553900000000002C16.753416666666666 3.3720016666666672 17.890833333333333 4.483195 18.020583333333335 5.925965000000001C18.11766666666667 7.005906666666667 18.208333333333336 8.433 18.208333333333336 9.998333333333333C18.208333333333336 11.56375 18.11766666666667 12.990833333333335 18.020583333333335 14.0708C17.890833333333333 15.513533333333331 16.753416666666666 16.624733333333335 15.315566666666667 16.74138333333333C13.999199999999998 16.848116666666666 12.13565 16.95666666666667 10 16.95666666666667C7.864583333333334 16.95666666666667 6.001155 16.848116666666666 4.684808333333334 16.7414C3.2467266666666665 16.624750000000002 2.1092383333333338 15.513266666666667 1.9795200000000002 14.070383333333334C1.8823900000000002 12.990000000000002 1.7916666666666667 11.562683333333334 1.7916666666666667 9.998333333333333C1.7916666666666667 8.434066666666666 1.8823900000000002 7.00672 1.9795200000000002 5.926381666666667C2.1092383333333338 4.483463333333334 3.2467266666666665 3.371976666666667 4.684808333333334 3.255365z" fill="#9499A0"></path><path d="M13.291666666666666 8.833333333333334L8.166666666666668 8.833333333333334C7.890526666666666 8.833333333333334 7.666666666666666 8.609449999999999 7.666666666666666 8.333333333333334C7.666666666666666 8.057193333333334 7.890526666666666 7.833333333333334 8.166666666666668 7.833333333333334L13.291666666666666 7.833333333333334C13.567783333333335 7.833333333333334 13.791666666666668 8.057193333333334 13.791666666666668 8.333333333333334C13.791666666666668 8.609449999999999 13.567783333333335 8.833333333333334 13.291666666666666 8.833333333333334z" fill="#9499A0"></path><path d="M14.541666666666666 12.166666666666666L9.416666666666668 12.166666666666666C9.140550000000001 12.166666666666666 8.916666666666666 11.942783333333333 8.916666666666666 11.666666666666668C8.916666666666666 11.390550000000001 9.140550000000001 11.166666666666668 9.416666666666668 11.166666666666668L14.541666666666666 11.166666666666668C14.817783333333335 11.166666666666668 15.041666666666668 11.390550000000001 15.041666666666668 11.666666666666668C15.041666666666668 11.942783333333333 14.817783333333335 12.166666666666666 14.541666666666666 12.166666666666666z" fill="#9499A0"></path><path d="M6.5 8.333333333333334C6.5 8.609449999999999 6.27614 8.833333333333334 6 8.833333333333334L5.458333333333333 8.833333333333334C5.182193333333334 8.833333333333334 4.958333333333334 8.609449999999999 4.958333333333334 8.333333333333334C4.958333333333334 8.057193333333334 5.182193333333334 7.833333333333334 5.458333333333333 7.833333333333334L6 7.833333333333334C6.27614 7.833333333333334 6.5 8.057193333333334 6.5 8.333333333333334z" fill="#9499A0"></path><path d="M7.750000000000001 11.666666666666668C7.750000000000001 11.942783333333333 7.526140000000001 12.166666666666666 7.25 12.166666666666666L6.708333333333334 12.166666666666666C6.432193333333334 12.166666666666666 6.208333333333334 11.942783333333333 6.208333333333334 11.666666666666668C6.208333333333334 11.390550000000001 6.432193333333334 11.166666666666668 6.708333333333334 11.166666666666668L7.25 11.166666666666668C7.526140000000001 11.166666666666668 7.750000000000001 11.390550000000001 7.750000000000001 11.666666666666668z" fill="#9499A0"></path></svg>
+            </span>
+            <span class="item pe-3">{{videos[vid]['danmaku_num']}}</span>
+            <span class="item pe-3">{{videos[vid]['upload_time']}}</span>
+            <span class="item pe-1">
+                <svg class="copyright-icon" style="width:16px;height:16px;" data-v-aed3e268="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16" width="16" height="16"><path d="M3.6893999999999996 5.1036666666666655C2.3498133333333335 7.12952 2.5688666666666666 9.875600000000002 4.346579999999999 11.653333333333332C6.1242600000000005 13.431066666666666 8.8704 13.650133333333333 10.896266666666664 12.310533333333334L3.6893999999999996 5.1036666666666655zM5.103626666666667 3.689440000000001L12.310599999999997 10.896333333333331C13.650066666666667 8.870466666666665 13.43113333333333 6.124313333333333 11.653400000000001 4.346606666666665C9.875666666666667 2.5689266666666666 7.129559999999999 2.349853333333333 5.103626666666667 3.689440000000001zM2.9323533333333334 13.067533333333337C0.13359999999999994 10.268866666666664 0.13359999999999994 5.731153333333332 2.9323533333333334 2.9324C5.731113333333333 0.1336399999999999 10.268799999999999 0.1336399999999999 13.0676 2.9324C15.866399999999995 5.731153333333332 15.866399999999995 10.268866666666664 13.0676 13.067533333333337C10.268799999999999 15.866333333333332 5.731113333333333 15.866333333333332 2.9323533333333334 13.067533333333337z" fill="#fd676f"></path></svg>
+            </span>
+            <span class="item pe-3">未经作者授权，禁止转载</span>
+        </div>
+        <div id="nplayer"></div>
+        <div class="d-flex shadow-sm">
+            <span class="float-start p-3 video-num-of-watch">
+                <span>1</span>人正在观看，已装填
+                <span id="num_of_danmu">3600</span>条弹幕
+            </span>
+            <span class="d-flex align-items-center">
                 <select id="danmuchangebar" onchange="chageDanmu()">
                     <option value="1">标准弹幕</option>
                     <option value="2">最多弹幕</option>
@@ -50,127 +90,269 @@
                 </select>
             </span>
         </div>
-
-        <div style="width: 100%;color:#61666d;font-size: 16px;padding-top:20px">
-            <span><img src="{{ url_for("static", filename="svg/like.svg")}}" class="star_like"/></span>
-            <span style="padding-right:4%;padding-left:5px">{{videos[vid]['like']}}</span>
-            <span><img src="{{ url_for("static", filename="svg/coin.svg")}}" class="star_like"/></span>
-            <span style="padding-right:4%;padding-left:5px">{{videos[vid]['coin']}}</span>
-            <span><img src="{{ url_for("static", filename="svg/star.svg")}}" class="star_like"/></span>
-            <span style="padding-right:4%;padding-left:5px">{{videos[vid]['star']}}</span>
-            <span><img src="{{ url_for("static", filename="svg/share.svg")}}" class="star_like"/></span>
-            <span style="padding-right:4%;padding-left:5px">{{videos[vid]['share']}}</span>
-        </div>
-        <div class = "bottom-line2" > </div>
-
-        <div>
-            <div style="color:#18191C;font-size:16px;font-family:PingFang SC;line-height:50px;padding-left:5px;padding-top:10px">
-                本次期间限定公开，将于北京时间10月1日（星期日）23:00截止 <br>※为方便大家观看，此版本进行了字幕的优化。
+        <div class="d-flex justify-content-start">
+            <div class="ps-0  pe-4 pt-3 pb-0 op-icon">
+                <svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" class="video-like-icon video-toolbar-item-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.77234 30.8573V11.7471H7.54573C5.50932 11.7471 3.85742 13.3931 3.85742 15.425V27.1794C3.85742 29.2112 5.50932 30.8573 7.54573 30.8573H9.77234ZM11.9902 30.8573V11.7054C14.9897 10.627 16.6942 7.8853 17.1055 3.33591C17.2666 1.55463 18.9633 0.814421 20.5803 1.59505C22.1847 2.36964 23.243 4.32583 23.243 6.93947C23.243 8.50265 23.0478 10.1054 22.6582 11.7471H29.7324C31.7739 11.7471 33.4289 13.402 33.4289 15.4435C33.4289 15.7416 33.3928 16.0386 33.3215 16.328L30.9883 25.7957C30.2558 28.7683 27.5894 30.8573 24.528 30.8573H11.9911H11.9902Z" fill="currentColor"></path></svg>
+                <span class="px-2 video-op">{{videos[vid]['like']}}</span>
             </div>
-            <div style="padding-top: 10px;padding-bottom: 10px">
-                <span class="rand_band">动画</span>
-                <span class="rand_band">综合</span>
-                <span class="rand_band">MyGO!!!!!</span>
-                <span class="rand_band">立石凛</span>
-                <span class="rand_band">青木阳菜</span>
-                <span class="rand_band">小日向美香</span>
-                <span class="rand_band">mygo</span>
-                <span class="rand_band">BanG Dream!</span>
-                <span class="rand_band">林鼓子</span>
-                <span class="rand_band">羊宫妃那</span>
+            <div class="ps-0  pe-4 pt-3 pb-0 op-icon">
+                <svg width="36" height="36" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" class="video-coin-icon video-toolbar-item-icon" data-v-331e415b=""><path fill-rule="evenodd" clip-rule="evenodd" d="M14.045 25.5454C7.69377 25.5454 2.54504 20.3967 2.54504 14.0454C2.54504 7.69413 7.69377 2.54541 14.045 2.54541C20.3963 2.54541 25.545 7.69413 25.545 14.0454C25.545 17.0954 24.3334 20.0205 22.1768 22.1771C20.0201 24.3338 17.095 25.5454 14.045 25.5454ZM9.66202 6.81624H18.2761C18.825 6.81624 19.27 7.22183 19.27 7.72216C19.27 8.22248 18.825 8.62807 18.2761 8.62807H14.95V10.2903C17.989 10.4444 20.3766 12.9487 20.3855 15.9916V17.1995C20.3854 17.6997 19.9799 18.1052 19.4796 18.1052C18.9793 18.1052 18.5738 17.6997 18.5737 17.1995V15.9916C18.5667 13.9478 16.9882 12.2535 14.95 12.1022V20.5574C14.95 21.0577 14.5444 21.4633 14.0441 21.4633C13.5437 21.4633 13.1382 21.0577 13.1382 20.5574V12.1022C11.1 12.2535 9.52148 13.9478 9.51448 15.9916V17.1995C9.5144 17.6997 9.10883 18.1052 8.60856 18.1052C8.1083 18.1052 7.70273 17.6997 7.70265 17.1995V15.9916C7.71158 12.9487 10.0992 10.4444 13.1382 10.2903V8.62807H9.66202C9.11309 8.62807 8.66809 8.22248 8.66809 7.72216C8.66809 7.22183 9.11309 6.81624 9.66202 6.81624Z" fill="currentColor"></path></svg>
+                <span class="px-2 video-op">{{videos[vid]['coin']}}</span>
+            </div>
+            <div class="ps-0  pe-4 pt-3 pb-0 op-icon">
+                <svg width="36" height="36" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" class="video-fav-icon video-toolbar-item-icon" data-v-b42ec39c=""><path fill-rule="evenodd" clip-rule="evenodd" d="M19.8071 9.26152C18.7438 9.09915 17.7624 8.36846 17.3534 7.39421L15.4723 3.4972C14.8998 2.1982 13.1004 2.1982 12.4461 3.4972L10.6468 7.39421C10.1561 8.36846 9.25639 9.09915 8.19315 9.26152L3.94016 9.91102C2.63155 10.0734 2.05904 11.6972 3.04049 12.6714L6.23023 15.9189C6.96632 16.6496 7.29348 17.705 7.1299 18.7605L6.39381 23.307C6.14844 24.6872 7.62063 25.6614 8.84745 25.0119L12.4461 23.0634C13.4276 22.4951 14.6544 22.4951 15.6359 23.0634L19.2345 25.0119C20.4614 25.6614 21.8518 24.6872 21.6882 23.307L20.8703 18.7605C20.7051 17.705 21.0339 16.6496 21.77 15.9189L24.9597 12.6714C25.9412 11.6972 25.3687 10.0734 24.06 9.91102L19.8071 9.26152Z" fill="currentColor"></path></svg>
+                <span class="px-2 video-op">{{videos[vid]['star']}}</span>
+            </div>
+            <div class="ps-0  pe-4 pt-3 pb-0 op-icon">
+                <svg data-v-1cf2fbd4="" width="36" height="36" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg" class="video-share-icon video-toolbar-item-icon"><path d="M12.6058 10.3326V5.44359C12.6058 4.64632 13.2718 4 14.0934 4C14.4423 4 14.78 4.11895 15.0476 4.33606L25.3847 12.7221C26.112 13.3121 26.2087 14.3626 25.6007 15.0684C25.5352 15.1443 25.463 15.2144 25.3847 15.2779L15.0476 23.6639C14.4173 24.1753 13.4791 24.094 12.9521 23.4823C12.7283 23.2226 12.6058 22.8949 12.6058 22.5564V18.053C7.59502 18.053 5.37116 19.9116 2.57197 23.5251C2.47607 23.6489 2.00031 23.7769 2.00031 23.2122C2.00031 16.2165 3.90102 10.3326 12.6058 10.3326Z" fill="currentColor"></path></svg>
+                <span class="px-2 video-op">{{videos[vid]['share']}}</span>
             </div>
         </div>
-        <div class = "bottom-line2" > </div>
 
-        <a href="/mygo">
-        <div class="bar-pic">
-            <img src="{{ url_for("static", filename="pic/bar.png")}}" style="width: 100%;z-index: -1;"/>
+        <hr class="text-secondary">
+        <div class="row" id="video-des">
+            <pre class="video-des">{{videos[vid]["des"]}}</pre>
+        </div>
+        <div class="row p-3" onclick="more_des()" id="more-des-button" >展开更多</div>
+
+        <div class="d-flex flex-wrap">
+            {%for video_tab in videos[vid]["tab"]%}
+                <a href="https://search.bilibili.com/all?keyword={{video_tab}}">
+            <span class="ms-0 me-2 mb-1 px-3 py-0 badge rounded-pill video-rand-tab cp">{{video_tab}}</span>
+                </a>
+            {%endfor%}
+        </div>
+        <hr class="text-secondary">
+
+        <a href="https://mall.bilibili.com/act/aicms/Ux2yGo7eC.html">
+        <div class="row py-2">
+            <img src="{{ url_for("static", filename="pic/bar.png")}}" style="width:100%"/>
         </div>
         </a>
 
-        <div style="padding-top:3%;padding-bottom:2%">
-            <span style="font-size:25px;color:#18191C;">评论</span>
-            <span style="font-size:15px;color:#9499A0;">{{videos[vid]['comment_num']}}</span>
-            <span class="hot_or_new active" data-cid="1">最热</span>
-            <span class="hot_or_new" data-cid="2">最新</span>
+        <div class="d-flex align-items-center justify-content-start">
+            <div class="d-flex align-items-center justify-content-start p-2">
+                <span class="p-0 pinglun">评论</span>
+                <span class="p-1" id="num_of_comment"></span>
+            </div>
+            <div class="d-flex align-items-center justify-content-start p-2">
+                <span class="p-0 hot_or_new active" data-cid="1">最热</span>
+                <span class="p-2 hot_or_new">|</span>
+                <span class="p-0 hot_or_new" data-cid="2">最新</span>
+            </div>
         </div>
-        <div class="comment-list" data-infinite-scroll></div>
+        <div id="comment-list" class=""></div>
 
     </div>
 
-    <div class="container-right">
-        <div class="right-who-left"><img src="{{ url_for("static", filename="pic/i2.hdslb.com/bfs/face/5727b28b871235eaeb8d9a68354846b569d7a1cc.jpg")}}" style="vertical-align: middle;border-radius:50%;height:50px;width:50px"/></div>
-        <div class="right-who-right">
-            <div>
-                <span style="color:#FB7299;font-size:16px;">MyGO_AveMujica</span>
-                <span style="color:#61666D;font-size:13px;"><img src="{{ url_for("static", filename="pic/send_mes.png")}}"/> 发消息</span>
+    <div class="col-xxl-4 pt-2 hide-at-600px">
+        <div class="align-items-center">
+            <div class="p-0 float-start" style="width:48px">
+                <div class="d-flex align-items-center" style="height:90px">
+                    <img src="{{ url_for("static", filename="pic/mygo.avif")}}" style="height:48px;border-radius:50%" class="img-thumbnail"/>
+                    <div style="position:relative">
+                        <img src="{{ url_for("static", filename="svg/personal.svg")}}" style="position: absolute;bottom:-25px;right:0px;width:18px;height:18px;"/>
+                    </div>
+                </div>
             </div>
-            <div style="color: #9499A0;font-size:13px;padding-top:5px;white-space:nowrap;overflow:hidden;text-overflow: ellipsis">来自BanG Dream! Project，「MyGO!!!!!」与「Ave Mujica」的官方账号</div>
-            <div style="padding-top:8px">
-                <div class="chongdian"><span style="padding-left:30%">充电</span></div>
-                <div class="guanzhu"><span style="padding-left:35%">已关注 18.3万</span></div>
+            <div class="" style="margin-left:60px">
+                <div class="pt-2 pb-0">
+                    <span class="up-title">MyGO_AveMujica</span>
+                    <span class="up-title-mes ps-1"><img src="{{ url_for("static", filename="pic/send_mes.png")}}"/> 发消息</span>
+                </div>
+                <div class="p-0 pb-0" style="width:100%">
+                    <div class="up-des text-truncate" >来自BanG Dream! Project，「MyGO!!!!!」与「Ave Mujica」的官方账号</div>
+                </div>
+                <div class="row text-center" style="margin-left:2px;">
+                    <div class="btn chongdian" style="width:32.5%;height:30px">
+                        <img src="{{ url_for("static", filename="pic/dian.webp")}}" style="height:20px"/>充电
+                    </div>
+                    <button class="btn" id="guanzhu">
+                        已关注 36.5万
+                    </button>
+                </div>
             </div>
         </div>
-        <div class="danmu-list">
-            <span>弹幕列表</span>
-            <span style="float:right;padding-right:20px"><img style="width:20px;height:20px;transform: rotate(90deg)" src="{{ url_for("static", filename="svg/arrow-icon.svg")}}"/></span>
+
+        <div class="container p-0 mt-3">
+            <div class="d-flex align-items-center justify-content-between list-container">
+                <span class="px-3 py-2">弹幕列表</span>
+                <span class="p-2"><img src="{{ url_for("static", filename="svg/arrow-icon.svg")}}" style="height:20px"/></span>
+            </div>
         </div>
-        <a href="https://mall.bilibili.com/act/aicms/Ux2yGo7eC.html?spm_id_from=333.999.rich-text.link.click">
-        <div style="width:100%;padding-top:20px;height:150px">
-            <div style="float:left;padding-left:0px"><img src="/static/pic/ad_pic.png" style="height:150px;border-radius:10px"/></div>
-            <div style="margin-left:55%;font-size:16px;padding-top:5px;line-height:30px;color:#505050">→物贩还在继续哦←</div>
+        <div class="row p-0 mt-3 cp" onclick="window.location.href ='/mygo'">
+            <div class="col-6"><img src="/static/pic/ad_pic.png" class="rounded-1" style="width:100%"/></div>
+            <div class="col-6 ps-0">
+                <div class="zhuantiye-hover">→→ Mygo专题页 ←←</div>
+                <div class="d-flex justify-content-start align-items-center">
+                    <svg data-v-7c4b2c06="" width="32" height="16" viewBox="0 0 32 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="ad-icon" data-v-56c09a18=""><path d="M10.312 2.02015L9.364 2.18815C9.604 2.57215 9.832 3.00415 10.024 3.47215H5.56V6.98815C5.536 9.41215 5.176 11.2962 4.504 12.6642L5.212 13.3002C5.992 11.7162 6.4 9.61615 6.448 6.98815V4.30015H15.34V3.47215H10.972C10.756 2.93215 10.54 2.45215 10.312 2.02015ZM25.948 8.77615H18.124V13.1922H19V12.5562H25.072V13.1922H25.948V8.77615ZM19 11.7402V9.60415H25.072V11.7402H19ZM18.844 4.72015H21.712V6.66415H16.576V7.51615H27.424V6.66415H22.588V4.72015H26.512V3.89215H22.588V2.18815H21.712V3.89215H19.36C19.6 3.44815 19.792 2.98015 19.948 2.47615L19.084 2.38015C18.7 3.64015 17.956 4.70815 16.876 5.57215L17.392 6.25615C17.956 5.78815 18.436 5.27215 18.844 4.72015Z" fill="#9499A0"></path> <rect x="0.5" y="0.50415" width="31" height="15" rx="1.5" stroke="#9499A0"></rect></svg>
+                    <span class="ps-1 list-small-text">要跟我组一辈子的乐队吗？</span>
+                </div>
+            </div>
         </div>
         </a>
-        <div class="right-list">
-            <div style="padding-left:8px;padding-top:5px">
-                <span>It's MyGO!!!!!</span>
-                <span style="color: #9499A0;font-size:13px">({{videos[vid]['rank']}}/14)</span>
+        <div class="container p-0 mt-4 list-container">
+            <div class="d-flex p-2 pb-0 justify-content-between align-items-end">
+                <div class="justify-content-start">
+                    <span class="ps-2">It's MyGO!!!!!</span>
+                    <span class="ps-1 list-small-text">(1/4)</span>
+                </div>
             </div>
-            <div class="right-list-title"><span>210.5万播放 </span>
-                <span><img src="{{ url_for("static", filename="svg/ic_info.svg")}}"/>简介</span></div>
-            <div class = "bottom-line" > </div>
-            <div class="right-list-box">
+            <div class="d-flex p-2 pb-0 justify-content-between align-items-center list-small-text">
+                <div class="justify-content-start">
+                    <span class="ps-2">1178.0万播放</span>
+                    <img class="ps-1" src="{{ url_for("static", filename="svg/ic_info.svg")}}">
+                    <span >简介</span>
+                </div>
+                <div class="px-2"><button type="button" class="btn px-4 btn-sm list-small-button">已订阅</button></div>
+            </div>
+            <hr class="mx-3 text-secondary">
+            <div class="p-2 pt-0 list-play">
             {%for vid_e in videos.keys()%}
                 {% if vid_e==vid %}
-                <div class="right-list-item" style="color:#00AEEC" onClick="handleListItemClick('{{vid_e}}')">
-                    <img src="{{ url_for("static", filename="pic/playing.gif")}}" style="height:13px">
-                    {{videos[vid_e]['title']}}
-                    <span style="float:right;padding-right:10px;color:#18191C;white-space:nowrap;overflow:hidden;text-overflow: ellipsis">{{videos[vid_e]['long']}}</span>
+                <div class="d-flex mx-1 py-1 justify-content-between list_play_item_container" id="lp_{{ vid_e }}">
+                    <div class="text-truncate list_playing_item ps-1">
+                        <img src="{{ url_for("static", filename="pic/playing.gif")}}" style="height:13px">
+                        {{videos[vid_e]['title']}}
+                    </div>
+                    <div class="px-2 list-play-time">{{videos[vid_e]['long']}}</div>
                 </div>
                 {% else %}
-                <div class="right-list-item" onClick="handleListItemClick('{{vid_e}}')">{{videos[vid_e]['title']}}
-                <span style="float:right;padding-right:10px;white-space:nowrap;overflow:hidden;text-overflow: ellipsis">{{videos[vid_e]['long']}}</span></div>
+                <div class="d-flex mx-1 py-1 justify-content-between cp" onClick="handleListItemClick('{{vid_e}}')" id="lp_{{ vid_e }}">
+                    <div class="text-truncate list_play_item">{{videos[vid_e]['title']}}</div>
+                    <div class="px-2 list-play-time">{{videos[vid_e]['long']}}</div>
+                </div>
                 {% endif %}
             {%endfor%}
             </div>
         </div>
-        {%for vid_e in videos.keys()%}
-            {% if videos[vid_e]['rank']!=13%}
-        <div class="pan-tab" onClick="handleListItemClick('{{vid_e}}')">
-            <div style="float:left;padding-left:0px"><img src="/static/pic/mygo_j{{videos[vid_e]['rank']}}.webp" style="height:150px;border-radius:10px"/></div>
-            <div style="margin-left:55%;padding-top:5px;">
-                <div class="pan-tab-title">{{videos[vid_e]['title']}}</div>
-                <div class="one-pan-title-detail">
-                    <span><img src="{{ url_for("static", filename="svg/up.svg")}}" style="vertical-align: middle;"/></span>
+
+    <div class="row px-3 mt-4">
+        <div class="col-3 p-0">
+            <img src="/static/pic/game-cover.avif" class="rounded-1" style="width:100%"/>
+        </div>
+        <div class="col-6 cp" onclick="window.location.href ='https://www.biligame.com/detail/?id=168'">
+            <div class="pt-2 ad-title">BanG Dream！</div>
+            <div class="list-small-text">音乐节奏/BanG Dream</div>
+            <div class="d-flex justify-content-start">
+                <svg width="16px" viewBox="0 0 1024 1024" class="van-rate-star"><linearGradient id="lg_1907cfac1.b778d" x1="0" x2="100%" y1="0" y2="0"><stop offset="100%" stop-color="#FFA726" stop-opacity="1"></stop> <stop offset="100%" stop-color="rgba(0,0,0,0)" stop-opacity="1"></stop></linearGradient> <path stroke="#FFA726" stroke-width="60" fill="url(#lg_1907cfac1.b778d)" d="M766.4 890.72 a30.88 30.88 0 0 1-16-4  L512 761.12 l-238.08 125.6 a33.44 33.44 0 0 1-48-35.2 L272 585.76 78.4 397.6 a32 32 0 0 1-8.64-33.92 A34.24 34.24 0 0 1 96 341.12 l266.56-38.56 119.36-241.92 A33.28 33.28 0 0 1 512 41.92 a34.08 34.08 0 0 1 29.92 18.56 l119.04 241.92 L928 341.12 a33.28 33.28 0 0 1 26.56 22.56 32 32 0 0 1-8.64 33.92 L752 585.76 l45.92 265.92 a32 32 0 0 1-13.28 32 26.72 26.72 0 0 1-18.56 6.72 M766.4 890.72z"></path></svg>
+                <svg width="16px" viewBox="0 0 1024 1024" class="van-rate-star"><linearGradient id="lg_1907cfac1.b778d" x1="0" x2="100%" y1="0" y2="0"><stop offset="100%" stop-color="#FFA726" stop-opacity="1"></stop> <stop offset="100%" stop-color="rgba(0,0,0,0)" stop-opacity="1"></stop></linearGradient> <path stroke="#FFA726" stroke-width="60" fill="url(#lg_1907cfac1.b778d)" d="M766.4 890.72 a30.88 30.88 0 0 1-16-4  L512 761.12 l-238.08 125.6 a33.44 33.44 0 0 1-48-35.2 L272 585.76 78.4 397.6 a32 32 0 0 1-8.64-33.92 A34.24 34.24 0 0 1 96 341.12 l266.56-38.56 119.36-241.92 A33.28 33.28 0 0 1 512 41.92 a34.08 34.08 0 0 1 29.92 18.56 l119.04 241.92 L928 341.12 a33.28 33.28 0 0 1 26.56 22.56 32 32 0 0 1-8.64 33.92 L752 585.76 l45.92 265.92 a32 32 0 0 1-13.28 32 26.72 26.72 0 0 1-18.56 6.72 M766.4 890.72z"></path></svg>
+                <svg width="16px" viewBox="0 0 1024 1024" class="van-rate-star"><linearGradient id="lg_1907cfac1.b778d" x1="0" x2="100%" y1="0" y2="0"><stop offset="100%" stop-color="#FFA726" stop-opacity="1"></stop> <stop offset="100%" stop-color="rgba(0,0,0,0)" stop-opacity="1"></stop></linearGradient> <path stroke="#FFA726" stroke-width="60" fill="url(#lg_1907cfac1.b778d)" d="M766.4 890.72 a30.88 30.88 0 0 1-16-4  L512 761.12 l-238.08 125.6 a33.44 33.44 0 0 1-48-35.2 L272 585.76 78.4 397.6 a32 32 0 0 1-8.64-33.92 A34.24 34.24 0 0 1 96 341.12 l266.56-38.56 119.36-241.92 A33.28 33.28 0 0 1 512 41.92 a34.08 34.08 0 0 1 29.92 18.56 l119.04 241.92 L928 341.12 a33.28 33.28 0 0 1 26.56 22.56 32 32 0 0 1-8.64 33.92 L752 585.76 l45.92 265.92 a32 32 0 0 1-13.28 32 26.72 26.72 0 0 1-18.56 6.72 M766.4 890.72z"></path></svg>
+                <svg width="16px" viewBox="0 0 1024 1024" class="van-rate-star"><linearGradient id="lg_1907cfac1.b778d" x1="0" x2="100%" y1="0" y2="0"><stop offset="100%" stop-color="#FFA726" stop-opacity="1"></stop> <stop offset="100%" stop-color="rgba(0,0,0,0)" stop-opacity="1"></stop></linearGradient> <path stroke="#FFA726" stroke-width="60" fill="url(#lg_1907cfac1.b778d)" d="M766.4 890.72 a30.88 30.88 0 0 1-16-4  L512 761.12 l-238.08 125.6 a33.44 33.44 0 0 1-48-35.2 L272 585.76 78.4 397.6 a32 32 0 0 1-8.64-33.92 A34.24 34.24 0 0 1 96 341.12 l266.56-38.56 119.36-241.92 A33.28 33.28 0 0 1 512 41.92 a34.08 34.08 0 0 1 29.92 18.56 l119.04 241.92 L928 341.12 a33.28 33.28 0 0 1 26.56 22.56 32 32 0 0 1-8.64 33.92 L752 585.76 l45.92 265.92 a32 32 0 0 1-13.28 32 26.72 26.72 0 0 1-18.56 6.72 M766.4 890.72z"></path></svg>
+                <svg width="16px" viewBox="0 0 1024 1024" class="van-rate-star"><linearGradient id="lg_166157306.80b2d" x1="0" x2="100%" y1="0" y2="0"><stop offset="59.999999999999964%" stop-color="#FFA726" stop-opacity="1"></stop> <stop offset="59.999999999999964%" stop-color="rgba(0,0,0,0)" stop-opacity="1"></stop></linearGradient> <path stroke="#FFA726" stroke-width="60" fill="url(#lg_166157306.80b2d)" d="M766.4 890.72 a30.88 30.88 0 0 1-16-4   L512 761.12 l-238.08 125.6 a33.44 33.44 0 0 1-48-35.2 L272 585.76 78.4 397.6 a32 32 0 0 1-8.64-33.92 A34.24 34.24 0 0 1 96 341.12 l266.56-38.56 119.36-241.92 A33.28 33.28 0 0 1 512 41.92 a34.08 34.08 0 0 1 29.92 18.56 l119.04 241.92 L928 341.12 a33.28 33.28 0 0 1 26.56 22.56 32 32 0 0 1-8.64 33.92 L752 585.76 l45.92 265.92 a32 32 0 0 1-13.28 32 26.72 26.72 0 0 1-18.56 6.72 M766.4 890.72z"></path></svg>
+                <span class="ad-score ps-2">9.2分</span>
+            </div>
+            <div class="list-small-text text-truncate"><span class="ad-gonggao-pan">公告</span>「让我们手牵手 与你共舞的万圣节之夜」KIRAMEKI Festival活动开启！</div>
+        </div>
+        <div class="col-3 d-flex align-items-center justify-content-end">
+            <button class="btn ad-button px-3">下载</button>
+        </div>
+    </div>
+
+    <div class="container p-0 mt-4">
+    {%for vid_e in videos.keys()%}
+       <div class="row p-0 mt-3">
+            <div class="col-6 position-relative" onClick="handleListItemClick('{{vid_e}}')">
+                <img src="/static/pic/mygo_j{{videos[vid_e]['rank']}}.webp" class="rounded-1" style="width:100%"/>
+                <span class="list-dur-span">{{videos[vid_e]['long']}}</span>
+            </div>
+            <div class="col-6 ps-0">
+                <div class="zhuantiye-hover" onClick="handleListItemClick('{{vid_e}}')">{{videos[vid_e]['title']}}</div>
+                <div class="d-flex justify-content-start align-items-center list-small-text pt-1 zhuantiye-hover" onclick="window.location.href ='https://space.bilibili.com/1459104794'" >
+                    <span class="pe-1">
+                        <svg style="width:18px;height:18px;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 18 18" width="18" height="18"><path d="M4.612500000000001 6.186037499999999C4.92315 6.186037499999999 5.175000000000001 6.437872500000001 5.175000000000001 6.748537499999999L5.175000000000001 9.580575C5.175000000000001 10.191075000000001 5.66991 10.686 6.280425000000001 10.686C6.8909325 10.686 7.38585 10.191075000000001 7.38585 9.580575L7.38585 6.748537499999999C7.38585 6.437872500000001 7.637700000000001 6.186037499999999 7.94835 6.186037499999999C8.259 6.186037499999999 8.51085 6.437872500000001 8.51085 6.748537499999999L8.51085 9.580575C8.51085 10.8124125 7.512262499999999 11.811 6.280425000000001 11.811C5.048595000000001 11.811 4.050000000000001 10.8124125 4.050000000000001 9.580575L4.050000000000001 6.748537499999999C4.050000000000001 6.437872500000001 4.3018350000000005 6.186037499999999 4.612500000000001 6.186037499999999z" fill="currentColor"></path><path d="M9.48915 6.748537499999999C9.48915 6.437872500000001 9.7409625 6.186037499999999 10.05165 6.186037499999999L11.79375 6.186037499999999C12.984637500000002 6.186037499999999 13.950000000000001 7.151415 13.950000000000001 8.34225C13.950000000000001 9.5331375 12.984637500000002 10.4985 11.79375 10.4985L10.61415 10.4985L10.61415 11.2485C10.61415 11.55915 10.3623 11.811 10.05165 11.811C9.7409625 11.811 9.48915 11.55915 9.48915 11.2485L9.48915 6.748537499999999zM10.61415 9.3735L11.79375 9.3735C12.3633 9.3735 12.825000000000001 8.9118 12.825000000000001 8.34225C12.825000000000001 7.7727375 12.3633 7.31103 11.79375 7.31103L10.61415 7.31103L10.61415 9.3735z" fill="currentColor"></path><path d="M9 3.7485375000000003C7.111335 3.7485375000000003 5.46225 3.84462 4.2981675 3.939015C3.4891575 4.0046175 2.8620825 4.6226400000000005 2.79 5.424405C2.7045525 6.37485 2.625 7.6282499999999995 2.625 8.9985C2.625 10.368825000000001 2.7045525 11.622225 2.79 12.5726625C2.8620825 13.374412500000002 3.4891575 13.992450000000002 4.2981675 14.058074999999999C5.46225 14.152425000000001 7.111335 14.2485 9 14.2485C10.888874999999999 14.2485 12.538050000000002 14.152425000000001 13.702200000000001 14.058037500000001C14.511074999999998 13.9924125 15.138000000000002 13.3746 15.210075 12.573037500000002C15.295499999999999 11.622975 15.375 10.3698375 15.375 8.9985C15.375 7.627237500000001 15.295499999999999 6.3740775 15.210075 5.4240375C15.138000000000002 4.622475 14.511074999999998 4.00464 13.702200000000001 3.9390374999999995C12.538050000000002 3.844635 10.888874999999999 3.7485375000000003 9 3.7485375000000003zM4.2072375 2.8176975C5.39424 2.7214425 7.074434999999999 2.6235375000000003 9 2.6235375000000003C10.925775 2.6235375000000003 12.606075 2.7214575 13.793099999999999 2.81772C15.141074999999999 2.92704 16.208849999999998 3.9695849999999995 16.330575 5.323297500000001C16.418174999999998 6.297675 16.5 7.585537500000001 16.5 8.9985C16.5 10.4115375 16.418174999999998 11.6994 16.330575 12.6738C16.208849999999998 14.027474999999999 15.141074999999999 15.0700125 13.793099999999999 15.1793625C12.606075 15.275625 10.925775 15.3735 9 15.3735C7.074434999999999 15.3735 5.39424 15.275625 4.2072375 15.179400000000001C2.859045 15.070049999999998 1.7912325 14.027212500000001 1.6695225000000002 12.673425C1.5818849999999998 11.69865 1.5 10.4106 1.5 8.9985C1.5 7.586475 1.5818849999999998 6.2984025 1.6695225000000002 5.3236725C1.7912325 3.96984 2.859045 2.9270175000000003 4.2072375 2.8176975z" fill="currentColor"></path></svg>
+                    </span>
                     <span>MyGO_AveMujica</span>
                 </div>
-                <div class="one-pan-title-detail">
-                    <span><img src="{{ url_for("static", filename="svg/view-icon.svg")}}" style="vertical-align: middle;"/></span><span style="padding-right:20px">{{videos[vid_e]['play_time']}}</span>
-                    <span><img src="{{ url_for("static", filename="svg/dm-icon.svg")}}" style="vertical-align: middle;"/></span><span style="padding-right:20px">{{videos[vid_e]['danmaku_num']}}</span>
+                <div class="d-flex justify-content-start align-items-center list-small-text pt-1">
+                    <svg class="view-icon" style="width:20px;height:20px;" data-v-3b903b56="" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20" width="20" height="20"><path d="M10 4.040041666666666C7.897383333333334 4.040041666666666 6.061606666666667 4.147 4.765636666666667 4.252088333333334C3.806826666666667 4.32984 3.061106666666667 5.0637316666666665 2.9755000000000003 6.015921666666667C2.8803183333333333 7.074671666666667 2.791666666666667 8.471183333333332 2.791666666666667 9.998333333333333C2.791666666666667 11.525566666666668 2.8803183333333333 12.922083333333333 2.9755000000000003 13.9808C3.061106666666667 14.932983333333334 3.806826666666667 15.666916666666667 4.765636666666667 15.744683333333336C6.061611666666668 15.849716666666666 7.897383333333334 15.956666666666667 10 15.956666666666667C12.10285 15.956666666666667 13.93871666666667 15.849716666666666 15.234766666666667 15.74461666666667C16.193416666666668 15.66685 16.939000000000004 14.933216666666667 17.024583333333336 13.981216666666668C17.11975 12.922916666666667 17.208333333333332 11.526666666666666 17.208333333333332 9.998333333333333C17.208333333333332 8.470083333333333 17.11975 7.073818333333334 17.024583333333336 6.015513333333334C16.939000000000004 5.063538333333333 16.193416666666668 4.329865000000001 15.234766666666667 4.252118333333334C13.93871666666667 4.147016666666667 12.10285 4.040041666666666 10 4.040041666666666zM4.684808333333334 3.255365C6.001155 3.14862 7.864583333333334 3.0400416666666668 10 3.0400416666666668C12.13565 3.0400416666666668 13.999199999999998 3.148636666666667 15.315566666666667 3.2553900000000002C16.753416666666666 3.3720016666666672 17.890833333333333 4.483195 18.020583333333335 5.925965000000001C18.11766666666667 7.005906666666667 18.208333333333336 8.433 18.208333333333336 9.998333333333333C18.208333333333336 11.56375 18.11766666666667 12.990833333333335 18.020583333333335 14.0708C17.890833333333333 15.513533333333331 16.753416666666666 16.624733333333335 15.315566666666667 16.74138333333333C13.999199999999998 16.848116666666666 12.13565 16.95666666666667 10 16.95666666666667C7.864583333333334 16.95666666666667 6.001155 16.848116666666666 4.684808333333334 16.7414C3.2467266666666665 16.624750000000002 2.1092383333333338 15.513266666666667 1.9795200000000002 14.070383333333334C1.8823900000000002 12.990000000000002 1.7916666666666667 11.562683333333334 1.7916666666666667 9.998333333333333C1.7916666666666667 8.434066666666666 1.8823900000000002 7.00672 1.9795200000000002 5.926381666666667C2.1092383333333338 4.483463333333334 3.2467266666666665 3.371976666666667 4.684808333333334 3.255365z" fill="#9499A0"></path><path d="M12.23275 9.1962C12.851516666666667 9.553483333333332 12.851516666666667 10.44665 12.232683333333332 10.803866666666666L9.57975 12.335600000000001C8.960983333333335 12.692816666666667 8.1875 12.246250000000002 8.187503333333334 11.531733333333333L8.187503333333334 8.4684C8.187503333333334 7.753871666666667 8.960983333333335 7.307296666666667 9.57975 7.66456L12.23275 9.1962z" fill="#9499A0"></path></svg>
+                    <span class="ps-1">{{videos[vid_e]['play_time']}}</span>
+                    <img  class="ps-2" src="{{ url_for("static", filename="svg/dm-icon.svg")}}"/>
+                    <span class="ps-1">{{videos[vid_e]['danmaku_num']}}</span>
                 </div>
             </div>
         </div>
-            {% endif %}
-        {%endfor%}
+    {%endfor%}
     </div>
+
+    </div>
+
+    </div>
+
+{#整活区域，不喜请删，欸嘿。。。。#}
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+
+      <strong class="me-auto">求求你不要走</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      <img src="{{ url_for("static", filename="pic/p1.png")}}" style="height:200px"/><br>
+        <span>要我怎么做你才能重新关注呢？</span>
+    </div>
+  </div>
+</div>
+
+
 </div>
 </body>
 </html>
 <script>
+$(function (){
+    /* 视频简介添加 更多信息*/
+    const element = document.getElementById("video-des");
+    if (element.offsetHeight>91){
+        element.style.height = "91px";
+        element.style.overflow="hidden"
+    }else{
+        const element2 = document.getElementById("more-des-button");
+        element2.style.display="none"
+    }
+    /*视频播放列表，正在播放项目垂直居中*/
+    const div = document.getElementById("lp_{{ vid }}");
+    const container = document.querySelector(".list-play");
+    const containerRect = container.getBoundingClientRect();
+    const divRect = div.getBoundingClientRect();
+    const scrollTop = divRect.top - containerRect.top + container.scrollTop - (containerRect.height / 2);
+    container.scrollTo({
+        top: scrollTop,
+        behavior: 'smooth'
+    });
+    const toastTrigger = document.getElementById('guanzhu')
+    const toastLiveExample = document.getElementById('liveToast')
+    if (toastTrigger) {
+      toastTrigger.addEventListener('click', () => {
+        const toast = new bootstrap.Toast(toastLiveExample)
+        toast.show()
+      })
+    }
+});
 
-    function handleListItemClick(i) {
-        redirectUrl = '/video/' + (i);
-        window.location.href = redirectUrl;
-    };
+function handleListItemClick(i) {
+    /**
+     * 视频列表点击一项跳转到对应的页面
+     * @type {string}
+     */
+    var redirectUrl = '/video/' + (i);
+    window.location.href = redirectUrl;
+};
 
+function more_des(){
+    const element = document.getElementById("video-des");
+    element.style.height ='auto';
+    const element2 = document.getElementById("more-des-button");
+    element2.innerHTML = "收起";
+    element2.removeEventListener('click', more_des);
+    element2.addEventListener('click',less_des)
+}
+function less_des(){
+    const element = document.getElementById("video-des");
+    element.style.height ='91px';
+    element.style.overflow="hidden"
+    const element2 = document.getElementById("more-des-button");
+    element2.innerHTML ="展开更多";
+    element2.removeEventListener('click', less_des);
+    element2.addEventListener('click',more_des)
+}
 </script>

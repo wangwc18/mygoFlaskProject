@@ -1,254 +1,112 @@
-a{text-decoration:none}
+@media (max-width: 1400px) {
+      .hide-at-600px {
+        display: none;
+      }
+        .max-at-600px{
+            width: 100%;
+        }
+    }
+/*bootstrap默认container-xxl是1320px，和b站的尺寸有差异,改到1533px（左1054+30+441+额外padding）*/
+@media (min-width: 1681px) {
+  .container {
+    max-width: 1533px;
+  }
+  .col-xxl-12 {width: 100%;}
+  .col-xxl-11 {width: 91.66666667%;}
+  .col-xxl-10 {width: 83.33333333%;}
+  .col-xxl-9 {width: 75%;}
+  .col-xxl-8 {width: 70%;}
+  .col-xxl-7 {width: 58.33333333%;}
+  .col-xxl-6 {width: 50%;}
+  .col-xxl-5 {width: 41.66666667%;}
+  .col-xxl-4 {width: 30%;}
+  .col-xxl-3 {width: 25%;}
+  .col-xxl-2 {width: 16.66666667%;}
+  .col-xxl-1 {width: 8.33333333%;}
+  .col-xxl-auto {width: auto;}
+}
+
+
+.cp{
+    cursor: pointer
+}
+
+
 .app-header {
-    width: 100%;
-    height: 70px;
-    font-size: 15px;
-    position: fixed;
-    box-shadow:0px 5px 3px #F6F7F8;
-    color: #18191C;;
-    min-width: 1100px;
-    background: white;
-    z-index: 10;
-    margin:0; padding:0
+    font-family: PingFang SC,HarmonyOS_Regular,Helvetica Neue,Microsoft YaHei,sans-serif!important;
+    font-size: 14px;
+    color: #18191c;
+    font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+    /*font-weight: bold;;*/
 }
-.container {
-    overflow-y: auto;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 75px;
-    /*border: 1px solid red;*/
+/*左侧视频标题部分*/
+.title-black-big{
+    font-size: 21px;
+    font-family: PingFang SC, HarmonyOS_Regular, Helvetica Neue, Microsoft YaHei, sans-serif;
+    line-height: 28px;
+    font-weight:400;
 }
-.container-left {
-    float: left;
-    width: 67%;
-    /*background: green;*/
-}
-.left-title {
-    padding-top: 20px;
-    font-size: 22px;
-    font-family: BlinkMacSystemFont sans-serif;
-}
-.left-title-detail{
+.title-gray-mes{
     font-size: 13px;
-    font-family: BlinkMacSystemFont sans-serif;
+    font-family: PingFang SC, HarmonyOS_Regular, Helvetica Neue, Microsoft YaHei, sans-serif;
     color: #9499A0;
-    padding-top: 16px;
-    padding-bottom: 22px;
+    font-weight:400;
 }
-
-.comment-list{
-    width: 100%;
+.video-num-of-watch{
+    font-size:14px;
+    color:#505050;
 }
-.comment-list-item{
-    width: 100%;
+/*左侧 点赞投币分享*/
+.op-icon{
+    color:#61666D;
+    cursor: pointer;
 }
-.comment-item-img-contain{
-    float: left;
-    width: 7%;
+.op-icon:hover{
+    color:#00AEEC;
 }
-.comment-item-img1{
-    position:absolute;
-    z-index:1;
+.op-icon-image{
+    height:36px;
+    width:36px;
 }
-.comment-item-img2{
-    position:absolute;
-    z-index:2;
+.video-op{
+ font-size:14px;
 }
-.comment-item-img-1{
-    margin-top: 16px;
-    margin-left: 16px;
-    width: 49px;
-    height: 49px;
-    border-radius:50%;
-}
-.comment-item-img-2{
-    width: 80px;
-    height: 80px;
-}
-.comment-item-right{
-    margin-left: 7%;
-    padding-top: 1px;
-    /*background: blue;*/
-}
-.comment-item-name{
-    width: 100%;
-    margin-left: 10px;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    font-family: BlinkMacSystemFont sans-serif;
-    color: #61666d;
-}
-.comment-item-name2{
-    width: 100%;
-    margin-left: 10px;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    font-family: BlinkMacSystemFont sans-serif;
-    color: #FB7299;;
-}
-.comment-item-content{
-    width: 100%;
-    margin-left: 10px;
-    font-size: 16px;
-    font-family: BlinkMacSystemFont sans-serif;
-    color: #18191C;
-    line-height: 26px;
-}
-.comment-item-fun{
-    width: 100%;
-    margin-left: 10px;
-    margin-top: 10px;
-    font-size: 13px;
-    font-family: BlinkMacSystemFont sans-serif;
-    color:#9499A0;
-}
-
-.comment-s-list-item{
-    width: 100%;
-}
-.comment-s-item-img-contain{
-    float: left;
-    width: 7%;
-}
-.comment-s-item-img1{
-    position:absolute;
-    z-index:1;
-}
-.comment-s-item-img2{
-    position:absolute;
-    z-index:2;
-}
-.comment-s-item-img-1{
-    margin-top: 12px;
-    margin-left: 12px;
-    width: 37px;
-    height: 37px;
-    border-radius:50%;
-}
-
-.comment-s-item-right{
-    margin-left: 7%;
-    padding-top: 12px;
-    /*background: blue;*/
-}
-.comment-s-item-name{
-    width: 100%;
-    margin-left: 0px;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    font-family: BlinkMacSystemFont sans-serif;
-    color: #61666d;
-}
-.comment-s-item-name2{
-    width: 100%;
-    margin-left: 0px;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    font-family: BlinkMacSystemFont sans-serif;
-    color:#FB7299;;
-}
-.comment-s-item-content{
-    width: 100%;
-    margin-left: 10px;
-    font-size: 16px;
-    font-family: BlinkMacSystemFont sans-serif;
-    color: #18191C;
-    line-height: 26px;
-}
-.comment-s-item-fun{
-    width: 100%;
-    margin-left: 10px;
-    margin-top: 10px;
-    font-size: 13px;
-    font-family: BlinkMacSystemFont sans-serif;
-    color:#9499A0;
-}
-
-
-.bottom-line{
-    border-bottom: 1px solid #E3E5E7;
-    margin-left: 10px;
-    padding-top: 15px;
-}
-
-.bottom-line2{
-    border-bottom: 1px solid #E3E5E7;
-    padding-top: 15px;
-}
-
-.container-right {
-    margin-left: 70%;
-    height: 594px;
-}
-.right-who-left {
-   width: 15%;
-    float:left;
-    padding-top:20px;
-}
-.right-who-right{
-    margin-left:15%;
-    padding-top:15px;
-    /*padding-left: ;*/
-}
-.right-list {
-    background: #F1F2F3;
-    margin-top:20px;
-    padding-top:5px;
-    padding-bottom:5px;
-    padding-left:5px;
-    padding-right:5px;
-    border-radius:8px;
-    width: 100%;
-}
-.right-list-title {
-    padding-left:8px;
-    padding-top:10px;
-    color: #9499A0;
-    font-size: 13px;
-}
-.right-list-box{
-    height: 200px;
-    width: 100%;
-    overflow-y: auto;
-}
-
-.right-list-box::-webkit-scrollbar {
-  width: 6px; /* 设置滚动条宽度 */
-  height: 6px; /* 设置滚动条高度 */
-}
-
-.right-list-box::-webkit-scrollbar-thumb {
-  border-radius: 3px; /* 设置滚动条滑块圆角 */
-  background-color: rgba(0, 0, 0, 0.2); /* 设置滑块颜色 */
-}
-
-.right-list-box::-webkit-scrollbar-track {
-  background-color: rgba(0,0,0,0.05); /* 设置滑块轨道颜色 */
-}
-
-
-.right-list-item {
-    width:100%;
-    padding-top:5px;
-    padding-bottom:5px;
-    user-select: none;
-    font-size:15px;
+/*左侧 视频简介*/
+.video-des{
     color:#18191C;
-    display: inline-block;overflow:hidden;text-overflow: ellipsis;
+    font-size:16px;
+    font-family:PingFang SC, HarmonyOS_Regular, Helvetica Neue, Microsoft YaHei, sans-serif;
+    line-height:24px;
 }
-.right-list-item:hover{
+#more-des-button{
+    cursor: pointer;
+    font-size: 14px;
+    color: #61666D;
+}
+#more-des-button:hover{
     color: #00AEEC;
 }
+/*左侧 视频标签*/
+.video-rand-tab{
+    color: #505050;
+    background-color: #F1F2F3 ;
+    font-size: 14px;
+    line-height: 32px;
+    font-weight:normal;
+}
+
+/*评论区相关*/
+.pinglun{
+    font-size:25px;
+    color:#18191C;
+}
+#num_of_comment{
+    font-size:15px;color:#9499A0;
+}
 .hot_or_new{
-    margin-left:3%;
     font-size: 17px;
-     color: #9499A0;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    color: #9499A0;
 }
 .hot_or_new.active{
     color: #18191C;
@@ -257,117 +115,327 @@ a{text-decoration:none}
     color: #00AEEC;
     cursor:pointer;
 }
-.chongdian{
-    float:left;
-    background-color: #00AEEC;
-    color:whitesmoke;
-    border-radius: 5px;
-    width:23%;
-    height:27px;
-    font-size: 13px;
-    padding-top:4px;
-}
-.guanzhu{
-    margin-left:26%;
-    background-color: #E3E5E7 ;
-    color:#9499A0;
-    border-radius: 5px;
-    width:67%;
-    height:27px;
-    font-size: 13px;
-    padding-top:4px;
-}
 
-.star_like{
-    vertical-align: middle;
-    height:40px;
-    width: 40px;
+.reply-decorate{
+    position: absolute;
+    top: 0;
+    right: 0;
 }
-.player_bottom{
-    /*width: 100%;*/
-    height: 46px;
-    font-size: 16px;
-    box-shadow:0px 0px 8px #E3E5E7;
-    color: #505050;
-    padding-top: 15px;
-    padding-left: 15px
+.user-sailing-img{
+    height:48px;
 }
-
-.rand_band{
-    color: #505050;
-    background-color: #F1F2F3 ;
-    border-radius:20px;
-    font-size: 15px;
+.user-sailing-text{
+    position: absolute;
+    right: 0;
+    top:10%;
+    font-size: 13px;
+    line-height: 16px;
+}
+.root-reply-avatar{
+    left: 0;
+    width: 80px;
+    cursor: pointer;
+}
+.comment-right{
+    margin-left:80px
+}
+.bili-avatar-img{
+    height: 40.8px;
+    width: 40.8px;
+    border-radius:50%;
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.bili-avatar-pendent-dom{
+    height: 72px;
+    width: 72px;
+    position: absolute;
+    bottom: -16px;
+    left: 4px;
+}
+.comment-s-item-name{
+    font-size: 14px;
+    font-family: BlinkMacSystemFont sans-serif;
+    color: #61666d;
+}
+.comment-s-item-name2{
+    font-size: 14px;
+    font-family: BlinkMacSystemFont sans-serif;
+    color:#FB7299;
+}
+.level-img-wrap{
+    height:25px;
+}
+.level-img {
+    height:25px;width:25px
+}
+.fan-badge{
+    display: flex;
+    align-items: center;
+    height: 14px;
     padding-left: 5px;
-    padding-right: 14px;
-    padding-top: 5px;
-    padding-bottom: 6px;
-    margin-left: 15px;
-}
-.bar-pic{
-    padding-top: 25px;
-    width: 100%;
-}
-.user-right-top-band{
-    float:right;
-    font-size: 12px;
-}
-.user-right-top-band-img{
-    height: 48px;
-    position:absolute;
-    transform: translateX(-240px);
-}
-.user-right-top-band-num{
-    padding-top: 8px;
-    padding-right: 8px;
-    font-family: PingFang SC;
-    font-weight: bold;
-}
-.go-top-icon{
-    border: 1px solid red;
-    color:red;
-    font-size: 10px;
-    padding-right: 3px;
-}
-.danmu-list{
-    margin-top: 10px;
-    background: #f4f4f4;
-    font-size: 17px;
-    width: 100%;
-    height: 37px;
+    /*border: .5px solid ;*/
     border-radius: 10px;
-    padding-top:13px;
-    padding-left:17px;
+    margin-left: 5px;
 }
-.pan-tab{
-    width:100%;
-    padding-top:20px;
-    height:150px;
+.badge-name-warp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 25px;
+    height: 100%;
+    margin-right: 4px;
 }
-.pan-tab:hover{
-    color: #00AEEC;
-    cursor:pointer;
+.badge-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-weight: 500;
+    white-space: nowrap;
+    transform: scale(.5) translate(-50%, -50%);
+    transform-origin: 0 0;
 }
-.pan-tab-title{
+.badge-level-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 11.5px;
+    height: 11.5px;
+    border-radius: 50%;
+    margin-right: .5px;
+}
+.badge-level{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    font-family: Reeji-CloudHuPo-GBK;
+    font-weight: 500;
+    white-space: nowrap;
+    line-height: 1;
+    transform: scale(.5) translate(-50%, -43%);
+    transform-origin: 0 0;
+}
+.reply-top-icon{
+    top: -2px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    border: 1px solid #FF6699;
+    border-radius: 3px;
+    margin-right: 5px;
+    font-size: 12px;
+    color: #FF6699;
+}
+.reply-content{
+    color: #18191C;;
+    line-height: 24px;
+    vertical-align: baseline;
     word-wrap: break-word;
-    word-break: normal;
+    font-weight: 400;
     font-size:16px;
-    padding-top:0px;
-    line-height:25px;
-    color:#18191C
 }
-.pan-tab-title:hover{
-    color: #00AEEC;
-}
-.one-pan-title-detail{
+.reply-info{
     font-size: 13px;
     font-family: BlinkMacSystemFont sans-serif;
     color: #9499A0;
-    padding-top: 6px;
 }
-.one-pan-title-detail:hover{
-    color: #00AEEC;
+.reply-op-icon{
+    height:16px;width:16px
 }
-.nplayer_video-mirroring {
-  transform: scaleX(-1);
+.root-reply-avatar2{
+    left: 0;
+    width: 42px;
+    cursor: pointer;
+}
+.bili-avatar-img2{
+    height: 24px;
+    width: 24px;
+    border-radius:50%;
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+.reply-right{
+    margin-left:42px;
+    word-wrap: break-word;
+}
+.comment-view-more1{
+    color:#9499A0;
+    font-size: 13px;
+}
+.comment-view-more2{
+    color:#9499A0;
+    font-size: 13px;
+    cursor: pointer;
+}
+.comment-view-more2:hover{
+    color:#1890ff;
+}
+.comment-view-more-page{
+    font-size: 13px;
+    color:#18191C;
+    cursor: pointer;
+}
+.comment-view-more-page-active{
+    font-size: 13px;
+    color:#00AEEC;
+}
+.comment-view-more-page:hover{
+    color:#00AEEC;
+}
+.comment-view-more-page-m{
+    font-size: 13px;
+    color:#18191C;
+}
+
+/*右侧-up信息*/
+.up-title{
+    color:#FF6699;
+    font-size:16px;
+    cursor: pointer;
+}
+.up-title:hover{
+    color:#FB7299
+}
+.up-title-mes{
+    color:#61666D;font-size:14px;
+}
+.up-des{
+    color:#9499A0;font-size:14px;
+}
+.chongdian{
+    background-color: white;
+    border: 1px solid #FF6699;
+    color:#FF6699;
+    font-size: 13px;
+    border-radius: 5px;
+}
+.chongdian:hover{
+    background-color: #FFECF1;
+    border: 1px solid #FF6699;
+    color:#FF6699;
+}
+#guanzhu{
+    background-color: #E3E5E7 ;
+    color:#9499A0;
+    border-radius: 5px;
+    font-size: 13px;
+    width:60%;margin-left:5%;height:30px
+}
+.guanzhu:hover{
+    background-color: #F1F2F3;
+    color:#9499A0;
+}
+.player_bottom{
+    font-size: 16px;
+    box-shadow:0px 0px 8px #E3E5E7;
+    color: #505050;
+}
+/*右侧-广告tab*/
+.zhuantiye-hover:hover{
+    cursor: pointer;
+    color:#00AEEC;
+}
+.list-container{
+    background:#F1F2F3;
+    border-radius: 8px;
+}
+/*右侧-播放列表*/
+.list-play{
+    max-height: 152px;
+    border-radius: 6px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+.list-play::-webkit-scrollbar {
+  width: 6px; /* 设置滚动条宽度 */
+  height: 6px; /* 设置滚动条高度 */
+}
+
+.list-play::-webkit-scrollbar-thumb {
+  border-radius: 3px; /* 设置滚动条滑块圆角 */
+  background-color: rgba(0, 0, 0, 0.2); /* 设置滑块颜色 */
+}
+
+.list-play::-webkit-scrollbar-track {
+  background-color: rgba(0,0,0,0.05); /* 设置滑块轨道颜色 */
+}
+.list-small-text {
+    color: #9499A0;
+    font-size: 14px;
+}
+.list-small-button{
+     color: #9499A0;
+    background-color: #E3E5E7;
+    font-size: 13px;
+}
+.list_play_item_container{
+    background: #FFFFFF;
+    cursor:pointer
+}
+.list_play_item{
+    color:#18191C;
+    font-size: 15px;
+}
+.list_play_item:hover{
+    color:#00AEEC;
+}
+.list_playing_item{
+    color:#00AEEC;
+    font-size: 15px;
+}
+.list-play-time{
+    color:#9499A0;
+    font-size: 14px;
+}
+.list-dur-span{
+    position: absolute;
+    bottom: 6px;
+    right: 16px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    padding: 0 4px;
+    color: #FFFFFF;;
+}
+/* 右侧-广告*/
+.ad-title{
+    font-size: 16px;
+    color:#18191C;
+    font-family: PingFang SC, HarmonyOS_Regular, Helvetica Neue, Microsoft YaHei, sans-serif;
+}
+.ad-score{
+    color:#ffa726;
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+}
+.ad-gonggao-pan{
+    background-color: #fff6e4;
+    color:#E58900;
+    font-size: 12px;
+}
+.ad-button{
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+    background-color: #00AEEC;
+    color:white;
+    font-size: 14px;
+}
+.ad-button:hover{
+    background-color: #00AEEC;
+    color:white;
 }

@@ -1,82 +1,17 @@
-
 .body{
     width: 100%;
     margin: 0;
     padding: 0;
 }
-.div1{
-    width:100%;
-    padding-bottom:0.88840%;
-    /*position: relative;*/
-    background-image: url("mygo_static/mygo1.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin: 0;
-
-}
-.div2{
-    width:100%;
-    padding-bottom: 0.59774%;
-    /*position: relative;*/
-    background-image: url("mygo_static/mygo2.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin: 0;
-}
-.div3{
-    width:100%;
-    padding-bottom: 13%;
-    /*position: relative;*/
-    background-image: url("mygo_static/mygo3.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin: 0;
-}
-.player{
-    width:50%;
-    padding-left: 25%;
-    padding-top:4.7%;
-    /*padding-bottom:9.55%;*/
-}
-.img1-1{
-    width:40%;
-    padding-left:30%;
-}
-.img3-1{
-    width:50%;
-    padding-top: 50%;
-    padding-left:25%;
-}
-
 
 .scroll {
-    width:50%;
-    margin-left:25%;
-    padding-top:2.0%;
-    text-align: center;
     white-space: nowrap;
-    overflow-x: scroll;
+    overflow-x: hidden;
     overflow-y: hidden;
-    border-radius:10px
 }
-
-
-.scroll::-webkit-scrollbar {
-  width:500px;height: 10px
+#click_left_button:hover{
+    color: #505050;
 }
-
-.scroll::-webkit-scrollbar-thumb {
-  border-radius: 4px;
-  background-color: rgb(232,232,232);
-
-}
-
-.scroll::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0);
-}
- .item {
-    white-space: nowrap;
-    display: inline-block;
-     padding: 0px;
-     width:20%
+#click_right_button:hover{
+    color: #505050;
 }

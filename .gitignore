@@ -1,10 +1,18 @@
 .idea/
 __pycache__/
 .video/
-.static/pic/i0.hdslb.com/
-.static/pic/i1.hdslb.com/
-.static/pic/i2.hdslb.com/
-.get_data/comment_json/
 .nvimlog
 .DS_Store
 
+/get_data/comment_json_hot/
+/get_data/comment_json_more/
+/get_data/comment_json_new/
+
+/static/pic/album.biliimg.com/
+/static/pic/i0.hdslb.com/
+/static/pic/i1.hdslb.com/
+/static/pic/i2.hdslb.com/
+
+/comment_hot_json/
+/comment_more_json/
+/comment_new_json/
