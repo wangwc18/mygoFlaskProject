@@ -57,11 +57,11 @@ python+flask+nplayer
 3. 效果：
 
    首页效果
-   ![播放器效果](https://github.com/wangwc18/mygoFlaskProject/blob/master/show-player.png)
+   ![alt text](show-player.png)
    评论区效果
-   ![评论区效果](https://github.com/wangwc18/mygoFlaskProject/blob/master/show-comment.png)
+   ![alt text](show-comment.png)
    活动页效果（评论区上的图片点击跳转）
-   ![活动效果](https://github.com/wangwc18/mygoFlaskProject/blob/master/show-mygo.png)
+   ![alt text](show-mygo.png)
    视频播放器右侧的图片（跳转b站会员购）都是可以点击跳转到B站对应的页面
    
 ## Mac + conda 运行本项目
