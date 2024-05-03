@@ -50,7 +50,7 @@ python+flask+bootstrap+nplayer
 2. 解压到任意位置。
 3. 双击 "windows一键启动.bat" 打开命令行，打开浏览器（最好是谷歌），输入 `127.0.0.1:5000` 访问。
 
-** FAQ：**
+** 常见问题：**
 
 - 缺少视频资源，在云盘中找到"视频资源"文件夹下载后放在 mygoFlaskProject/video 文件夹下。
 - 视频有声音黑屏：说明自己准备的视频是 v265 格式，这个目前只有新的浏览器支持，下载安装谷歌浏览器解决。[谷歌官网](https://www.google.cn/chrome/index.html)。
