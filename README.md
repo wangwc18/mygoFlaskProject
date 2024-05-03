@@ -67,9 +67,9 @@ python+flask+bootstrap+nplayer
    - 你也可以通过 `git clone git@github.com:wangwc18/mygoFlaskProject.git` 命令克隆本仓库。但是你还是需要从网盘下载完整版压缩包，解压后将文件夹拷贝覆盖到本仓库下（缺少视频资源与图片资源）。
 2. Python 环境启动
    - Step 1: 安装依赖
-     `pip3 install -r requirements.txt`
+     - `pip3 install -r requirements.txt`
    - Step 2: 启动
-     `python app.py`
+     - `python app.py`
 3. Conda 环境启动
    - Step 1: 新建 Conda 环境
      - `conda create -n mygo python=3.10`
