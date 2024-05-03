@@ -68,13 +68,9 @@ python+flask+bootstrap+nplayer
 2. Python 环境启动
    - Step 1: 首先你得有个 Python 吧，没有就装一个吧，我的 Python 版本是 3.10.11。
    - Step 2: 之后安装 requirements.txt 里的包，在文件夹下打开命令行，输入
-     ```shell
-     pip3 install -r requirements.txt
-     ```
+     `pip3 install -r requirements.txt`
    - Step 3: 命令行启动程序
-     ```shell
-     python app.py
-     ```
+     `python app.py`
 3. Conda 环境启动
    - Step 1: 新建 Conda 环境，使用如下命令：
      - `conda create -n mygo python=3.10`
