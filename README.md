@@ -1,8 +1,9 @@
-# mygoFlaskProject
+<h1 align="center">mygoFlaskProject</h1>
 
 > 自上次 2023.10.01 mygo 在B站下架后，为了保留大家在B站观看 mygo 的美好回忆，我爬取了评论和弹幕制作了这个可以本地启动的网页项目。2024.04.08-2024.04.17 为了庆祝活动 mygo 又再次短暂上架，我对数据进行了更新，页面做了重构。
 
-B站视频地址：https://www.bilibili.com/video/BV1Ww411C73
+<p align="center"><a href=https://www.bilibili.com/video/BV1Ww411C73f>B站视频链接</a></p>
+
 # 预览：
    - 首页效果
       ![alt text](show-player.png)
