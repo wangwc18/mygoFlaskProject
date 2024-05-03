@@ -1,16 +1,17 @@
 # mygoFlaskProject
 
-自上次 2023.10.01《mygo》在B站下架后，为了保留大家在B站观看 mygo 的美好回忆，我爬取了评论和弹幕制作了这个可以本地启动的网页项目。2024.04.08-2024.04.17 为了庆祝活动 mygo 又再次短暂上架，我对数据进行了更新，页面做了重构。
+> 自上次 2023.10.01《mygo》在B站下架后，为了保留大家在B站观看 mygo 的美好回忆，我爬取了评论和弹幕制作了这个可以本地启动的网页项目。2024.04.08-2024.04.17 为了庆祝活动 mygo 又再次短暂上架，我对数据进行了更新，页面做了重构。
 
-B站视频地址：[https://www.bilibili.com/video/](https://www.bilibili.com/video/)
+B站视频地址：https://www.bilibili.com/video/BV1Ww411C73
+# 预览：
+   - 首页效果
+      ![alt text](show-player.png)
+   - 评论区效果
+      ![alt text](show-comment.png)
+   - 活动页效果（视频播放器右侧广告区域点击跳转到这个页面）
+      ![alt text](show-mygo.png)
 
-往期回顾：[https://www.bilibili.com/video/BV1Ww411C73f](https://www.bilibili.com/video/BV1Ww411C73f)
-
-## 技术框架
-
-python+flask+bootstrap+nplayer
-
-## mygo，启动!!!!! （按照以下四种情况下载对应的资源进行操作即可）
+## 请按照以下四种情况下载对应的资源进行操作
 
 百度云盘：[链接](https://pan.baidu.com/s/1rlRCLZ8B32ozVbnlrGeggg?pwd=eyrw) 提取码：eyrw
 
@@ -70,7 +71,6 @@ python+flask+bootstrap+nplayer
      - `pip3 install -r requirements.txt`
    - Step 2: 启动
      - `python app.py`
-     - 访问 `127.0.0.1:5000`，就可以看 mygo 了。
 2. Conda 环境启动
    - Step 1: 新建 Conda 环境
      - `conda create -n mygo python=3.10`
@@ -78,23 +78,15 @@ python+flask+bootstrap+nplayer
      - `pip install -r requirements.txt`
    - Step 2: 启动
        - `python app.py` （若需更改端口，请编辑 `run_mode.json` 尾行的 `port`）
-       - 访问 `127.0.0.1:5000`，就可以看 mygo 了。
 3. Docker 环境启动
    - Step 1: 拉取镜像：
       - `docker pull happyrespawnanchor/my-go-flask-project:24.4.17`
    - Step 2: 启动容器
-      - `docker run -it -p 5000:5000 --rm -v /你自己/拥有的/视频位置:/mygo/video my-go-flask-project:24.4.17`（换成你的mygo视频路径）
-      - 访问 `127.0.0.1:5000`，就可以看 mygo 了。
-4. 预览：
-   - 首页效果
-      ![alt text](show-player.png)
-   - 评论区效果
-      ![alt text](show-comment.png)
-   - 活动页效果（视频播放器右侧广告区域点击跳转到这个页面）
-      ![alt text](show-mygo.png)
-
+      - `docker run -it -p 5000:5000 --rm -v /你自己/拥有的/视频位置:/mygo/video my-go-flask-project:24.4.17`（换成你的mygo视频路径） 
+* 最后访问 `127.0.0.1:5000` 即可，如果你更改了端口，此处的5000也记得改掉。
 ## 项目结构
-
+### 技术框架
+`Python` + `Flask` + `Bootstrap` + `nPlayer`
 ### 数据获取
 
 1. 弹幕有三种来源，这些文件在 `mygoFlaskProject/danmaku/` 下（做了重命名）
@@ -122,10 +114,8 @@ python+flask+bootstrap+nplayer
 
 ## 最后
 
-- 超级感谢 B站月落云尘大佬对 nplayer 视频组件的指路以及代码示范。
-- 感谢 B站 Darklyyy 对页面部分细节的优化，之前一个 2k 屏幕适配的分支：[链接](https://github.com/wangwc18/mygoFlaskProject/tree/better2k)。
+- 超级感谢 B站月落云尘大佬对 nPlayer 视频组件的指路以及代码示范。
+- 感谢B站 Darklyyy 对页面部分细节优化，制作的一个对 2k 屏幕适配的分支：[Better 2K](https://github.com/wangwc18/mygoFlaskProject/tree/better2k)。
 - 感谢 GitHub 的 [Gray Zhang](https://github.com/otakustay) 大佬提供的新弹幕文件和建议。
 
-剩下的写的都比较简陋(~~实在太懒~~)，有机会用 Vue 重构一下前端吧（大概要等到 Mujicac 出了吧，欸嘿）。
-
-母鸡卡要 25 年 1 月啦？？？？？！！！！！
+有空用 Vue 重构一下前端（~~实在太懒~~
