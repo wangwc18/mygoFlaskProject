@@ -22,8 +22,8 @@ python+flask+bootstrap+nplayer
 
 1. 下载对应文件夹里的压缩包。
 2. 解压到任意位置。
-3. 打开解压后的 mygoFlaskProject 文件夹，找到 mygoFlaskProject/video 文件夹，把视频资源放入其中（支持 MP4/WebM/Ogg/FLV/AVI/MKV/MOV/ 等类型的文件，具体可能还要看一下视频编码格式），注意在 Windows 默认排序下需要满足“1-12集、总集篇、13集、特别节目1-2”这个顺序，否则会导致集数错乱。如果错乱的话可以按 1-16 重命名视频文件，缺少的资源可以在网盘“视频资源”里下载。
-4. 双击 "windows一键启动.bat" 打开命令行，打开浏览器（最好是谷歌），输入 `127.0.0.1:5000` 访问。
+3. 打开解压后的 `mygoFlaskProject` 文件夹，找到 `mygoFlaskProject/video` 文件夹，把视频资源放入其中（支持 MP4/WebM/Ogg/FLV/AVI/MKV/MOV/ 等类型的文件，具体可能还要看一下视频编码格式），注意在 Windows 默认排序下需要满足“1-12集、总集篇、13集、特别节目1-2”这个顺序，否则会导致集数错乱。如果错乱的话可以按 1-16 重命名视频文件，缺少的资源可以在网盘“视频资源”里下载。
+4. 双击 `windows一键启动.bat` 启动,然后在浏览器中访问`127.0.0.1:5000`即可。
 
 ### 不包含本地含视频资源包含本地图片资源：
 
@@ -31,8 +31,8 @@ python+flask+bootstrap+nplayer
 
 1. 下载对应文件夹里的压缩包。
 2. 解压到任意位置。
-3. 打开解压后的 mygoFlaskProject 文件夹，找到 mygoFlaskProject/video 文件夹，把视频资源放入其中（支持 MP4/WebM/Ogg/FLV/AVI/MKV/MOV/ 等类型的文件，具体可能还要看一下视频编码格式），注意在 Windows 默认排序下需要满足”1-12集、总集篇、13集、特别节目1-2“这个顺序，否则会导致集数错乱。如果错乱的话可以按 1-16 重命名视频文件，缺少的资源可以在网盘“视频资源”里下载。
-4. 双击 "windows一键启动.bat" 打开命令行，打开浏览器（最好是谷歌），输入 `127.0.0.1:5000` 访问。
+3. 打开解压后的 `mygoFlaskProject` 文件夹，找到 `mygoFlaskProject/video` 文件夹，把视频资源放入其中（支持 MP4/WebM/Ogg/FLV/AVI/MKV/MOV/ 等类型的文件，具体可能还要看一下视频编码格式），注意在 Windows 默认排序下需要满足”1-12集、总集篇、13集、特别节目1-2“这个顺序，否则会导致集数错乱。如果错乱的话可以按 1-16 重命名视频文件，缺少的资源可以在网盘“视频资源”里下载。
+4. 双击 `windows一键启动.bat` 启动,然后在浏览器中访问`127.0.0.1:5000`即可。
 
 ### 包含本地视频资源不包含本地图片资源：
 
@@ -40,7 +40,7 @@ python+flask+bootstrap+nplayer
 
 1. 下载对应文件夹里的压缩包。
 2. 解压到任意位置。
-3. 双击 "windows一键启动.bat" 打开命令行，打开浏览器（最好是谷歌），输入 `127.0.0.1:5000` 访问。
+3. 双击 `windows一键启动.bat` 启动,然后在浏览器中访问`127.0.0.1:5000`即可。
 
 ### 包含本地视频资源与本地图片资源(下载体积最大)：
 
@@ -48,17 +48,17 @@ python+flask+bootstrap+nplayer
 
 1. 下载对应文件夹里的压缩包。
 2. 解压到任意位置。
-3. 双击 "windows一键启动.bat" 打开命令行，打开浏览器（最好是谷歌），输入 `127.0.0.1:5000` 访问。
+3. 双击 `windows一键启动.bat` 启动,然后在浏览器中访问`127.0.0.1:5000`即可。
 
 ** 常见问题 **
 
-- 缺少视频资源，在云盘中找到"视频资源"文件夹下载后放在 mygoFlaskProject/video 文件夹下。
+- 缺少视频资源，在云盘中找到“视频资源”文件夹下载后放在 `mygoFlaskProject/video` 文件夹下。
 - 视频有声音黑屏：说明自己准备的视频是 v265 格式，这个目前只有新的浏览器支持，下载安装谷歌浏览器解决。[谷歌官网](https://www.google.cn/chrome/index.html)。
 - 视频不加载+评论区不加载：原因是火绒的拦截策略，临时关掉火绒或者B站私聊，改一下代码即可。
 - 页面布局错乱：浏览器最大化后调整网页缩放即可。
-- 感觉视频不够清楚：mygoFlaskProject/video/文件夹下放的是所有视频，替换为你的高清资源即可。[这里推荐一个阿里云盘资源](https://www.aliyundrive.com/s/4vHPUhfMMEK)。
+- 感觉视频不够清楚：`mygoFlaskProject/video/`文件夹下放的是所有视频，替换为你的高清资源即可，[这里推荐一个阿里云盘资源](https://www.aliyundrive.com/s/4vHPUhfMMEK)。
 - 运行后图片和视频加载慢：确保图片和视频被放在一个速度快的储存介质下，如固态硬盘，不要放在U盘中。如果还是卡那可能你需要换个新电脑了。
-- 想在其他设备（如手机或平板）上观看：保证所有设备处于同一个局域网下，在其他设备上访问电脑命令行上第二行的局域网地址即可。推荐手机横屏观看。
+- 想在其他设备（如手机或平板）上观看：确保所有设备处于同一个局域网下，在其他设备上访问电脑命令行上第二行的局域网地址即可。推荐手机横屏观看。
 
 ## 开发环境启动
 
@@ -96,22 +96,22 @@ python+flask+bootstrap+nplayer
 
 ### 数据获取
 
-1. 弹幕有三种来源，这些文件在 mygoFlaskProject/danmaku/ 下（做了重命名）
+1. 弹幕有三种来源，这些文件在 `mygoFlaskProject/danmaku/` 下（做了重命名）
    - 标准弹幕(1文件夹)，使用“唧唧Down”获取 xml 和 ass 文件，只用 xml 文件。
    - 最多弹幕(2文件夹)，使用 B站的这篇专栏 [链接](https://www.bilibili.com/read/cv26903973/)，作者做了最大合并，里头还有各种其他类型的弹幕。
    - 开播弹幕(3文件夹)，后期弹幕和前期弹幕的观感不同（比如前期弹幕剧透更少），所以取了前 3000 条，这部分由 Gray Zhang 提供。
-2. 同时下载了视频文件在 mygoFlaskProject/video/ 下。
-3. 剩余的数据为程序抓取，保存在 mygoFlaskProject/get_data/ 目录下：
-   - get_basic_mess.py 获取视频的基础信息（类似标题、播放数量、弹幕数量等）生成 mygoFlaskProject/basic.json。
-   - get_comment.py 获取所有评论以及回复，生成三个文件夹 comment_json_hot、comment_json_new、comment_json_more，分别对应最热评论、最新评论、更多评论的原始 JSON。为了防止大语言模型的隐私泄露问题，原始评论数据我放网盘了。（PS: 由于 04.17 晚上 cookie 过期导致爬取失败，现在的数据是 04.17 下午 2 点爬的，红豆泥斯米马赛。。。。。）
-   - get_pic.py 爬取评论区图片。
-   - orginal_json_to_type.py 原始 JSON 信息太多，把信息精简后放在 mygoFlaskProject/ 下：
-     - comment_hot_json 最热评论（JSON 中的图片链接为本地图片链接）。
-     - comment_new_json 最新评论（JSON 中的图片链接为本地图片链接）。
-     - comment_more_json 更多评论，评论回复中的“点击查看”加载出的评论（JSON 中的图片链接为本地图片链接）。
-     - comment_hot_json_online 最热评论（JSON 中的图片链接为 B站链接）。
-     - comment_new_json_online 最新评论（JSON 中的图片链接为 B站链接）。
-     - comment_more_json_online 更多评论，评论回复中的“点击查看”加载出的评论（JSON 中的图片链接为 B站链接）。
+2. 同时下载了视频文件在 `mygoFlaskProject/video/` 下。
+3. 剩余的数据为程序抓取，保存在 `mygoFlaskProject/get_data/` 目录下：
+   - `get_basic_mess.py` 获取视频的基础信息（类似标题、播放数量、弹幕数量等）生成 `mygoFlaskProject/basic.json`。
+   - `get_comment.py` 获取所有评论以及回复，生成三个文件夹 `comment_json_hot`、`comment_json_ne`w、`comment_json_more`，分别对应最热评论、最新评论、更多评论的原始 JSON。为了防止大语言模型的隐私泄露问题，原始评论数据我放网盘了。（PS: 由于 04.17 晚上 Cookie 过期导致爬取失败，现在的数据是 04.17 下午 2 点爬的，红豆泥斯米马赛。。。。。）
+   - `get_pic.py` 爬取评论区图片。
+   - `orginal_json_to_type.py` 原始 JSON 信息太多，把信息精简后放在 `mygoFlaskProject/` 下：
+     - `comment_hot_json` 最热评论（JSON 中的图片链接为本地图片链接）。
+     - `comment_new_json` 最新评论（JSON 中的图片链接为本地图片链接）。
+     - `comment_more_json` 更多评论，评论回复中的“点击查看”加载出的评论（JSON 中的图片链接为本地图片链接）。
+     - `comment_hot_json_online` 最热评论（JSON 中的图片链接为B站链接）。
+     - `comment_new_json_online` 最新评论（JSON 中的图片链接为B站链接）。
+     - `comment_more_json_online` 更多评论，评论回复中的“点击查看”加载出的评论（JSON 中的图片链接为 B站链接）。
 
 ### 视频组件
 
