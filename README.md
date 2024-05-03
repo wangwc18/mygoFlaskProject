@@ -62,16 +62,16 @@ python+flask+bootstrap+nplayer
 
 ## 开发环境启动
 
-1. 下载文件
+### 下载文件
    - 你可以直接从上面的两个网盘下载本仓库的完整版本。
    - 你也可以通过 `git clone git@github.com:wangwc18/mygoFlaskProject.git` 命令克隆本仓库。但是你还是需要从网盘下载完整版压缩包，解压后将文件夹拷贝覆盖到本仓库下（缺少视频资源与图片资源）。
-2. Python 环境启动
+1. Python 环境启动
    - Step 1: 安装依赖
      - `pip3 install -r requirements.txt`
    - Step 2: 启动
      - `python app.py`
      - 访问 `127.0.0.1:5000`，就可以看 mygo 了。
-3. Conda 环境启动
+2. Conda 环境启动
    - Step 1: 新建 Conda 环境
      - `conda create -n mygo python=3.10`
      - `conda activate mygo`
@@ -79,7 +79,7 @@ python+flask+bootstrap+nplayer
    - Step 2: 启动
        - `python app.py` （若需更改端口，请编辑 `run_mode.json` 尾行的 `port`）
        - 访问 `127.0.0.1:5000`，就可以看 mygo 了。
-4. Docker 环境启动
+3. Docker 环境启动
    - Step 1: 拉取镜像：
       - `docker pull happyrespawnanchor/my-go-flask-project:24.4.17`
    - Step 2: 启动容器
