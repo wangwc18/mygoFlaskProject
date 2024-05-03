@@ -70,14 +70,15 @@ python+flask+bootstrap+nplayer
      - `pip3 install -r requirements.txt`
    - Step 2: 启动
      - `python app.py`
+     - 访问 `127.0.0.1:5000`，就可以看 mygo 了。
 3. Conda 环境启动
    - Step 1: 新建 Conda 环境
      - `conda create -n mygo python=3.10`
      - `conda activate mygo`
      - `pip install -r requirements.txt`
    - Step 2: 启动
-       - `python app.py` （若需更改端口，请编辑 `run_mode.json` 尾行的 `"port":`）
-       - 访问 `127.0.0.1:端口号`，就可以看 mygo 了。
+       - `python app.py` （若需更改端口，请编辑 `run_mode.json` 尾行的 `port`）
+       - 访问 `127.0.0.1:5000`，就可以看 mygo 了。
 4. Docker 环境启动
    - Step 1: 拉取镜像：
       - `docker pull happyrespawnanchor/my-go-flask-project:24.4.17`
