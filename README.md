@@ -50,15 +50,15 @@ python+flask+bootstrap+nplayer
 2. 解压到任意位置。
 3. 双击 "windows一键启动.bat" 打开命令行，打开浏览器（最好是谷歌），输入 `127.0.0.1:5000` 访问。
 
-**常见问题：**
+** FAQ：**
 
 - 缺少视频资源，在云盘中找到"视频资源"文件夹下载后放在 mygoFlaskProject/video 文件夹下。
 - 视频有声音黑屏：说明自己准备的视频是 v265 格式，这个目前只有新的浏览器支持，下载安装谷歌浏览器解决。[谷歌官网](https://www.google.cn/chrome/index.html)。
 - 视频不加载+评论区不加载：原因是火绒的拦截策略，临时关掉火绒或者 B站私聊，改一下代码即可。
 - 页面布局错乱：浏览器最大化后调整网页缩放即可。
 - 感觉视频不够清楚：mygoFlaskProject/video/文件夹下放的是所有视频，替换为你的高清资源即可。[这里推荐一个阿里云盘资源](https://www.aliyundrive.com/s/4vHPUhfMMEK)。
-- 运行后图片和视频加载慢：不要把文件夹放在 U 盘或其他移动存储设备中直接运行，会导致数据传输受制于接口速度，如果还是卡那可能你需要换个新电脑了。
-- 想在手机或 pad 上运行：没问题，但是移动端的页面没有适配，操作方法是手机和电脑连接同一 wifi（在同一个局域网内），电脑打开程序后，手机浏览器（最好也是谷歌）访问命令行中的第二个地址，注意在播放视频时最好使用横屏模式。
+- 运行后图片和视频加载慢：确保图片和视频被放在一个速度快的储存介质下，如固态硬盘，不要放在U盘中。如果还是卡那可能你需要换个新电脑了。
+- 想在其他设备（如手机或平板）上观看：保证所有设备处于同一个局域网下，在其他设备上访问电脑命令行上第二行的局域网地址即可。推荐手机横屏观看。
 
 ## 开发环境启动
 
@@ -66,26 +66,25 @@ python+flask+bootstrap+nplayer
    - 你可以直接从上面的两个网盘下载本仓库的完整版本。
    - 你也可以通过 `git clone git@github.com:wangwc18/mygoFlaskProject.git` 命令克隆本仓库。但是你还是需要从网盘下载完整版压缩包，解压后将文件夹拷贝覆盖到本仓库下（缺少视频资源与图片资源）。
 2. Python 环境启动
-   - Step 1: 首先你得有个 Python 吧，没有就装一个吧，我的 Python 版本是 3.10.11。
-   - Step 2: 之后安装 requirements.txt 里的包，在文件夹下打开命令行，输入
+   - Step 1: 安装依赖
      `pip3 install -r requirements.txt`
-   - Step 3: 命令行启动程序
+   - Step 2: 启动
      `python app.py`
 3. Conda 环境启动
-   - Step 1: 新建 Conda 环境，使用如下命令：
+   - Step 1: 新建 Conda 环境
      - `conda create -n mygo python=3.10`
      - `conda activate mygo`
      - `pip install -r requirements.txt`
-   - Step 2: 启动 app.py
-       - `python app.py` （此时如果遭遇端口号被占用的问题，请编辑 `run_mode.json`，将最后一行的 `"port":` 改为一个你喜欢的四位数。）
-       - 访问 `127.0.0.1:上面设置的端口号`，就可以看 mygo 了。
+   - Step 2: 启动
+       - `python app.py` （若需更改端口，请编辑 `run_mode.json` 尾行的 `"port":`）
+       - 访问 `127.0.0.1:端口号`，就可以看 mygo 了。
 4. Docker 环境启动
    - Step 1: 拉取镜像：
       - `docker pull happyrespawnanchor/my-go-flask-project:24.4.17`
    - Step 2: 启动容器
       - `docker run -it -p 5000:5000 --rm -v /你自己/拥有的/视频位置:/mygo/video my-go-flask-project:24.4.17`（换成你的mygo视频路径）
       - 访问 `127.0.0.1:5000`，就可以看 mygo 了。
-4. 效果：
+4. 预览：
    - 首页效果
       ![alt text](show-player.png)
    - 评论区效果
