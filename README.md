@@ -17,7 +17,7 @@
 
 ## 请按照以下四种情况下载对应的资源进行操作
 
-百度云盘（提取码：eyrw）：[链接](https://pan.baidu.com/s/1rlRCLZ8B32ozVbnlrGeggg?pwd=eyrw)
+百度云盘（提取码：eyrw）：[链接](https://pan.baidu.com/s/1N9pCEdsN1rKn6BPJqhbGTw?pwd=ecg4)
 
 谷歌云盘：[链接](https://drive.google.com/drive/folders/1hOLUy8toxSi63UbNCoDNCAE9dRwuDbia?usp=sharing)
 
