@@ -138,6 +138,6 @@ if __name__ == '__main__':
 
     except Exception as e:
         print(e)
-        print("请检查传入参数是否有误！FlaskApp将自动在8080端口运行")
+        print("请检查传入参数是否有误！FlaskApp将自动在5000端口运行")
         run_port = 5000
         app.run(host=run_ip, port=run_port)
