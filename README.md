@@ -78,6 +78,7 @@
     - Step 1: 安装依赖
       - `pipenv install -r requirements.txt`
     - Step 2: 启动
+      - `pipenv shell` 
       - `python app.py [your-port]`
 4. Conda 环境启动
    - Step 1: 新建 Conda 环境
