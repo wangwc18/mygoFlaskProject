@@ -16,6 +16,7 @@ f = open("basic.json", 'r')
 content = f.read()
 f.close()
 mygo_data = json.loads(content)
+
 # 运行模式
 f = open("run_mode.json", 'r')
 content = f.read()
@@ -23,6 +24,7 @@ f.close()
 run_mode = json.loads(content)['run_mode']
 run_ip = json.loads(content)['ip']
 run_port = json.loads(content)['port']
+
 # 视频本地路径列表
 mygo_video_list = []
 for item in os.listdir('video/'):
@@ -130,4 +132,12 @@ def danmu_server():
 
 
 if __name__ == '__main__':
-    app.run(host=run_ip, port=run_port)
+    try:
+        run_port = int(sys.argv[1])
+        app.run(host=run_ip, port=run_port)
+
+    except Exception as e:
+        print(e)
+        print("请检查传入参数是否有误！FlaskApp将自动在8080端口运行")
+        run_port = 8080
+        app.run(host=run_ip, port=run_port)
