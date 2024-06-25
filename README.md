@@ -74,19 +74,19 @@
      - `pip3 install -r requirements.txt`
    - Step 2: 启动
      - `python app.py [your-port]`
-2. Pipenv 环境启动
+3. Pipenv 环境启动
     - Step 1: 安装依赖
       - `pipenv install -r requirements.txt`
     - Step 2: 启动
       - `python app.py [your-port]`
-2. Conda 环境启动
+4. Conda 环境启动
    - Step 1: 新建 Conda 环境
      - `conda create -n mygo python=3.10`
      - `conda activate mygo`
      - `pip install -r requirements.txt`
    - Step 2: 启动
        - `python app.py [your-port]`
-3. Docker 环境启动
+5. Docker 环境启动
    - Step 1: 拉取镜像：
       - `docker pull happyrespawnanchor/my-go-flask-project:24.4.17`
    - Step 2: 启动容器
