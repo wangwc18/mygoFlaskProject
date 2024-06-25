@@ -57,7 +57,7 @@
 
 **常见问题**
 
-- 缺少视频资源：在云盘中找到“视频资源”文件夹下载后放在 `mygoFlaskProject/video` 文件夹下。
+- 缺少视频资源：在云盘中找到“视频资源”文件夹下载后放在 `mygoFlaskProject/video` 文件夹下。如果找不到这个文件夹，在项目根目录下创建video/文件夹即可。
 - 视频有声音黑屏：说明自己准备的视频是 v265 格式，这个目前只有新的浏览器支持，下载[谷歌浏览器](https://www.google.cn/chrome/index.html)解决。
 - 视频不加载+评论区不加载：原因是火绒的拦截策略，临时关掉火绒或者B站私聊，改一下代码即可。
 - 页面布局错乱：浏览器最大化后调整网页缩放即可。
@@ -73,20 +73,25 @@
    - Step 1: 安装依赖
      - `pip3 install -r requirements.txt`
    - Step 2: 启动
-     - `python app.py`
+     - `python app.py [your-port]`
+2. Pipenv 环境启动
+    - Step 1: 安装依赖
+      - `pipenv install -r requirements.txt`
+    - Step 2: 启动
+      - `python app.py [your-port]`
 2. Conda 环境启动
    - Step 1: 新建 Conda 环境
      - `conda create -n mygo python=3.10`
      - `conda activate mygo`
      - `pip install -r requirements.txt`
    - Step 2: 启动
-       - `python app.py` （若需更改端口，请编辑 `run_mode.json` 尾行的 `port`）
+       - `python app.py [your-port]`
 3. Docker 环境启动
    - Step 1: 拉取镜像：
       - `docker pull happyrespawnanchor/my-go-flask-project:24.4.17`
    - Step 2: 启动容器
       - `docker run -it -p 5000:5000 --rm -v /你自己/拥有的/视频位置:/mygo/video my-go-flask-project:24.4.17`（换成你的mygo视频路径） 
-* 最后访问 `127.0.0.1:5000` 即可，如果你更改了端口，此处的5000也记得改掉。
+* 最后访问 `127.0.0.1:` 即可，如果你更改了端口，此处的5000也记得改掉。
 ## 项目结构
 ### 技术框架
 `Python` + `Flask` + `Bootstrap` + `nPlayer`
