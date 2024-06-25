@@ -91,7 +91,7 @@
       - `docker pull happyrespawnanchor/my-go-flask-project:24.4.17`
    - Step 2: 启动容器
       - `docker run -it -p 5000:5000 --rm -v /你自己/拥有的/视频位置:/mygo/video my-go-flask-project:24.4.17`（换成你的mygo视频路径） 
-* 最后访问 `127.0.0.1:` 即可，如果你更改了端口，此处的5000也记得改掉。
+* 最后访问 `127.0.0.1:5000` 即可，如果你更改了端口，此处的5000也记得改掉。
 ## 项目结构
 ### 技术框架
 `Python` + `Flask` + `Bootstrap` + `nPlayer`
