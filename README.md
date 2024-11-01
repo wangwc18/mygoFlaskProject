@@ -4,8 +4,9 @@
 
 > 2024.04.08-2024.04.17 为了庆祝活动 mygo 又再次短暂上架，我对数据进行了更新，页面做了重构。
 
-<p align="center"><a href=https://www.bilibili.com/video/>B站视频链接()</a></p>
-<p align="center"><a href=https://www.bilibili.com/video/BV1Ww411C73f>上期B站视频链接(BV1Ww411C73f)</a></p>
+<p align="center"><a href=https://www.bilibili.com/video/BV1Ww411C73f/?p=3 />最新教程视频链接(https://www.bilibili.com/video/BV1Ww411C73f/?p=3)</a></p>
+<p align="center"><a href=https://www.bilibili.com/video/BV1Ww411C73f/?p=2 />上期教程视频链接(https://www.bilibili.com/video/BV1Ww411C73f/?p=2)</a></p>
+<p align="center"><a href=https://www.bilibili.com/video/BV1Ww411C73f>B站视频链接(BV1Ww411C73f)</a></p>
 
 # 预览：
    - 首页效果
