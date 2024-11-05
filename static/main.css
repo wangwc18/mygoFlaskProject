@@ -1,12 +1,11 @@
-@media (max-width: 1400px) {
-      .hide-at-600px {
-        display: none;
-      }
-        .max-at-600px{
-            width: 100%;
-        }
-    }
-/*bootstrap默认container-xxl是1320px，和b站的尺寸有差异,改到1533px（左1054+30+441+额外padding）*/
+/*@media (max-width: 1400px) {*/
+/*      .hide-at-600px {*/
+/*        width: 50%;*/
+/*      }*/
+/*        .max-at-600px{*/
+/*            width: 50%;*/
+/*        }*/
+/*    }*/
 @media (min-width: 1681px) {
   .container {
     max-width: 1533px;
@@ -25,7 +24,61 @@
   .col-xxl-1 {width: 8.33333333%;}
   .col-xxl-auto {width: auto;}
 }
+/*.custom-container {*/
+/*  max-width: 2000px;*/
+/*    padding-left: 10%;*/
+/*    padding-right: 10%;*/
+/*}*/
 
+/* 大于 2000px 时，两列的比例为 4:1 */
+@media (min-width: 2000px) {
+  .container {
+    max-width: 2540px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  .col-xxl-8 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+  .col-xxl-4 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
+/* 1200px 到 1400px 之间，两列的比例为 2:1 */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .custom-container {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+  .col-xxl-8 {
+    flex: 0 0 66.67%;
+    max-width: 66.67%;
+  }
+  .col-xxl-4 {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+  }
+}
+
+/* 小于 1117px 时，固定 .container 的宽度为 1117px */
+@media (max-width: 1199px) {
+  .container {
+    min-width: 1200px;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+    .col-xxl-8 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .col-xxl-4 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
 
 .cp{
     cursor: pointer

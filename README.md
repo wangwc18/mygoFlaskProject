@@ -69,7 +69,7 @@
 ## 开发环境启动
 
 ### 下载文件
-   - 你可以直接从上面的两个网盘下载本仓库的完整版本或通过 `git clone git@github.com:wangwc18/mygoFlaskProject.git` 命令克隆仓库。但是你还是需要从网盘下载完整版压缩包，解压后将文件夹拷贝覆盖到本仓库下（缺少视频资源与图片资源）。
+   - 你可以直接从上面的两个网盘下载本仓库的完整版本或通过 `git clone git@github.com:wangwc18/mygoFlaskProject.git` 命令克隆仓库。但是你还是需要从网盘下载完整版压缩包(使用B站图片时只需要下载视频就可以)，解压后将文件夹拷贝覆盖到本仓库下（缺少视频资源与图片资源）。
 1. Python 环境启动
    - Step 1: 安装依赖
      - `pip3 install -r requirements.txt`
@@ -121,7 +121,7 @@
 - 超级感谢 B站月落云尘大佬对 nPlayer 视频组件的指路以及代码示范。
 - 感谢B站 Darklyyy 对页面部分细节优化，制作的一个对 2k 屏幕适配的分支：[Better 2K](https://github.com/wangwc18/mygoFlaskProject/tree/better2k)。
 - 感谢 GitHub 的 [Gray Zhang](https://github.com/otakustay) 大佬提供的新弹幕文件和建议。
-
+- 感谢 GitHub 的[HappyRespawnanchor](https://github.com/HappyRespawnanchor) 以及[Junjie Fang](https://github.com/julyfun) 重新完善了README
 
 有空用 Vue 重构一下前端（~~实在太懒~~)，大概要等到 Mujicac 出了吧，欸嘿。
 

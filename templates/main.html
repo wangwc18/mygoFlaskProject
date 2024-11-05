@@ -15,7 +15,6 @@
     <script src="{{ url_for("static", filename="nplayer-danmaku/dist/index.min.js") }}"></script>
     <script> const vid = '{{vid}}';</script>
     <script src="{{ url_for("static", filename="main.js") }}"></script>
-    <script src="{{ url_for("static", filename="player.js") }}"></script>
 </head>
 
 <body>
@@ -55,9 +54,9 @@
   </div>
 </nav>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xxl-8 max-at-600px">
+<div class="container custom-container">
+  <div class="row no-gutters">
+    <div class="col col-xxl-8">
         <div class="pt-4 pb-3">
             <span class="title-black-big">{{videos[vid]['title']}}</span>
         </div>
@@ -145,7 +144,7 @@
 
     </div>
 
-    <div class="col-xxl-4 pt-2 hide-at-600px">
+    <div class="col col-xxl-4 pt-2">
         <div class="align-items-center">
             <div class="p-0 float-start" style="width:48px">
                 <div class="d-flex align-items-center" style="height:90px">
@@ -195,7 +194,7 @@
             <div class="d-flex p-2 pb-0 justify-content-between align-items-end">
                 <div class="justify-content-start">
                     <span class="ps-2">It's MyGO!!!!!</span>
-                    <span class="ps-1 list-small-text">(1/4)</span>
+                    <span class="ps-1 list-small-text">({{videos[vid]['rank']}}/16)</span>
                 </div>
             </div>
             <div class="d-flex p-2 pb-0 justify-content-between align-items-center list-small-text">
@@ -356,3 +355,4 @@ function less_des(){
     element2.addEventListener('click',more_des)
 }
 </script>
+<script src="{{ url_for("static", filename="player.js") }}"></script>

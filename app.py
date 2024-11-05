@@ -10,7 +10,6 @@ from tools import xml_2_json, csv_2_json
 
 app = Flask(__name__)
 
-
 # 视频基本信息,懒事儿就不整数据库了
 f = open("basic.json", 'r')
 content = f.read()
@@ -30,6 +29,7 @@ for item in os.listdir('video/'):
     if os.path.isfile(item_path):
         mygo_video_list.append(item_path)
 mygo_video_list = natsorted(mygo_video_list)
+
 
 @app.route('/video/<vid>')
 def video_player(vid):
@@ -77,6 +77,7 @@ def get_comment():
     json_file.close()
     return json_str, 200, headers
 
+
 @app.route('/api/comment_more')
 def get_comment_more():
     vid = request.args.get("vid")  # 传入视频id
@@ -84,9 +85,11 @@ def get_comment_more():
     rpid = request.args.get("rpid")  # 评论id
     page = request.args.get("page")  # 页码
     if run_mode == 'outline':
-        json_file = open('comment_more_json/' + str(rank) + '/'+str(rpid) + "_" + str(page) + '.json', 'r', encoding='UTF-8')
+        json_file = open('comment_more_json/' + str(rank) + '/' + str(rpid) + "_" + str(page) + '.json', 'r',
+                         encoding='UTF-8')
     elif run_mode == 'online':
-        json_file = open('comment_more_json_online/' + str(rank) + '/'+str(rpid) + "_" + str(page) + '.json', 'r', encoding='UTF-8')
+        json_file = open('comment_more_json_online/' + str(rank) + '/' + str(rpid) + "_" + str(page) + '.json', 'r',
+                         encoding='UTF-8')
     else:
         return
     json_str = json_file.read()
@@ -94,13 +97,14 @@ def get_comment_more():
     json_file.close()
     return json_str, 200, headers
 
+
 @app.route("/api/video")
 def video_server():
     vid = request.args.get("vid")
     if vid not in mygo_data.keys():
         return
     rank = mygo_data[vid]['rank']
-    return send_file(mygo_video_list[rank-1])
+    return send_file(mygo_video_list[rank - 1])
 
 
 @app.route("/api/danmu", methods=['GET'])
@@ -113,20 +117,22 @@ def danmu_server():
         danmu_type = '1'
     rank = mygo_data[vid]['rank']
     headers = {"Content-Type": "application/json"}
-    if danmu_type == '1':
+    if rank > 14:  # 没有特别篇的最多和开播数据，所以都用标准弹幕了
         file_name = 'danmaku/1/' + str(rank) + '.xml'
         json_out, len_danmu = xml_2_json(file_name)
-    elif danmu_type == '2':
-        file_name = 'danmaku/2/ep' + str(rank) + '.csv'
-        json_out, len_danmu = csv_2_json(file_name)
     else:
-        file_name = 'danmaku/3/' + str(rank) + '.xml'
-        json_out, len_danmu = xml_2_json(file_name)
+        if danmu_type == '1':
+            file_name = 'danmaku/1/' + str(rank) + '.xml'
+            json_out, len_danmu = xml_2_json(file_name)
+        elif danmu_type == '2':
+            file_name = 'danmaku/2/ep' + str(rank) + '.csv'
+            json_out, len_danmu = csv_2_json(file_name)
+        else:
+            file_name = 'danmaku/3/' + str(rank) + '.xml'
+            json_out, len_danmu = xml_2_json(file_name)
     json_str = json.dumps(json_out, ensure_ascii=False)
     # mygo_data[vid]['load_danmaku'] = len_danmu
     return json_str, 200, headers
-
-
 
 
 if __name__ == '__main__':

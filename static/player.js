@@ -124,8 +124,17 @@ const Screenshot = {
 }
 
 let player;
-$.get('/api/danmu?id='+vid,function (response) {
+danmu_url='/api/danmu?id='+vid
+if (getCookie("danmutype") != NaN&& getCookie("danmutype") !=null &&document.getElementById("danmuchangebar")!=null) {
+    set_danmutype = getCookie("danmutype")
+    document.getElementById("danmuchangebar").value=set_danmutype
+    danmu_url = '/api/danmu?id=' + vid + "&type=" + set_danmutype
+}
+$.get(danmu_url,function (response) {
     const items = response.data
+    if( document.getElementById("num_of_danmu")!=null){
+        document.getElementById("num_of_danmu").textContent =items.length
+    }
     let set_opacity
     let set_speed
     let set_area
@@ -195,6 +204,7 @@ $.get('/api/danmu?id='+vid,function (response) {
 
 function chageDanmu(){
     var res = document.getElementById("danmuchangebar").value;
+    setCookie("danmutype",res);
    $.get('/api/danmu?id='+vid+"&type="+res,function (response){
         const items_new = response.data
         player.danmaku.clearScreen()
