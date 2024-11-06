@@ -141,7 +141,9 @@ $.get(danmu_url,function (response) {
     let set_fontsize
     let set_fontsizeScale
     if (getCookie("opacity") != NaN && getCookie("opacity") !=null )
-        {set_opacity = parseFloat(getCookie("opacity"))}
+        {
+            // console.log(getCookie("opacity"))
+            set_opacity = parseFloat(getCookie("opacity"))}
     else{set_opacity =0.7}
     if (getCookie("speed") != NaN && getCookie("speed") !=null )
         {set_speed = parseFloat(getCookie("speed"))}
@@ -191,8 +193,8 @@ $.get(danmu_url,function (response) {
       // console.log(opts)
     })
     player.on(player.danmaku.EVENT.DANMAKU_UPDATE_OPTIONS, () => {
-      // console.log(player.danmaku.opts)
-        setCookie("opacity",player.danmaku.opts.opacity)
+        // console.log(player.danmaku.el.style.opacity)
+        setCookie("opacity",player.danmaku.el.style.opacity)
         setCookie("speed",player.danmaku.opts.speed)
         setCookie("area",player.danmaku.opts.area)
         setCookie("fontsize",player.danmaku.opts.fontsize)

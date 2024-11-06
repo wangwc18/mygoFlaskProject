@@ -114,7 +114,7 @@
 
 1. 本分支视频组件替换为使用 nplayer（[链接](https://github.com/oyuyue/nplayer)），
 原本的项目是使用 dplayer（[链接](https://github.com/DIYgod/DPlayer)），但是有 Bug 迟迟不能修复。后续再研究一下添加新的功能。
-2. 弹幕的用户播放配置写入 Cookie，但是由于 Bug 弹幕的透明度无法保存。
+2. 弹幕的用户播放配置写入 Cookie，由于Bug弹幕的透明度无法正确保存(player.danmaku.opt.opacity无法获取实时的值，从player.danmaku.el.style.opacity获取值貌似与player.danmaku.opt.opacity不一样？)。
 
 ## 最后
 
