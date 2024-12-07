@@ -8,6 +8,9 @@
 <p align="center"><a href=https://www.bilibili.com/video/BV1Ww411C73f/?p=2 />上期教程视频链接(https://www.bilibili.com/video/BV1Ww411C73f/?p=2)</a></p>
 <p align="center"><a href=https://www.bilibili.com/video/BV1Ww411C73f>B站视频链接(BV1Ww411C73f)</a></p>
 
+> 2024.12.07 19:00 mygo全集终于作为正式番剧回归b站( https://www.bilibili.com/bangumi/play/ep1183102 )，并且保留了原来的弹幕和评论信息，更新了字幕，感谢'我去 母鸡卡'官方！！！！，本项目也就暂时告一段落啦，再次感谢大家过去一年以来的关注和支持！！！！
+<div align="center"><img src="yiranayi.png" alt="Image" width="50%"/></div>
+
 # 预览：
    - 首页效果
       ![alt text](show-player.png)
@@ -123,6 +126,3 @@
 - 感谢 GitHub 的 [Gray Zhang](https://github.com/otakustay) 大佬提供的新弹幕文件和建议。
 - 感谢 GitHub 的[HappyRespawnanchor](https://github.com/HappyRespawnanchor) 以及[Junjie Fang](https://github.com/julyfun) 重新完善了README
 
-有空用 Vue 重构一下前端（~~实在太懒~~)，大概要等到 Mujicac 出了吧，欸嘿。
-
-母鸡卡要 25 年 1 月啦？？？？？！！！！！
